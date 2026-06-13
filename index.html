@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefendX Technologies Inc. | Intelligent Airspace Security &amp; RF Autonomous Awareness</title>
+    <!-- Modern Premium Tech Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy:         #060B13;
+            --cobalt:       #0F1E36;
+            --steel:        #1E3B66;
+            --ice:          #D6E8F6;
+            --ice-lt:       #F0F7FC;
+            --gold:         #D4AF37;
+            --gold-lt:      #F3E5AB;
+            --gold-bg:      #1C1A10;
+            --white:        #FFFFFF;
+            --offwhite:     #0A0F1D;
+            --card-bg:      #0D1527;
+            --card-hover:   #13203B;
+            --silver:       #1E293B;
+            --charcoal:     #080C16;
+            --midgray:      #94A3B8;
+            --lgray:        #64748B;
+            --red:          #EF4444;
+            --green:        #10B981;
+            
+            --bg-main-f1:   #060913;
+            --bg-card-f1:   #0b1120;
+            --bg-card-hover-f1: #111a2e;
+            --accent-blue-f1: #38bdf8;
+            --accent-green-f1: #34d399;
+            --accent-green-glow-f1: rgba(52, 211, 153, 0.15);
+            
+            --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+            font-size: 16px; 
+        }
+
+        body { 
+            font-family: var(--font); 
+            color: var(--text-primary); 
+            background: var(--navy); 
+            color: #F8FAFC;
+            line-height: 1.7; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+        }
+
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        /* ── UTILITY CLASSES ────────────────────────────────────────────── */
+        .container { 
+            max-width: 1280px; 
+            margin: 0 auto; 
+            padding: 0 24px; 
+        }
+        .section { 
+            padding: 100px 0; 
+        }
+        .section-alt { 
+            background: var(--offwhite); 
+            border-top: 1px solid var(--silver);
+            border-bottom: 1px solid var(--silver);
+        }
+        .section-dark { 
+            background: #04080F; 
+            color: var(--white); 
+        }
+        .section-cobalt { 
+            background: linear-gradient(185deg, var(--cobalt) 0%, var(--navy) 100%); 
+            color: var(--white); 
+        }
+        .label { 
+            font-size: 11px; 
+            font-weight: 700; 
+            letter-spacing: 0.15em; 
+            text-transform: uppercase; 
+            color: var(--gold); 
+            margin-bottom: 12px; 
+            display: block; 
+        }
+        .label-light { 
+            color: var(--gold-lt); 
+        }
+        h1, h2, h3, h4 { 
+            line-height: 1.2; 
+            font-weight: 700; 
+            font-family: var(--font-display);
+        }
+        
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 14px 28px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            font-size: 14px; 
+            letter-spacing: 0.03em; 
+            cursor: pointer; 
+            border: none; 
+            transition: var(--transition); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .btn-gold { 
+            background: var(--gold); 
+            color: var(--navy); 
+        }
+        .btn-gold:hover { 
+            background: var(--gold-lt); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        .btn-outline { 
+            background: transparent; 
+            color: var(--white); 
+            border: 1.5px solid rgba(255,255,255,0.25); 
+        }
+        .btn-outline:hover { 
+            border-color: var(--gold); 
+            color: var(--gold); 
+            transform: translateY(-2px);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .btn-navy { 
+            background: var(--steel); 
+            color: var(--white); 
+        }
+        .btn-navy:hover { 
+            background: #2b538c; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(30, 59, 102, 0.4);
+        }
+        
+        .tag { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 11px; 
+            font-weight: 700; 
+            letter-spacing: 0.08em; 
+            text-transform: uppercase; 
+        }
+        .tag-gold { 
+            background: var(--gold-bg); 
+            color: var(--gold); 
+            border: 1px solid rgba(212, 175, 55, 0.3); 
+        }
+        .tag-ice { 
+            background: rgba(56, 189, 248, 0.1); 
+            color: var(--accent-blue-f1); 
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        
+        .divider { 
+            width: 48px; 
+            height: 3px; 
+            background: var(--gold); 
+            margin: 20px 0 32px; 
+            border-radius: 2px; 
+        }
+        .divider-center { 
+            margin: 20px auto 32px; 
+        }
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+        }
+        .grid-3 { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 28px; 
+        }
+        .grid-4 { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 24px; 
+        }
+        .text-center { 
+            text-align: center; 
+        }
+
+        /* ── NAV HEADER & BRAND LOGO ────────────────────────────────────── */
+        .nav { 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            background: rgba(6, 11, 19, 0.95); 
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06); 
+        }
+        .nav-inner { 
+            display: flex; 
+            align-items: center; 
+            height: 85px; 
+        }
+        .nav-logo { 
+            display: flex; 
+            align-items: center; 
+            margin-right: 32px; 
+            flex-shrink: 0; 
+            transition: var(--transition);
+        }
+        .nav-logo:hover {
+            transform: scale(1.02);
+            opacity: 0.95;
+        }
+        .nav-logo-img { 
+            height: 52px; 
+            width: auto; 
+            border-radius: 4px; 
+            object-fit: contain;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .nav-links { 
+            display: flex; 
+            align-items: center; 
+            flex: 1; 
+        }
+        .nav-item { 
+            position: relative; 
+        }
+        .nav-link { 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+            padding: 0 16px; 
+            height: 85px; 
+            font-size: 13px; 
+            font-weight: 600; 
+            color: rgba(255,255,255,0.7); 
+            letter-spacing: 0.02em; 
+            cursor: pointer; 
+            transition: color 0.15s; 
+            white-space: nowrap; 
+            border-bottom: 2px solid transparent; 
+        }
+        .nav-link:hover { 
+            color: var(--white); 
+            border-bottom-color: var(--gold); 
+        }
+        .nav-link svg { 
+            width: 10px; 
+            height: 10px; 
+            fill: currentColor; 
+            transition: transform 0.15s; 
+        }
+        .nav-item:hover .nav-link svg { 
+            transform: rotate(180deg); 
+        }
+        .nav-dropdown { 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            min-width: 250px; 
+            background: var(--cobalt); 
+            border: 1px solid rgba(255,255,255,0.08); 
+            border-top: 2px solid var(--gold); 
+            box-shadow: 0 16px 40px rgba(0,0,0,0.55); 
+            opacity: 0; 
+            visibility: hidden; 
+            transform: translateY(-4px); 
+            transition: all 0.18s; 
+            z-index: 100; 
+            border-radius: 0 0 6px 6px;
+        }
+        .nav-item:hover .nav-dropdown { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0); 
+        }
+        .nav-dropdown a { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 12px 20px; 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.75); 
+            transition: all 0.15s; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+        .nav-dropdown a:last-child { 
+            border-bottom: none; 
+        }
+        .nav-dropdown a:hover { 
+            color: var(--gold); 
+            background: rgba(255,255,255,0.05); 
+            padding-left: 26px; 
+        }
+        .nav-dropdown a::before { 
+            content: "›"; 
+            font-size: 14px; 
+            color: var(--gold); 
+            opacity: 0; 
+            transition: opacity 0.15s; 
+        }
+        .nav-dropdown a:hover::before { 
+            opacity: 1; 
+        }
+        .nav-cta { 
+            margin-left: auto; 
+            padding-left: 24px; 
+        }
+
+        /* ── STYLISH HERO INTERACTIVE SIMULATOR BANNER ──────────────────── */
+        .interactive-hero-banner {
+            background: radial-gradient(circle at 50% 0%, #15243f 0%, #060b13 75%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 80px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .sim-grid-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .sim-control-panel {
+            background: rgba(13, 21, 39, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .sim-tabs-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .sim-tab-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #94A3B8;
+            padding: 10px 4px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+
+        .sim-tab-btn:hover {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+        }
+
+        .sim-tab-btn.active {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold);
+            color: var(--gold-lt);
+        }
+
+        .sim-viewer-wrapper {
+            position: relative;
+            background: #040810;
+            border-radius: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            height: 380px;
+            overflow: hidden;
+        }
+
+        #airspaceCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sim-telemetry-hud {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            background: rgba(4, 8, 16, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 4px;
+            padding: 12px;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: #38bdf8;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .hud-line span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .alert-pulse-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(239, 68, 110, 0.2);
+            border: 1px solid #ef4444;
+            color: #ff6b6b;
+            padding: 4px 10px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        .alert-pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: pulse-red 1s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% { transform: scale(0.9); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.4; }
+            100% { transform: scale(0.9); opacity: 1; }
+        }
+
+        /* ── THREAT BANNER ───────────────────────────────────────────────── */
+        .threat-banner { 
+            background: var(--charcoal); 
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .threat-banner-inner { 
+            display: flex; 
+            gap: 0; 
+            overflow: hidden; 
+        }
+        .threat-stat { 
+            flex: 1; 
+            padding: 35px 30px; 
+            border-right: 1px solid rgba(255,255,255,0.06); 
+        }
+        .threat-stat:last-child { 
+            border-right: none; 
+        }
+        .threat-stat .num { 
+            font-size: 38px; 
+            font-weight: 800; 
+            color: var(--gold); 
+            letter-spacing: -0.03em; 
+            line-height: 1; 
+            margin-bottom: 8px; 
+            font-family: var(--font-display);
+        }
+        .threat-stat .desc { 
+            font-size: 13px; 
+            color: #94A3B8; 
+            line-height: 1.5; 
+        }
+        .threat-stat .desc strong { 
+            color: #F1F5F9; 
+            display: block; 
+            font-size: 14px; 
+            margin-bottom: 4px; 
+        }
+
+        /* ── INTERACTIVE THREAT LANDSCAPE ARCHITECTURE ───────────────────── */
+        .landscape-wrapper { 
+            display: grid; 
+            grid-template-columns: 280px 1fr; 
+            gap: 40px; 
+            background: var(--card-bg); 
+            border: 1px solid rgba(255,255,255,0.08); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 12px 48px rgba(0,0,0,0.4); 
+        }
+        .landscape-tabs { 
+            background: rgba(0,0,0,0.2); 
+            border-right: 1px solid rgba(255,255,255,0.08); 
+            padding: 24px 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 4px; 
+        }
+        .landscape-tab-btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 14px 24px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: var(--midgray); 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            cursor: pointer; 
+            border-left: 3px solid transparent; 
+            transition: all 0.2s ease; 
+            text-align: left; 
+            background: transparent; 
+            border-top: none; 
+            border-right: none; 
+            border-bottom: none; 
+            width: 100%; 
+        }
+        .landscape-tab-btn:hover { 
+            color: var(--white); 
+            background: rgba(255,255,255,0.02); 
+        }
+        .landscape-tab-btn.active { 
+            color: var(--gold-lt); 
+            background: var(--card-hover); 
+            border-left-color: var(--gold); 
+        }
+        .landscape-tab-btn .arrow-indicator { 
+            font-size: 16px; 
+            opacity: 0; 
+            transition: opacity 0.2s; 
+            color: var(--gold); 
+        }
+        .landscape-tab-btn.active .arrow-indicator { 
+            opacity: 1; 
+        }
+        .landscape-content-panel { 
+            padding: 48px; 
+            display: none; 
+        }
+        .landscape-content-panel.active { 
+            display: block; 
+            animation: panelFade 0.35s ease forwards; 
+        }
+        @keyframes panelFade { 
+            from { opacity: 0; transform: translateY(8px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .threat-grid-cards { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 24px; 
+            margin-top: 32px; 
+        }
+        .threat-detail-card { 
+            background: rgba(255,255,255,0.02); 
+            border: 1px solid rgba(255,255,255,0.06); 
+            border-radius: 8px; 
+            padding: 24px; 
+            border-top: 2px solid var(--accent-blue-f1); 
+        }
+        .threat-detail-card h4 { 
+            font-size: 15px; 
+            color: var(--white); 
+            margin-bottom: 10px; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .threat-detail-card p { 
+            font-size: 13.5px; 
+            color: var(--midgray); 
+            line-height: 1.6; 
+        }
+
+        .stat-callout-box { 
+            background: var(--cobalt); 
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--white); 
+            border-radius: 8px; 
+            padding: 32px; 
+            margin-bottom: 32px; 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+        }
+        .stat-callout-box .huge-num { 
+            font-size: 48px; 
+            font-weight: 900; 
+            color: var(--gold); 
+            line-height: 1; 
+            font-family: var(--font-display);
+        }
+        .stat-callout-box .callout-text h4 { 
+            font-size: 16px; 
+            margin-bottom: 4px; 
+            color: var(--white); 
+        }
+        .stat-callout-box .callout-text p { 
+            font-size: 13px; 
+            color: var(--midgray); 
+            line-height: 1.5; 
+        }
+
+        /* ── PLATFORM VISUAL ────────────────────────────────────────────── */
+        .platform-visual { 
+            background: var(--card-bg); 
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px; 
+            padding: 48px; 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        /* ── TECH CARDS ─────────────────────────────────────────────────── */
+        .tech-card { 
+            background: var(--card-bg); 
+            border: 1px solid rgba(255,255,255,0.06); 
+            border-radius: 12px; 
+            padding: 32px; 
+            transition: var(--transition); 
+            border-top: 3px solid transparent; 
+        }
+        .tech-card:hover { 
+            border-top-color: var(--gold); 
+            background: var(--card-hover);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.3); 
+            transform: translateY(-4px); 
+        }
+        .tech-card .icon { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 8px; 
+            background: rgba(56, 189, 248, 0.1); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+            font-size: 22px; 
+        }
+        .tech-card h3 { 
+            font-size: 16px; 
+            color: var(--white); 
+            margin-bottom: 12px; 
+        }
+        .tech-card p { 
+            font-size: 14px; 
+            color: var(--midgray); 
+            line-height: 1.7; 
+        }
+
+        /* ── INDUSTRIES ──────────────────────────────────────────────────── */
+        .industry-card { 
+            border-radius: 8px; 
+            overflow: hidden; 
+            position: relative; 
+            cursor: pointer; 
+        }
+        .industry-card-inner { 
+            background: var(--card-bg); 
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 32px 28px 28px; 
+            min-height: 200px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            transition: var(--transition); 
+            position: relative; 
+        }
+        .industry-card-inner:hover { 
+            background: var(--card-hover); 
+            border-color: rgba(255,255,255,0.15);
+        }
+        .industry-card .ind-icon { 
+            font-size: 32px; 
+            margin-bottom: 16px; 
+            opacity: 0.85; 
+        }
+        .industry-card h3 { 
+            font-size: 16px; 
+            font-weight: 700; 
+            color: var(--white); 
+            margin-bottom: 8px; 
+        }
+        .industry-card p { 
+            font-size: 12.5px; 
+            color: var(--midgray); 
+            line-height: 1.5; 
+        }
+        .industry-card .ind-arrow { 
+            position: absolute; 
+            bottom: 20px; 
+            right: 24px; 
+            font-size: 18px; 
+            color: var(--gold); 
+            opacity: 0; 
+            transition: opacity 0.2s; 
+        }
+        .industry-card-inner:hover .ind-arrow { 
+            opacity: 1; 
+        }
+
+        /* ── DIFFERENTIATORS ─────────────────────────────────────────────── */
+        .diff-row { 
+            display: flex; 
+            gap: 32px; 
+            padding: 36px 0; 
+            border-bottom: 1px solid rgba(255,255,255,0.08); 
+            align-items: flex-start; 
+        }
+        .diff-row:last-child { 
+            border-bottom: none; 
+        }
+        .diff-num { 
+            font-size: 48px; 
+            font-weight: 900; 
+            color: rgba(255, 255, 255, 0.05); 
+            flex-shrink: 0; 
+            width: 72px; 
+            line-height: 1; 
+            font-family: var(--font-display);
+        }
+        .diff-body h3 { 
+            font-size: 20px; 
+            color: var(--white); 
+            margin-bottom: 12px; 
+            font-weight: 700; 
+        }
+        .diff-body p { 
+            font-size: 15px; 
+            color: var(--midgray); 
+            line-height: 1.75; 
+        }
+        .diff-badge { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 6px; 
+            margin-top: 12px; 
+            padding: 5px 12px; 
+            background: rgba(255,255,255,0.02); 
+            border: 1px solid rgba(255,255,255,0.06); 
+            border-radius: 4px; 
+            font-size: 11px; 
+            color: var(--midgray); 
+            font-weight: 600; 
+        }
+        .diff-badge .ck { 
+            color: var(--green); 
+        }
+
+        /* ── MARKET / INVESTORS ──────────────────────────────────────────── */
+        .market-num { 
+            font-size: 56px; 
+            font-weight: 900; 
+            color: var(--gold); 
+            letter-spacing: -0.04em; 
+            line-height: 1; 
+            font-family: var(--font-display);
+        }
+        .market-sub { 
+            font-size: 14px; 
+            color: var(--midgray); 
+            margin-top: 6px; 
+        }
+        .investor-card { 
+            background: rgba(255,255,255,0.02); 
+            border: 1px solid rgba(255,255,255,0.06); 
+            border-radius: 12px; 
+            padding: 32px; 
+        }
+        .investor-card h3 { 
+            font-size: 16px; 
+            color: var(--white); 
+            margin-bottom: 14px; 
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 10px;
+        }
+        .investor-card ul { 
+            padding-left: 0; 
+            list-style: none; 
+        }
+        .investor-card ul li { 
+            font-size: 13px; 
+            color: var(--midgray); 
+            padding: 8px 0; 
+            border-bottom: 1px solid rgba(255,255,255,0.04); 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 8px; 
+        }
+        .investor-card ul li:last-child { 
+            border-bottom: none; 
+        }
+        .investor-card ul li::before { 
+            content: "›"; 
+            color: var(--gold); 
+            font-weight: 700; 
+            flex-shrink: 0; 
+        }
+
+        /* ── COMPARISON ──────────────────────────────────────────────────── */
+        .comp-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        .comp-table th { 
+            padding: 14px 20px; 
+            font-size: 12px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.06em; 
+            background: var(--cobalt); 
+            color: #fff; 
+            font-weight: 600; 
+            text-align: left; 
+        }
+        .comp-table th:first-child { 
+            border-radius: 8px 0 0 0; 
+        }
+        .comp-table th:last-child { 
+            border-radius: 0 8px 0 0; 
+        }
+        .comp-table th.highlight { 
+            background: var(--steel); 
+            color: var(--gold); 
+        }
+        .comp-table td { 
+            padding: 14px 20px; 
+            font-size: 13px; 
+            color: var(--midgray); 
+            border-bottom: 1px solid rgba(255,255,255,0.06); 
+            vertical-align: middle; 
+        }
+        .comp-table td.highlight { 
+            background: rgba(56, 189, 248, 0.03); 
+            color: var(--white); 
+            font-weight: 600; 
+        }
+        .comp-table tr:last-child td { 
+            border-bottom: none; 
+        }
+        .comp-table .yes { 
+            color: var(--green); 
+            font-weight: 700; 
+        }
+        .comp-table .no { 
+            color: var(--red); 
+        }
+        .comp-table .partial { 
+            color: #E67E22; 
+        }
+
+        /* ── CONTACT FORM ────────────────────────────────────────────────── */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            gap: 64px; 
+            align-items: center; 
+        }
+        .contact-info h2 { 
+            font-size: 36px; 
+            color: var(--white); 
+            margin-bottom: 20px; 
+        }
+        .contact-form { 
+            background: var(--card-bg); 
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px; 
+            padding: 40px; 
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+        .form-row { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 16px; 
+            margin-bottom: 16px; 
+        }
+        .form-group { 
+            margin-bottom: 16px; 
+        }
+        .form-group label { 
+            display: block; 
+            font-size: 12px; 
+            font-weight: 600; 
+            color: var(--midgray); 
+            text-transform: uppercase; 
+            letter-spacing: 0.06em; 
+            margin-bottom: 6px; 
+        }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; 
+            padding: 12px 16px; 
+            border: 1.5px solid rgba(255,255,255,0.1); 
+            border-radius: 6px; 
+            font-size: 14px; 
+            font-family: var(--font); 
+            color: var(--white); 
+            background: rgba(0,0,0,0.2); 
+            transition: border-color 0.15s; 
+            outline: none; 
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+            border-color: var(--accent-blue-f1); 
+        }
+        .form-group select option {
+            background-color: var(--navy);
+            color: #fff;
+        }
+        .form-group textarea { 
+            resize: vertical; 
+            min-height: 100px; 
+        }
+
+        /* ── FOOTER ──────────────────────────────────────────────────────── */
+        .footer { 
+            background: #04070d; 
+            color: var(--midgray); 
+            padding: 72px 0 40px; 
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr 1fr; 
+            gap: 48px; 
+            margin-bottom: 60px; 
+        }
+        .footer-brand p { 
+            font-size: 13px; 
+            line-height: 1.75; 
+            margin-top: 16px; 
+            max-width: 280px; 
+        }
+        .footer h4 { 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            color: var(--white); 
+            margin-bottom: 16px; 
+            font-weight: 700; 
+        }
+        .footer ul { 
+            list-style: none; 
+        }
+        .footer ul li { 
+            margin-bottom: 10px; 
+        }
+        .footer ul a { 
+            font-size: 13px; 
+            color: var(--midgray); 
+            transition: color 0.15s; 
+        }
+        .footer ul a:hover { 
+            color: var(--gold); 
+        }
+        .footer-bottom { 
+            padding-top: 32px; 
+            border-top: 1px solid rgba(255,255,255,0.06); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .footer-bottom p { 
+            font-size: 12px; 
+        }
+        .footer-badges { 
+            display: flex; 
+            gap: 12px; 
+        }
+        .footer-badge { 
+            padding: 4px 10px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 3px; 
+            font-size: 10px; 
+            color: var(--midgray); 
+            font-weight: 600; 
+            letter-spacing: 0.06em; 
+        }
+
+        .sec-header { 
+            margin-bottom: 56px; 
+        }
+        .sec-header-center { 
+            text-align: center; 
+        }
+        .sec-header-center .divider { 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+        .sec-title { 
+            font-size: clamp(28px, 3vw, 40px); 
+            color: var(--white); 
+            font-weight: 800; 
+            letter-spacing: -0.02em; 
+        }
+        .sec-sub { 
+            font-size: 16px; 
+            color: var(--midgray); 
+            max-width: 580px; 
+            margin-top: 16px; 
+            line-height: 1.7; 
+        }
+
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(20px); 
+            transition: opacity 0.55s ease, transform 0.55s ease; 
+        }
+        .reveal.visible { 
+            opacity: 1; 
+            transform: none; 
+        }
+
+        /* ── DYNAMIC ABOUT VIEW PANEL (SLIDE-OVER ARCHITECTURE) ── */
+        .company-panel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(4, 7, 13, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .company-panel-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .company-panel {
+            width: 100%;
+            max-width: 780px;
+            height: 100%;
+            background: var(--navy);
+            color: #fff;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 48px;
+            position: relative;
+            border-left: 2px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .company-panel-overlay.active .company-panel {
+            transform: translateX(0);
+        }
+
+        .panel-close-btn {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .panel-close-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: var(--red);
+            color: var(--red);
+            transform: rotate(90deg);
+        }
+
+        .panel-header-wrapper {
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 24px;
+        }
+
+        .panel-logo-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .panel-logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .panel-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-blue-f1);
+            font-weight: 700;
+        }
+
+        .panel-section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .panel-section-title::before {
+            content: '';
+            width: 4px;
+            height: 1.5rem;
+            background: var(--accent-blue-f1);
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .panel-p {
+            color: var(--midgray);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .panel-innovation-card {
+            background: linear-gradient(135deg, var(--card-bg), var(--card-hover));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--accent-green-f1);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .panel-innovation-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            background: var(--accent-green-glow-f1);
+            filter: blur(60px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .panel-innovation-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+        }
+
+        .panel-innovation-card h3 span {
+            color: var(--accent-green-f1);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .panel-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .panel-pillar-item {
+            background-color: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 24px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .panel-pillar-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            background-color: rgba(255,255,255,0.04);
+        }
+
+        .panel-pillar-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: var(--font-display);
+        }
+
+        .panel-pillar-item.science h3 { color: var(--white); border-bottom-color: rgba(255, 255, 255, 0.2); }
+        .panel-pillar-item.mission h3 { color: var(--accent-blue-f1); border-bottom-color: rgba(56, 189, 248, 0.3); }
+        .panel-pillar-item.vision h3 { color: var(--accent-green-f1); border-bottom-color: rgba(52, 211, 153, 0.3); }
+
+        .panel-pillar-item p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--midgray);
+        }
+
+        /* ── TOAST NOTIFICATION SYSTEM ── */
+        .toast-container {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast {
+            background: #0B1120;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-left: 4px solid var(--gold);
+            color: var(--white);
+            padding: 16px 24px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .sim-grid-layout { grid-template-columns: 1fr; }
+            .threat-banner-inner { flex-wrap: wrap; }
+            .threat-stat { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .threat-stat:last-child { border-bottom: none; }
+            .landscape-wrapper { grid-template-columns: 1fr; }
+            .landscape-tabs { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px; flex-direction: row; overflow-x: auto; }
+            .landscape-content-panel { padding: 24px; }
+            .threat-grid-cards { grid-template-columns: 1fr; }
+            .company-panel { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ██ NAVIGATION (With Logo.jpg integration) ██████████████████ -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="DefendX Technologies home">
+        <img src="Logo.jpg" alt="DefendX Technologies Logo" class="nav-logo-img">
+      </a>
+
+      <div class="nav-links" role="menubar">
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Threat Landscape
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#threat-landscape-section">Airspace Risk Architecture</a>
+            <a href="#threat-landscape-section">Commercial Utility Framework</a>
+            <a href="#threat-landscape-section">Statistical Intelligence</a>
+            <a href="#threat-landscape-section">Financial Liability Analysis</a>
+            <a href="#comparison">Vulnerability Assessment</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Technology
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#technology">Detection Mechanisms</a>
+            <a href="#technology">Signal Classification</a>
+            <a href="#technology">Threat &amp; Payload Grouping</a>
+            <a href="#technology">Spatial Diagnostics</a>
+            <a href="#technology">Actionable Security Output</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Solutions
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#platform">AirSentinel™ Platform</a>
+            <a href="#Systems">Solutions by Sector</a>
+            <a href="#Systems">System Integration &amp; API</a>
+            <a href="#Systems">Deployment Configurations</a>
+            <a href="#Systems">Monitoring-as-a-Service (MaaS)</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Systems
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#Systems">Airports &amp; Aviation Hubs</a>
+            <a href="#Systems">Correctional Facilities</a>
+            <a href="#Systems">Utilities &amp; Hydro Grid</a>
+            <a href="#Systems">Stadiums &amp; Mass Gatherings</a>
+            <a href="#Systems">Border &amp; Maritime Security</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Company
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="javascript:void(0)" onclick="openAboutPanel()">About DefendX</a>
+            <a href="#why">Why DefendX</a>
+            <a href="javascript:void(0)" onclick="openAboutPanel()">Leadership Team</a>
+            <a href="#investors">Investors &amp; Milestones</a>
+            <a href="#contact">Careers</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-gold" style="padding:10px 20px; font-size:13px;">Request Briefing</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ██ INTERACTIVE TACTICAL AIRSPACE SIMULATOR HEADER (NEW REFINED BANNER) ██ -->
+<section class="interactive-hero-banner" id="home">
+  <div class="container">
+    <div class="sim-grid-layout">
+      <!-- Left text area inside hero -->
+      <div class="hero-content" style="padding: 0;">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line" aria-hidden="true"></div>
+          <span class="tag tag-gold">Sovereign Airspace Intelligence</span>
+          <span class="tag tag-ice">Edge ML Autonomous</span>
+        </div>
+        <h1 style="font-size: clamp(34px, 4vw, 52px); margin-bottom: 20px; color: #fff;">
+          Canadian-Engineered.<br>Autonomous Airspace<br><em style="color: var(--gold); font-style: normal;">SkyShield Protection.</em>
+        </h1>
+        <p style="font-size: 16px; color: var(--midgray); max-width: 520px; margin-bottom: 30px; line-height: 1.6;">
+          DefendX Technologies delivers edge-autonomous UAV sensing architectures. By leveraging passive radio frequency (RF) sensing, we secure critical boundaries entirely without local transmission emissions.
+        </p>
+        <div class="hero-actions">
+          <a href="#platform" class="btn btn-gold">Explore the Platform</a>
+          <a href="javascript:void(0)" onclick="openAboutPanel()" class="btn btn-outline">Corporate Profile</a>
+        </div>
+      </div>
+
+      <!-- Right Visual Airspace Simulator Dashboard -->
+      <div class="sim-control-panel reveal">
+        <div class="sim-tabs-header">
+          <button class="sim-tab-btn active" id="btn-airport" onclick="setSimSector('airport')">✈️ Airport</button>
+          <button class="sim-tab-btn" id="btn-prison" onclick="setSimSector('prison')">🏰 Prison</button>
+          <button class="sim-tab-btn" id="btn-utility" onclick="setSimSector('utility')">⚡ Hydro Grid</button>
+          <button class="sim-tab-btn" id="btn-stadium" onclick="setSimSector('stadium')">🏟️ Stadium</button>
+        </div>
+
+        <div class="sim-viewer-wrapper">
+          <!-- Canvas element for active radar/airspace rendering -->
+          <canvas id="airspaceCanvas"></canvas>
+          
+          <div class="alert-pulse-badge" id="simAlertBadge">
+            <div class="alert-pulse-dot"></div>
+            <span id="simAlertText">Monitoring Skyway</span>
+          </div>
+
+          <div class="sim-telemetry-hud">
+            <div class="hud-line">SECTOR: <span id="hud-sector">AVIATION CORE</span></div>
+            <div class="hud-line">FREQ INDEX: <span id="hud-freq">2.412 GHz - 5.825 GHz</span></div>
+            <div class="hud-line">SENSORS: <span id="hud-sensors">3 ACTIVE PASSIVE NODES</span></div>
+            <div class="hud-line">STATUS: <span id="hud-status" style="color: var(--accent-green-f1);">NO THREAT SIGNALS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ THREAT STATISTICS BANNER ███████████████████████████████████████ -->
+<div class="threat-banner" id="threat" aria-label="Key threat statistics">
+  <div class="threat-banner-inner container">
+    <div class="threat-stat">
+      <div class="num">1,900+</div>
+      <div class="desc"><strong>Aviation Incursions</strong> recorded near Canadian runways in a single year—growing past 30% annually.</div>
+    </div>
+    <div class="threat-stat">
+      <div class="num">1,064</div>
+      <div class="desc"><strong>Correctional Breaches</strong> recorded nationally. Contraband drops increased tenfold over 5 years.</div>
+    </div>
+    <div class="threat-stat">
+      <div class="num">26,000 km</div>
+      <div class="desc"><strong>Energy Utility Corridors</strong> spanning Canada currently operating with zero real-time airspace visibility.</div>
+    </div>
+    <div class="threat-stat">
+      <div class="num">99.4%</div>
+      <div class="desc"><strong>Autonomous Accuracy</strong> validated over 400 test deployments at regional critical infrastructure pilots.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ██ DEEP DIVE INTERACTIVE THREAT LANDSCAPE SECTION ██████████████████ -->
+<section class="section section-alt" id="threat-landscape-section">
+  <div class="container">
+    <div class="sec-header sec-header-center">
+      <span class="label">Strategic Assessment</span>
+      <h2 class="sec-title">Airspace Threat Landscape &amp; Analysis</h2>
+      <div class="divider divider-center"></div>
+      <p class="sec-sub">An evaluation of low-altitude vectors, macro-economic utility dynamics, structural deficiencies in contemporary countermeasures, and financial operational impacts.</p>
+    </div>
+
+    <div class="landscape-wrapper">
+      <!-- Tab Navigation Sidebar -->
+      <div class="landscape-tabs" role="tablist" aria-label="Threat Landscape Navigation">
+        <button class="landscape-tab-btn active" onclick="switchLandscapeTab(event, 'uav-threat')" role="tab" aria-selected="true" aria-controls="panel-uav-threat">
+          <span>The Drone Threat</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'commercial-utility')" role="tab" aria-selected="false" aria-controls="panel-commercial-utility">
+          <span>Commercial Utility</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'incident-data')" role="tab" aria-selected="false" aria-controls="panel-incident-data">
+          <span>Incident Data</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'cost-inaction')" role="tab" aria-selected="false" aria-controls="panel-cost-inaction">
+          <span>Cost of Inaction</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'solution-gaps')" role="tab" aria-selected="false" aria-controls="panel-solution-gaps">
+          <span>Current Solution Gaps</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <!-- Panel 1: The Drone Threat -->
+      <div id="panel-uav-threat" class="landscape-content-panel active" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--white); margin-bottom: 16px;">Asymmetric Airspace Vulnerabilities: The Dual-Use Dilemma</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Small Unmanned Aerial Systems (sUAVs) have evolved from recreational novelties into ubiquitous operational threats. While providing immense economic efficiencies, their structural agility allows malicious or negligent actors to completely bypass traditional terrestrial security perimeters. Low-altitude vectors present unique detection challenges due to minimized radar cross-sections.
+        </p>
+        <blockquote>
+          <p style="font-style: italic; color: var(--accent-blue-f1); border-left: 3px solid var(--gold); padding-left: 16px; font-size: 14px; margin-bottom: 24px;">
+            "The democratization of advanced flight controllers means that standard physical boundaries no longer guarantee perimeter integrity."
+          </p>
+        </blockquote>
+        <div class="threat-grid-cards">
+          <div class="threat-detail-card">
+            <h4>🛰️ Airborne Espionage</h4>
+            <p>Readily available high-definition optics allow unauthorized surveillance of sensitive facilities, corporate assets, and executive installations from unprotected vertical lines of sight.</p>
+          </div>
+          <div class="threat-detail-card">
+            <h4>📦 Contraband Delivery Vectors</h4>
+            <p>Automated waypoint navigation allows payload-carrying systems to execute precise drops over correctional facility fences and across international borders, evading standard ground checkpoints.</p>
+          </div>
+          <div class="threat-detail-card">
+            <h4>💥 Asymmetric Sabotage</h4>
+            <p>Consumer platforms can be configured to carry kinetic or electronic hazards, threatening public officials, open-loop grids, and vital energy nodes.</p>
+          </div>
+          <div class="threat-detail-card">
+            <h4>⚠️ Operational Incursions</h4>
+            <p>Inexperienced operators flying consumer platforms routinely drift into restricted corridors, causing immediate disruptions to civil aviation hubs, traffic networks, and high-visibility public events.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Commercial Utility -->
+      <div id="panel-commercial-utility" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--white); margin-bottom: 16px;">The Macro-Economic Utility Landscape: Commercial &amp; Sovereign Value</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Unmanned aviation acts as a fundamental catalyst across global markets, driving down operational costs, protecting human capital, and optimizing data collection frequency. Legitimate commercial drone usage is exploding, meaning security operators must differentiate, not blindly block signals.
+        </p>
+        <div class="threat-grid-cards">
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>⚡ Industrial &amp; Energy Logistics</h4>
+            <p>Automated inspections of energy grids, transformers, and pipeline networks reduce data acquisition delay while eliminating the safety risks associated with human inspections.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>🌾 Precision Digital Agriculture</h4>
+            <p>Imaging payloads assess vast crop acreage, monitor livestock distribution, map irrigation deficiencies, and direct automated localized delivery with minimal soil impact.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>🏗️ Civil Infrastructure &amp; Real Estate</h4>
+            <p>Construction management frameworks leverage continuous aerial modeling to assess structural layouts and track high-velocity material distributions safely.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>🛡️ Sovereign Governance &amp; Tactical Defence</h4>
+            <p>First responders, border security elements, and local military units deploy localized systems for real-time terrain intelligence and search-and-rescue arrays.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Incident Data -->
+      <div id="panel-incident-data" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--white); margin-bottom: 16px;">Quantifying the Airspace Crisis: Empirical Trends</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Data collected from international regulatory bodies, municipal registries, and proprietary signal monitoring frameworks demonstrate an undeniable trend: unauthorized low-altitude flights are growing exponentially.
+        </p>
+        <div class="stat-callout-box">
+          <div class="huge-num">3.4x</div>
+          <div class="callout-text">
+            <h4>Incursion Multiplier</h4>
+            <p>Validated localized tracking reports show a massive increase in uncoordinated aerial events near critical infrastructure nodes between 2023 and 2026.</p>
+          </div>
+        </div>
+        <p style="font-size: 14px; color: var(--midgray); line-height: 1.7;">
+          At Collins Bay Institution in Kingston, Ontario — one of Canada's largest federal penitentiaries — nearly 100 unauthorized drones were intercepted in a single year, almost ten times the number recorded just five years earlier. In Quebec, staff reported 274 drones flying over provincial detention centres in just one quarter.
+        </p>
+      </div>
+
+      <!-- Panel 4: Cost of Inaction -->
+      <div id="panel-cost-inaction" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--white); margin-bottom: 16px;">The Financial &amp; Operational Liabilities of Airspace Blindness</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Waiting for an explicit airborne breach to occur represents a severe organizational risk. For asset operators, corporate boards, and security managers, failing to deploy continuous monitoring tools results in direct exposure to substantial downstream liabilities.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); padding:20px; border-radius:4px;">
+            <strong style="color:var(--white); display:block; margin-bottom:4px; font-size:14px;">Immediate Capital Dissipation</strong>
+            <p style="font-size:13px; color:var(--midgray);">A minor incursion at a primary shipping port or aviation corridor forces a complete operational suspension. Idle logistics operations and diverted commercial aircraft can generate losses exceeding millions per hour.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); padding:20px; border-radius:4px;">
+            <strong style="color:var(--white); display:block; margin-bottom:4px; font-size:14px;">Regulatory &amp; Legal Exposure</strong>
+            <p style="font-size:13px; color:var(--midgray);">Failing to maintain a documented record of low-altitude threats exposes infrastructure operators to compliance penalties, third-party liability lawsuits, and severe breaches of mandated physical security standards.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: Current Solution Gaps -->
+      <div id="panel-solution-gaps" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--white); margin-bottom: 16px;">The Failure of Legacy Defensive Paradigms</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Traditional corporate security methods are structurally ill-equipped to identify or counter modern consumer and custom drone threats. Legacy technologies frequently introduce severe secondary risks or suffer from significant blind spots.
+        </p>
+        <div class="threat-grid-cards">
+          <div class="threat-detail-card" style="border-top-color: var(--red);">
+            <h4>Active Radar Limitations</h4>
+            <p>Conventional radar arrays struggle with small physical signatures, frequently misidentifying incoming targets as ground clutter or bird activity in urban landscapes.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--red);">
+            <h4>Active Jamming Restrictions</h4>
+            <p>Active transmission counter-measures generate severe signal interference, creating major legal, regulatory, and spectrum licensing barriers near airports or commercial centers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ PLATFORM OVERVIEW ██████████████████████████████████████████████ -->
+<section class="section" id="platform">
+  <div class="container">
+    <div class="grid-2" style="gap:80px; align-items:center;">
+      <div>
+        <div class="sec-header">
+          <span class="label">The Solution</span>
+          <h2 class="sec-title">AirSentinel™ — Built for the Real World</h2>
+          <div class="divider"></div>
+          <p class="sec-sub">AirSentinel™ is built to operate reliably in real-world environments, filtering out ambient clutter to provide clear, actionable insights for security coordinators where false alarms disrupt workflows.</p>
+        </div>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          By running specialized machine learning (TinyML) processing directly at the edge, the AirSentinel™ platform monitors low-altitude perimeters continuously, operating independently without requiring constant external network connections or centralized infrastructure.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="platform-visual">
+          <div style="margin-bottom:32px;">
+            <span class="label label-light">Three-Stage Architecture</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:24px;">
+            <div style="background:rgba(255,255,255,0.03); border-radius:6px; padding:24px; border-left:3px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:11px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Stage 01</span>
+                <span class="tag tag-ice" style="font-size:10px;">Passive · No Emissions</span>
+              </div>
+              <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Passive RF Signal Acquisition</h4>
+              <p style="font-size:13px; color:rgba(255,255,255,0.5);">Wideband omnidirectional monitoring across key frequency bands. Zero electromagnetic output. Fully compliant with spectrum regulations.</p>
+            </div>
+            <div style="text-align:center; color:var(--gold); font-size:20px;">↓</div>
+            <div style="background:rgba(255,255,255,0.03); border-radius:6px; padding:24px; border-left:3px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:11px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Stage 02</span>
+                <span class="tag tag-ice" style="font-size:10px;">Edge Deployed (TinyML)</span>
+              </div>
+              <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Edge-Based Processing</h4>
+              <p style="font-size:13px; color:rgba(255,255,255,0.5);">Signal analysis runs entirely on-site. Intelligently filters out normal environmental signals and background wireless activity without cloud latency.</p>
+            </div>
+            <div style="text-align:center; color:var(--gold); font-size:20px;">↓</div>
+            <div style="background:rgba(255,255,255,0.03); border-radius:6px; padding:24px; border-left:3px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:11px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Stage 03</span>
+                <span class="tag tag-ice" style="font-size:10px;">API · SOC Compatible</span>
+              </div>
+              <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Autonomous Alert &amp; Reporting</h4>
+              <p style="font-size:13px; color:rgba(255,255,255,0.5);">Real-time coordinate transfers map localized security threats. Integrates with security operations center software layers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ TECHNOLOGY PILLARS ██████████████████████████████████████████████ -->
+<section class="section section-alt" id="technology">
+  <div class="container">
+    <div class="sec-header sec-header-center">
+      <span class="label" style="display:block; text-align:center;">Technology</span>
+      <h2 class="sec-title" style="max-width:580px; margin:0 auto;">Comprehensive Defense-in-Depth Capability</h2>
+      <div class="divider divider-center"></div>
+      <p class="sec-sub" style="margin:0 auto; text-align:center;">Our multi-tier tech stack processes complex aerial environments systematically, bringing rigorous safety to corporate and government facilities.</p>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px;">
+      <div class="tech-card reveal">
+        <div class="icon">📡</div>
+        <h3>Detection</h3>
+        <p>Utilizes passive radio frequency monitoring to intercept low-altitude targets without emitting active signals, eliminating licensing conflicts and local network interference.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.08s;">
+        <div class="icon">🧬</div>
+        <h3>Identification</h3>
+        <p>Identifies the threat profile by matching incoming signal characteristics to a pre-configured, localized classification library, utilizing our advanced neural fingerprinting models.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.16s;">
+        <div class="icon">📊</div>
+        <h3>Classification</h3>
+        <p>Differentiates harmless consumer platforms or industrial survey operations from high-priority, unauthorized targets immediately.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.24s;">
+        <div class="icon">📍</div>
+        <h3>Tracking</h3>
+        <p>Maintains a continuous, secure path log of the threat's coordinates through your protected boundaries, projecting flight vectors on your maps.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.32s;">
+        <div class="icon">🛑</div>
+        <h3>Addressing</h3>
+        <p>Sends real-time coordinates and threat alerts directly to security staff or central monitoring dashboards for immediate, targeted counter-UAS response.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ INDUSTRIES / SYSTEMS ████████████████████████████████████████████ -->
+<section class="section section-dark" id="Systems">
+  <div class="container">
+    <div class="sec-header">
+      <span class="label label-light">Systems</span>
+      <h2 class="sec-title sec-title-light">Every Environment Where Airspace Matters</h2>
+      <div class="divider"></div>
+      <p class="sec-sub sec-sub-light">Our passive, edge-autonomous architecture is uniquely positioned to serve critical infrastructure security networks under strict regulatory oversight.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">✈️</div>
+          <h3>Airports &amp; Aviation</h3>
+          <p>Perimeter monitoring without aviation signal interference. Protects civilian aviation hubs from sudden incursion-triggered ground stops and massive operational liabilities.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🏛️</div>
+          <h3>Correctional Institutions</h3>
+          <p>Passive, fence-line sensor meshes easily deployed where active jamming hardware is restricted. Mitigates high-volume automated contraband vectors.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">⚡</div>
+          <h3>Critical Infrastructure &amp; Hydro</h3>
+          <p>Continuous monitoring arrays for power substations, cross-country pipelines, and remote refineries, providing non-stop protection along linear assets.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🛡️</div>
+          <h3>National Defence &amp; Law Enforcement</h3>
+          <p>Secure, domestic technology that complies fully with rigorous security criteria for national protection nodes, command posts, and temporary operations centers.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🗺️</div>
+          <h3>Border &amp; Maritime Security</h3>
+          <p>Persistent passive surveillance across dynamic international borders, detecting unmapped, modified custom pathways and smuggling patterns.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🏟️</div>
+          <h3>Events &amp; Venue Security</h3>
+          <p>Rapid-deployment kits for stadium security coordinators. Minimizes on-site operational footprints while feeding immediate alert telemetry to local dispatch teams.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ WHY DEFENDX (DIFFERENTIATION) ████████████████████████████████ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="grid-2" style="gap:80px; align-items:flex-start;">
+      <div>
+        <div class="sec-header">
+          <span class="label">Differentiation</span>
+          <h2 class="sec-title">Architected Where Conventional Detection Fails</h2>
+          <div class="divider"></div>
+          <p class="sec-sub">Technical and operational design choices that ensure dependable security in highly complex enterprise environments.</p>
+        </div>
+        <div class="diff-row reveal">
+          <div class="diff-num">01</div>
+          <div class="diff-body">
+            <h3>Fully Passive Architecture</h3>
+            <p>Our systems transmit zero signals. This structural choice handles complex regulatory compliance hurdles naturally across commercial airfields, urban cores, and high-density industrial plants.</p>
+            <div class="diff-badge"><span class="ck">✓</span> Deployable where active transmission systems cannot operate</div>
+          </div>
+        </div>
+        <div class="diff-row reveal">
+          <div class="diff-num">02</div>
+          <div class="diff-body">
+            <h3>Sovereign "Canadian Steel" Build</h3>
+            <p>Designed and manufactured in Canada. Featuring a ruggedized, military-spec physical chassis capable of sustaining extreme weather operations down to -40°C, proudly detailed with a maple shield marking.</p>
+            <div class="diff-badge"><span class="ck">✓</span> Ultimate environmental durability and resilient supply-chain sourcing</div>
+          </div>
+        </div>
+        <div class="diff-row reveal">
+          <div class="diff-num">03</div>
+          <div class="diff-body">
+            <h3>True Edge Autonomy</h3>
+            <p>Every analysis step happens locally on optimized units. Eliminates mandatory cloud reliance, round-trip processing lag, and data exposure vulnerabilities from external raw captures.</p>
+            <div class="diff-badge"><span class="ck">✓</span> Solar-compatible installation and sub-second detection metrics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitive Comparison Table -->
+      <div id="comparison" class="reveal" style="position:sticky; top:100px;">
+        <span class="label">Competitive Analysis</span>
+        <h3 style="font-size:20px; color:var(--white); margin-bottom:24px; font-weight:700;">System Capabilities vs. Market Standards</h3>
+        <div style="overflow-x:auto; border-radius:8px; border:1px solid rgba(255, 255, 255, 0.08);">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th class="highlight">DefendX SkyShield</th>
+                <th>Traditional Military C-UAS</th>
+                <th>Basic Consumer Scanners</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fully passive (no TX)</td>
+                <td class="highlight yes">✓ Yes</td>
+                <td class="no">✗ No</td>
+                <td class="no">✗ No</td>
+              </tr>
+              <tr>
+                <td>Sub-Zero Hardened</td>
+                <td class="highlight yes">✓ Yes (-40°C)</td>
+                <td class="highlight yes">✓ Yes</td>
+                <td class="no">✗ No</td>
+              </tr>
+              <tr>
+                <td>Edge Autonomy (SaaS)</td>
+                <td class="highlight yes">✓ Yes</td>
+                <td class="no">✗ No ($500K+ CapEx)</td>
+                <td class="partial">⊘ Partial</td>
+              </tr>
+              <tr>
+                <td>No Training Needed UI</td>
+                <td class="highlight yes">✓ Yes (1-Click)</td>
+                <td class="no">✗ No (Needs Engineer)</td>
+                <td class="highlight yes">✓ Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ INVESTORS / BUSINESS STRATEGY █████████████████████████████████ -->
+<section class="section section-cobalt" id="investors">
+  <div class="container">
+    <div class="sec-header">
+      <span class="label label-light">Investors &amp; Milestones</span>
+      <h2 class="sec-title sec-title-light">A Massive Market. A Critical Technology. Ready to Lead.</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-4" style="margin-bottom:64px;">
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+        <div class="market-num">$12.8B</div>
+        <div class="market-sub">Global C-UAS Market TAM by 2029</div>
+      </div>
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+        <div class="market-num">$2.4B</div>
+        <div class="market-sub">North American SAM (Prisons &amp; Aviation)</div>
+      </div>
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+        <div class="market-num">25.1%</div>
+        <div class="market-sub">Global Market CAGR Trajectory</div>
+      </div>
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
+        <div class="market-num">$4,500</div>
+        <div class="market-sub">Target MRR Per Installed Node</div>
+      </div>
+    </div>
+    <div class="grid-3" style="gap:28px;">
+      <div class="investor-card reveal">
+        <h3>Commercial Milestones</h3>
+        <ul>
+          <li><strong>Ontario Pilot Success:</strong> Achieved 99.4% detection over 400 simulated drone breaches in regional pilots.</li>
+          <li><strong>IP Pipeline:</strong> 2 provisional patents filed covering multi-sensor fusion models and adaptive local RF analysis.</li>
+          <li><strong>Western Accelerator:</strong> Partnering to prepare institutional data room to close $1.5M Seed round in Q4 2026.</li>
+        </ul>
+      </div>
+      <div class="investor-card reveal">
+        <h3>Competitive Moat</h3>
+        <ul>
+          <li>Pioneering passive signal processing algorithms built for complex urban perimeters.</li>
+          <li>Optimized software footprint allowing execution on low-cost edge chips instead of expensive workstations.</li>
+          <li>Hardware-as-a-Service model lease lowers initial buyer barrier, shrinking procurement from months to days.</li>
+        </ul>
+      </div>
+      <div class="investor-card reveal">
+        <h3>Revenue Strategy</h3>
+        <ul>
+          <li><strong>HaaS Model:</strong> Monthly node operational subscription with $8,200 hardware deployment startup.</li>
+          <li><strong>Security Integrators:</strong> Partnering with G4S, Securitas to bundle drone sensors into existing physical security scopes.</li>
+          <li><strong>Federal RFPs:</strong> Tapping into government correctional facility procurement pathways across Canada.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ BRIEFING CALL TO ACTION ████████████████████████████████████████ -->
+<section style="background:var(--navy); padding:72px 0;" id="about">
+  <div class="container text-center">
+    <span class="label label-light" style="display:block; text-align:center;">DefendX Technologies Inc.</span>
+    <h2 style="font-size:36px; color:var(--white); max-width:600px; margin:0 auto 20px; font-weight:800; letter-spacing:-0.02em;">The Airspace Above Critical Assets Deserves Better Protection.</h2>
+    <p style="font-size:16px; color:var(--midgray); max-width:480px; margin:0 auto 40px; line-height:1.75;">We build security solutions because the tools that exist today are too expensive, too limited, or too legally risky to deploy where threats matter most.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="javascript:void(0)" onclick="openAboutPanel()" class="btn btn-gold">About the Company</a>
+      <a href="#contact" class="btn btn-outline">Request an Operator Briefing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CONTACT & BRIEFING REQUESTS ██████████████████████████████████ -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="label label-light">Contact</span>
+        <h2>Start the Conversation</h2>
+        <div class="divider"></div>
+        <p style="font-size:15px; color:var(--midgray); line-height:1.8; margin-bottom:40px;">Whether you're a potential customer, government procurement officer, system integrator, or investor — we'd like to hear from you. All briefings are handled under strict confidentiality protocols.</p>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:40px; height:40px; border-radius:6px; background:rgba(212, 175, 55, 0.1); border:1px solid rgba(212, 175, 55, 0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">🌐</div>
+            <div><div style="font-size:12px; color:var(--lgray); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Website</div><div style="font-size:14px; color:var(--gold);">www.defxtech.com</div></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:40px; height:40px; border-radius:6px; background:rgba(212, 175, 55, 0.1); border:1px solid rgba(212, 175, 55, 0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">📍</div>
+            <div><div style="font-size:12px; color:var(--lgray); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Region</div><div style="font-size:14px; color:rgba(255,255,255,0.75);">London, Ontario, Canada</div></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:40px; height:40px; border-radius:6px; background:rgba(212, 175, 55, 0.1); border:1px solid rgba(212, 175, 55, 0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">🏛️</div>
+            <div><div style="font-size:12px; color:var(--lgray); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Collaborating Partners</div><div style="font-size:14px; color:rgba(255,255,255,0.75);">Western Accelerator · Western University Alumni</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive Contact Form Container -->
+      <div>
+        <div class="contact-form" id="briefingForm">
+          <h3 style="font-size:18px; color:var(--white); margin-bottom:24px; font-weight:700;">Request a Confidential Briefing</h3>
+          <form id="contactForm" action="https://formsubmit.co/esaleh81@gmail.com" method="POST" onsubmit="handleFormSubmit(event)">
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_subject" value="New DefendX Briefing Request!">
+            <input type="hidden" name="_honey" style="display:none">
+            <input type="hidden" name="_template" value="box">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="First Name" required placeholder="Jane">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="Last Name" required placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Organization</label>
+              <input type="text" name="Organization" required placeholder="Department / Company">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="Email" required placeholder="jane.smith@organization.com">
+            </div>
+            <div class="form-group">
+              <label>I am an</label>
+              <select name="User Role" required>
+                <option value="">— Select your role —</option>
+                <option value="Airport Authority">Airport / Aviation Authority</option>
+                <option value="Correctional Officer">Correctional Service / Public Safety</option>
+                <option value="Utility Operator">Energy / Utility Operator</option>
+                <option value="National Defence">National Defence / Security Forces</option>
+                <option value="Border Security">Border Security Operations</option>
+                <option value="System Integrator">System Integrator / Channel Partner</option>
+                <option value="Investor">Investor / Venture Capital</option>
+                <option value="Procurement Officer">Government Procurement Officer</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="Message" required placeholder="Briefly describe your operational environment and the challenge you're trying to solve…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; padding:15px 28px; font-size:14px;">
+              Submit Request →
+            </button>
+          </form>
+          <p style="font-size:11px; color:var(--lgray); text-align:center; margin-top:12px;">All inquiries are treated as strictly proprietary information. DefendX Technologies does not share contact details with third parties.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ FOOTER (With Logo.jpg integration) ██████████████████████████████████ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+          <img src="Logo.jpg" alt="DefendX Technologies Footer Logo" style="height:44px; width:auto; border-radius:4px; border:1px solid rgba(255,255,255,0.1)">
+          <span style="font-size:15px; font-weight:800; color:var(--white);">DefendX<span style="color:var(--gold);"> Technologies Inc.</span></span>
+        </div>
+        <p>Transforming complex RF signatures into actionable airspace intelligence. Intelligent Detection. Autonomous Awareness. Secure Airspace.</p>
+        <div style="margin-top:20px; font-size:12px; color:var(--midgray);">www.defxtech.com</div>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#platform">AirSentinel™ Overview</a></li>
+          <li><a href="#platform">Pipeline Framework</a></li>
+          <li><a href="#technology">Technology Pillars</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Systems</h4>
+        <ul>
+          <li><a href="#Systems">Airports &amp; Aviation</a></li>
+          <li><a href="#Systems">Correctional Institutions</a></li>
+          <li><a href="#Systems">Critical Infrastructure</a></li>
+          <li><a href="#Systems">Events &amp; Venues</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openAboutPanel()">About DefendX</a></li>
+          <li><a href="#why">Why DefendX</a></li>
+          <li><a href="#investors">Investors</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DefendX Technologies Inc. All rights reserved. AirSentinel™ is a trademarked module of DefendX Technologies.</p>
+      <div class="footer-badges">
+        <div class="footer-badge">Domestic Ownership</div>
+        <div class="footer-badge">Sovereign Tech</div>
+        <div class="footer-badge">P.Eng. Monitored</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ██ DYNAMIC INTERACTIVE COMPONENT: ABOUT OVERLAY PANEL ██ -->
+<div class="company-panel-overlay" id="aboutPanelOverlay" onclick="closeAboutPanelOnOutsideClick(event)">
+    <div class="company-panel">
+        <button class="panel-close-btn" onclick="closeAboutPanel()" aria-label="Close About Panel">×</button>
+        
+        <!-- Stylized Logo Header -->
+        <div class="panel-header-wrapper">
+            <div class="panel-logo-box">
+                <img src="Logo.jpg" alt="DefendX Logo" class="panel-logo-img">
+                <h2 style="font-size: 2.2rem; font-weight: 800; color: #fff;">DefendX<span style="color: var(--accent-blue-f1)"> Technologies</span></h2>
+            </div>
+            <div class="panel-subtitle">Sovereign Airspace Awareness &amp; Intelligence</div>
+        </div>
+
+        <!-- About section text content -->
+        <section style="margin-bottom: 40px;">
+            <h3 class="panel-section-title">About the Company</h3>
+            <p class="panel-p"><strong>DefendX Technologies Inc.</strong> is a Canadian innovator dedicated to developing intelligent sensing solutions for airspace awareness, drone detection, and autonomous RF intelligence. Founded on extensive operational insights in wireless communications and security networks, DefendX empowers organizations to monitor, understand, and protect the increasingly complex airspace surrounding critical assets.</p>
+            <p class="panel-p">As unmanned aerial systems (UAS) rapidly proliferate across commercial, industrial, and recreational sectors, modern airspace demands sophisticated security. DefendX meets this challenge head-on. By leveraging passive radio frequency (RF) sensing and automated analytics, our technology delivers real-time situational awareness and operational continuity—all without disrupting existing communications or infrastructure.</p>
+        </section>
+
+        <!-- Leadership Team Profiles -->
+        <section style="margin-bottom: 40px;">
+            <h3 class="panel-section-title">Founding Team</h3>
+            <div style="display:flex; flex-direction:column; gap:24px;">
+                <div style="background:rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding:20px; border-radius:8px;">
+                    <h4 style="color:#fff; font-size:16px;">Alexandre Tremblay — <span style="color:var(--gold);">Co-Founder &amp; CEO</span></h4>
+                    <p style="font-size:13.5px; color:var(--midgray); margin-top:6px;">Former Systems Engineer at Bombardier Aerospace. 8+ years designing flight dynamics and avionics communication architectures. Western Engineering Alumnus.</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding:20px; border-radius:8px;">
+                    <h4 style="color:#fff; font-size:16px;">Dr. Sarah Jenkins — <span style="color:var(--gold);">Chief Technology Officer</span></h4>
+                    <p style="font-size:13.5px; color:var(--midgray); margin-top:6px;">PhD in Electrical Engineering focused on adaptive signal processing. Former defence contractor specialized in tactical electronic warfare systems.</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); padding:20px; border-radius:8px;">
+                    <h4 style="color:#fff; font-size:16px;">Marcus Vance — <span style="color:var(--gold);">Head of Product Security</span></h4>
+                    <p style="font-size:13.5px; color:var(--midgray); margin-top:6px;">10+ years within specialized Canadian Armed Forces signals intelligence operations. Expert in regulatory compliance, physical safety, and threat assessment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation Highlight -->
+        <section>
+            <div class="panel-innovation-card">
+                <h3>AirSentinel™ <span>Core Innovation</span></h3>
+                <p class="panel-p" style="color: #cbd5e1; margin-bottom: 0;">At the heart of our technology is <strong>AirSentinel™</strong>, an advanced RF sensing platform engineered to autonomously detect, identify, classify, and track unauthorized drone activity. By fusing spectrum intelligence with edge processing, AirSentinel™ seamlessly transforms complex wireless environments into clear, actionable operational insights.</p>
+            </div>
+        </section>
+
+        <!-- Pillars Grid (Science, Mission, Vision) -->
+        <section style="margin-top: 40px;">
+            <h3 class="panel-section-title">Strategic Foundations</h3>
+            <div class="panel-pillars-grid">
+                <div class="panel-pillar-item science">
+                    <h3>Proven Reliability</h3>
+                    <p>Our systems are built on field-verified methodologies designed to operate reliably in highly active industrial perimeters, ensuring clean detection layouts under challenging conditions.</p>
+                </div>
+                
+                <div class="panel-pillar-item mission">
+                    <h3>Our Mission</h3>
+                    <p>To develop intelligent RF sensing technologies that enhance airspace awareness, elevate operational decision-making, and safeguard the security of critical environments.</p>
+                </div>
+                
+                <div class="panel-pillar-item vision">
+                    <h3>Our Vision</h3>
+                    <p>To be the global leader in autonomous RF intelligence and airspace awareness, empowering organizations with innovative solutions that enable safer, smarter, and more resilient operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <button class="btn btn-gold" onclick="closeAboutPanel(); scrollToContact();" style="font-size: 13px;">Request Partner Briefing</button>
+        </div>
+    </div>
+</div>
+
+<!-- ██ TOAST NOTIFICATION CONTAINER █████████████████████████████████ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ██ SCRIPTS & CANVAS SIMULATOR CONTROLLERS ██████████████████████ -->
+<script>
+    // Intersection Observer for scroll animations
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) { 
+            e.target.classList.add('visible'); 
+            obs.unobserve(e.target); 
+        } 
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Smooth scroll triggers
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const targetId = a.getAttribute('href').slice(1);
+        const el = document.getElementById(targetId);
+        if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Threat landscape interactive sub-tabs controller
+    function switchLandscapeTab(event, targetPanelId) {
+      const wrapper = event.target.closest('.landscape-wrapper');
+      
+      // Clear active states
+      wrapper.querySelectorAll('.landscape-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      
+      wrapper.querySelectorAll('.landscape-content-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      
+      const clickedBtn = event.target.closest('.landscape-tab-btn');
+      clickedBtn.classList.add('active');
+      clickedBtn.setAttribute('aria-selected', 'true');
+      
+      const targetPanel = wrapper.querySelector(`#panel-${targetPanelId}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    }
+
+    // Dynamic overlay controller functions
+    function openAboutPanel() {
+        const overlay = document.getElementById('aboutPanelOverlay');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Lock scrolling
+        showToast('🔑 Secure Info Loaded: DefendX Company Profile', 'ℹ️');
+    }
+
+    // Close company panel
+    function closeAboutPanel() {
+        const overlay = document.getElementById('aboutPanelOverlay');
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock scrolling
+    }
+
+    function closeAboutPanelOnOutsideClick(event) {
+        if (event.target.id === 'aboutPanelOverlay') {
+            closeAboutPanel();
+        }
+    }
+
+    function scrollToContact() {
+        const el = document.getElementById('contact');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Interactive Toast Notification System
+    function showToast(message, icon = '✓') {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+            <span class="toast-icon">${icon}</span>
+            <span class="toast-text">${message}</span>
+        `;
+        container.appendChild(toast);
+        
+        // Trigger presentation transition
+        setTimeout(() => toast.classList.add('show'), 100);
+        
+        // Automated garbage cleanup
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+        }, 4000);
+    }
+
+    // Secure briefing request controller with async FormSubmit integration
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('contactForm');
+        const org = form.querySelector('input[placeholder="Department / Company"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+
+        showToast('Encrypting and securing briefing metadata...', '🔐');
+        
+        // Submit asynchronously to FormSubmit using Fetch API to preserve user page flow
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                showToast(`Briefing request for ${org} queued successfully!`, '🛡️');
+                form.reset();
+            } else {
+                showToast('Submission error. Please verify input fields.', '⚠️');
+            }
+        })
+        .catch(error => {
+            showToast('Network error, please try again.', '⚠️');
+        });
+    }
+
+    // ── ACTIVE RADAR/AIRSPACE BLUEPRINT SIMULATION CANVAS ───────────────
+    const canvas = document.getElementById('airspaceCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let currentSector = 'airport';
+    let simulationTick = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let targetDetected = false;
+    let sweepAngle = 0;
+
+    // Sector parameters
+    const sectorParams = {
+        airport: {
+            title: "AVIATION CORRIDOR",
+            sensors: "4 PASSIVE NODES ACTIVE",
+            freq: "5.825 GHz ISM DFS",
+            status: "NO THREAT CORRIDORS",
+            alertText: "Monitoring Skyway",
+            alertStyle: "rgba(52, 211, 153, 0.2)",
+            alertBorder: "#34d399",
+            alertTextColor: "#34d399",
+            drawBackground: function(w, h) {
+                // Draw runways
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.lineWidth = 14;
+                ctx.beginPath();
+                ctx.moveTo(w * 0.2, h * 0.5);
+                ctx.lineTo(w * 0.8, h * 0.5);
+                ctx.stroke();
+                
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([5, 5]);
+                ctx.beginPath();
+                ctx.moveTo(w * 0.2, h * 0.5);
+                ctx.lineTo(w * 0.8, h * 0.5);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+        },
+        prison: {
+            title: "MAXIMUM BOUNDARY PERIMETER",
+            sensors: "6 NODES MESHED",
+            freq: "2.412 GHz DEEP COV",
+            status: "INTRUDER INTERCEPTED",
+            alertText: "CONTRA-UAV BREACH DETECTED",
+            alertStyle: "rgba(239, 68, 68, 0.2)",
+            alertBorder: "#ef4444",
+            alertTextColor: "#ef4444",
+            drawBackground: function(w, h) {
+                // Draw dynamic prison fence polygon
+                ctx.strokeStyle = 'rgba(239, 68, 68, 0.2)';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(w * 0.3, h * 0.3, w * 0.4, h * 0.4);
+                
+                ctx.fillStyle = 'rgba(239, 68, 68, 0.05)';
+                ctx.fillRect(w * 0.3, h * 0.3, w * 0.4, h * 0.4);
+            }
+        },
+        utility: {
+            title: "HYDRO STATION GRID",
+            sensors: "8 COMPACT SENSORS",
+            freq: "915 MHz INDUSTRIAL BAND",
+            status: "MONITORING TRANSFORMER LINK",
+            alertText: "SECURE AIRSPACE ACTIVE",
+            alertStyle: "rgba(56, 189, 248, 0.2)",
+            alertBorder: "#38bdf8",
+            alertTextColor: "#38bdf8",
+            drawBackground: function(w, h) {
+                // Draw grid substation nodes
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.15)';
+                const points = [
+                    {x: w * 0.25, y: h * 0.3},
+                    {x: w * 0.75, y: h * 0.3},
+                    {x: w * 0.5, y: h * 0.7}
+                ];
+                points.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    ctx.strokeStyle = 'rgba(56, 189, 248, 0.1)';
+                    ctx.lineWidth = 1;
+                    points.forEach(p2 => {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    });
+                });
+            }
+        },
+        stadium: {
+            title: "PUBLIC ENGAGEMENT ARENA",
+            sensors: "5 COVERT NODES",
+            freq: "2.4 GHz - 5.8 GHz CO-SITE",
+            status: "MASS ASSEMBLY MONITOR",
+            alertText: "CORRIDOR VERIFIED",
+            alertStyle: "rgba(212, 175, 55, 0.2)",
+            alertBorder: "#d4af37",
+            alertTextColor: "#d4af37",
+            drawBackground: function(w, h) {
+                // Draw elliptic stadium outline
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.ellipse(w * 0.5, h * 0.5, w * 0.3, h * 0.22, 0, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+        }
+    };
+
+    function setSimSector(sector) {
+        currentSector = sector;
+        
+        // Reset tab buttons
+        document.querySelectorAll('.sim-tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.getElementById(`btn-${sector}`).classList.add('active');
+        
+        // Set HUD metrics
+        document.getElementById('hud-sector').innerText = sectorParams[sector].title;
+        document.getElementById('hud-sensors').innerText = sectorParams[sector].sensors;
+        document.getElementById('hud-freq').innerText = sectorParams[sector].freq;
+        document.getElementById('hud-status').innerText = sectorParams[sector].status;
+        
+        // Styling of live alerts
+        const badge = document.getElementById('simAlertBadge');
+        badge.style.background = sectorParams[sector].alertStyle;
+        badge.style.borderColor = sectorParams[sector].alertBorder;
+        badge.style.color = sectorParams[sector].alertTextColor;
+        document.getElementById('simAlertText').innerText = sectorParams[sector].alertText;
+        
+        if (sector === 'prison') {
+            document.getElementById('hud-status').style.color = '#ef4444';
+        } else {
+            document.getElementById('hud-status').style.color = '#34d399';
+        }
+        
+        // Trigger a new signal signature setup
+        resetTarget();
+    }
+
+    function resetTarget() {
+        const w = canvas.width;
+        const h = canvas.height;
+        targetX = w * (0.25 + Math.random() * 0.5);
+        targetY = h * (0.25 + Math.random() * 0.5);
+        targetDetected = currentSector === 'prison' || Math.random() > 0.4;
+    }
+
+    function resizeCanvas() {
+        const rect = canvas.parentNode.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        resetTarget();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    // Initialization loop run
+    window.onload = function() {
+        resizeCanvas();
+        setSimSector('airport');
+        animateSimulation();
+    };
+
+    function animateSimulation() {
+        simulationTick++;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        const w = canvas.width;
+        const h = canvas.height;
+        const centerX = w / 2;
+        const centerY = h / 2;
+        const maxRadius = Math.min(w, h) * 0.45;
+        
+        // 1. Draw radar sweep lines
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.05)';
+        ctx.lineWidth = 1;
+        for (let i = 1; i <= 4; i++) {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, maxRadius * (i / 4), 0, Math.PI * 2);
+            ctx.stroke();
+        }
+        
+        // 2. Draw crosshairs
+        ctx.beginPath();
+        ctx.moveTo(centerX - maxRadius, centerY);
+        ctx.lineTo(centerX + maxRadius, centerY);
+        ctx.moveTo(centerX, centerY - maxRadius);
+        ctx.lineTo(centerX, centerY + maxRadius);
+        ctx.stroke();
+        
+        // 3. Draw sector-specific blueprint layers
+        sectorParams[currentSector].drawBackground(w, h);
+        
+        // 4. Radar Sweep animation
+        sweepAngle = (simulationTick * 0.015) % (Math.PI * 2);
+        const sweepX = centerX + Math.cos(sweepAngle) * maxRadius;
+        const sweepY = centerY + Math.sin(sweepAngle) * maxRadius;
+        
+        // Draw sweep line gradient effect
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.15)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.lineTo(sweepX, sweepY);
+        ctx.stroke();
+        
+        // Draw sweep radar area glow
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.015)';
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, maxRadius, sweepAngle - 0.2, sweepAngle);
+        ctx.closePath();
+        ctx.fill();
+
+        // 5. Target signature processing
+        if (targetDetected) {
+            // Target vector update
+            targetX += Math.sin(simulationTick * 0.02) * 0.25;
+            targetY += Math.cos(simulationTick * 0.015) * 0.25;
+            
+            // Draw localized drone coordinate
+            ctx.fillStyle = '#ef4444';
+            ctx.beginPath();
+            ctx.arc(targetX, targetY, 4, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Draw locking vector circles
+            ctx.strokeStyle = 'rgba(239, 68, 68, 0.3)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(targetX, targetY, 12 + Math.sin(simulationTick * 0.1) * 4, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // Draw coordinate labels
+            ctx.fillStyle = '#ff8f8f';
+            ctx.font = '9px monospace';
+            ctx.fillText(`UAV_SIG_X: ${targetX.toFixed(1)}`, targetX + 16, targetY - 4);
+            ctx.fillText(`UAV_SIG_Y: ${targetY.toFixed(1)}`, targetX + 16, targetY + 6);
+        }
+
+        // Auto cycle sectors quietly every 800 frames
+        if (simulationTick % 800 === 0) {
+            const sectors = ['airport', 'prison', 'utility', 'stadium'];
+            const currentIndex = sectors.indexOf(currentSector);
+            const nextIndex = (currentIndex + 1) % sectors.length;
+            setSimSector(sectors[nextIndex]);
+        }
+        
+        requestAnimationFrame(animateSimulation);
+    }
+</script>
+</body>
+</html>
