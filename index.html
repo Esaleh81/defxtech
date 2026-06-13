@@ -2242,7 +2242,8 @@
         
         setTimeout(() => {
             showToast(`Briefing request for ${org} queued successfully! Check ${email} shortly.`, '🛡️');
-            form.reset();
+             form.submit();
+            // form.reset();
         }, 1200);
     }
 </script>
