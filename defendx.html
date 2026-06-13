@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefendX Technologies Inc. | Intelligent Detection. Autonomous Awareness. Secure Airspace.</title>
+    <!-- Modern Tech Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy:     #0A1628;
+            --cobalt:   #1C3F6E;
+            --steel:    #2E6DA4;
+            --ice:      #D6E8F6;
+            --ice-lt:   #EBF4FA;
+            --gold:     #B8960C;
+            --gold-lt:  #D4AE22;
+            --gold-bg:  #FDF6DC;
+            --white:    #FFFFFF;
+            --offwhite: #F5F7FA;
+            --silver:   #E8EDF2;
+            --charcoal: #1E2A3A;
+            --midgray:  #5B6880;
+            --lgray:    #8A97A8;
+            --red:      #C0392B;
+            --green:    #1A7A4A;
+            
+            --bg-main-f1: #060913;
+            --bg-card-f1: #0b1120;
+            --bg-card-hover-f1: #111a2e;
+            --accent-blue-f1: #38bdf8;
+            --accent-green-f1: #34d399;
+            --accent-green-glow-f1: rgba(52, 211, 153, 0.15);
+            
+            --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+            --mono: 'SF Mono', 'Fira Code', monospace;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+            font-size: 16px; 
+        }
+
+        body { 
+            font-family: var(--font); 
+            color: var(--charcoal); 
+            background: var(--white); 
+            line-height: 1.7; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+        }
+
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        img { 
+            max-width: 100%; 
+            display: block; 
+        }
+
+        /* ── UTILITY CLASSES ────────────────────────────────────────────── */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 32px; 
+        }
+        .section { 
+            padding: 96px 0; 
+        }
+        .section-alt { 
+            background: var(--offwhite); 
+        }
+        .section-dark { 
+            background: var(--navy); 
+            color: var(--white); 
+        }
+        .section-cobalt { 
+            background: var(--cobalt); 
+            color: var(--white); 
+        }
+        .label { 
+            font-size: 11px; 
+            font-weight: 700; 
+            letter-spacing: 0.12em; 
+            text-transform: uppercase; 
+            color: var(--gold); 
+            margin-bottom: 12px; 
+            display: block; 
+        }
+        .label-light { 
+            color: var(--gold-lt); 
+        }
+        h1, h2, h3, h4 { 
+            line-height: 1.2; 
+            font-weight: 700; 
+            font-family: var(--font-display);
+        }
+        
+        /* ── BUTTONS ────────────────────────────────────────────────────── */
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 14px 28px; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 14px; 
+            letter-spacing: 0.03em; 
+            cursor: pointer; 
+            border: none; 
+            transition: var(--transition); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .btn-gold { 
+            background: var(--gold); 
+            color: var(--navy); 
+        }
+        .btn-gold:hover { 
+            background: var(--gold-lt); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(184, 150, 12, 0.35);
+        }
+        .btn-outline { 
+            background: transparent; 
+            color: var(--white); 
+            border: 1.5px solid rgba(255,255,255,0.4); 
+        }
+        .btn-outline:hover { 
+            border-color: var(--gold); 
+            color: var(--gold); 
+            transform: translateY(-2px);
+        }
+        .btn-navy { 
+            background: var(--navy); 
+            color: var(--white); 
+        }
+        .btn-navy:hover { 
+            background: var(--cobalt); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(10, 22, 40, 0.25);
+        }
+        
+        .tag { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 11px; 
+            font-weight: 700; 
+            letter-spacing: 0.08em; 
+            text-transform: uppercase; 
+        }
+        .tag-gold { 
+            background: var(--gold-bg); 
+            color: var(--gold); 
+            border: 1px solid rgba(184,150,12,0.25); 
+        }
+        .tag-ice { 
+            background: var(--ice); 
+            color: var(--cobalt); 
+        }
+        
+        .divider { 
+            width: 48px; 
+            height: 3px; 
+            background: var(--gold); 
+            margin: 20px 0 32px; 
+            border-radius: 2px; 
+        }
+        .divider-center { 
+            margin: 20px auto 32px; 
+        }
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 32px; 
+        }
+        .grid-3 { 
+            display: grid; 
+            grid-template-columns: repeat(3,1fr); 
+            gap: 28px; 
+        }
+        .grid-4 { 
+            display: grid; 
+            grid-template-columns: repeat(4,1fr); 
+            gap: 24px; 
+        }
+        .text-center { 
+            text-align: center; 
+        }
+
+        /* ── NAV HEADER & BRAND LOGO ────────────────────────────────────── */
+        .nav { 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            background: var(--navy); 
+            border-bottom: 1px solid rgba(255,255,255,0.06); 
+        }
+        .nav-inner { 
+            display: flex; 
+            align-items: center; 
+            height: 80px; 
+        }
+        .nav-logo { 
+            display: flex; 
+            align-items: center; 
+            margin-right: 32px; 
+            flex-shrink: 0; 
+            transition: var(--transition);
+        }
+        .nav-logo:hover {
+            transform: scale(1.02);
+            opacity: 0.95;
+        }
+        .nav-logo-img { 
+            height: 60px; 
+            width: auto; 
+            border-radius: 6px; 
+            object-fit: contain;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-links { 
+            display: flex; 
+            align-items: center; 
+            flex: 1; 
+        }
+        .nav-item { 
+            position: relative; 
+        }
+        .nav-link { 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+            padding: 0 16px; 
+            height: 80px; 
+            font-size: 13px; 
+            font-weight: 600; 
+            color: rgba(255,255,255,0.7); 
+            letter-spacing: 0.02em; 
+            cursor: pointer; 
+            transition: color 0.15s; 
+            white-space: nowrap; 
+            border-bottom: 2px solid transparent; 
+        }
+        .nav-link:hover { 
+            color: var(--white); 
+            border-bottom-color: var(--gold); 
+        }
+        .nav-link svg { 
+            width: 10px; 
+            height: 10px; 
+            fill: currentColor; 
+            transition: transform 0.15s; 
+        }
+        .nav-item:hover .nav-link svg { 
+            transform: rotate(180deg); 
+        }
+        .nav-dropdown { 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            min-width: 250px; 
+            background: var(--cobalt); 
+            border: 1px solid rgba(255,255,255,0.08); 
+            border-top: 2px solid var(--gold); 
+            box-shadow: 0 16px 40px rgba(0,0,0,0.35); 
+            opacity: 0; 
+            visibility: hidden; 
+            transform: translateY(-4px); 
+            transition: all 0.18s; 
+            z-index: 100; 
+            border-radius: 0 0 6px 6px;
+        }
+        .nav-item:hover .nav-dropdown { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0); 
+        }
+        .nav-dropdown a { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 12px 20px; 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.75); 
+            transition: all 0.15s; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+        .nav-dropdown a:last-child { 
+            border-bottom: none; 
+        }
+        .nav-dropdown a:hover { 
+            color: var(--gold); 
+            background: rgba(255,255,255,0.05); 
+            padding-left: 26px; 
+        }
+        .nav-dropdown a::before { 
+            content: "›"; 
+            font-size: 14px; 
+            color: var(--gold); 
+            opacity: 0; 
+            transition: opacity 0.15s; 
+        }
+        .nav-dropdown a:hover::before { 
+            opacity: 1; 
+        }
+        .nav-cta { 
+            margin-left: auto; 
+            padding-left: 24px; 
+            border-left: 1px solid rgba(255,255,255,0.08); 
+        }
+        .nav-badge { 
+            background: rgba(184,150,12,0.15); 
+            color: var(--gold); 
+            font-size: 10px; 
+            font-weight: 700; 
+            padding: 2px 6px; 
+            border-radius: 2px; 
+            letter-spacing: 0.08em; 
+        }
+
+        /* ── HERO ────────────────────────────────────────────────────────── */
+        .hero { 
+            background: var(--navy); 
+            color: var(--white); 
+            min-height: 90vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero-grid { 
+            position: absolute; 
+            inset: 0; 
+            background-image: linear-gradient(rgba(46,109,164,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(46,109,164,0.08) 1px, transparent 1px); 
+            background-size: 60px 60px; 
+            pointer-events: none; 
+        }
+        .hero-glow { 
+            position: absolute; 
+            top: -200px; 
+            right: -100px; 
+            width: 700px; 
+            height: 700px; 
+            background: radial-gradient(circle, rgba(28,63,110,0.5) 0%, transparent 70%); 
+            pointer-events: none; 
+        }
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            padding: 80px 0; 
+        }
+        .hero-eyebrow { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            margin-bottom: 28px; 
+        }
+        .hero-eyebrow-line { 
+            width: 32px; 
+            height: 2px; 
+            background: var(--gold); 
+        }
+        .hero h1 { 
+            font-size: clamp(36px, 4.5vw, 56px); 
+            font-weight: 800; 
+            line-height: 1.1; 
+            max-width: 780px; 
+            margin-bottom: 28px; 
+            letter-spacing: -0.02em; 
+        }
+        .hero h1 em { 
+            color: var(--gold); 
+            font-style: normal; 
+        }
+        .hero p { 
+            font-size: 18px; 
+            color: rgba(255,255,255,0.65); 
+            max-width: 560px; 
+            line-height: 1.75; 
+            margin-bottom: 44px; 
+        }
+        .hero-actions { 
+            display: flex; 
+            gap: 16px; 
+            flex-wrap: wrap; 
+        }
+        .hero-right { 
+            position: relative; 
+        }
+        .hero-platform-card { 
+            background: rgba(28,63,110,0.4); 
+            border: 1px solid rgba(214,232,246,0.12); 
+            border-radius: 8px; 
+            padding: 28px; 
+        }
+        .hero-platform-card h3 { 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            color: var(--gold); 
+            margin-bottom: 20px; 
+        }
+        .platform-step { 
+            display: flex; 
+            gap: 16px; 
+            align-items: flex-start; 
+            margin-bottom: 20px; 
+            padding-bottom: 20px; 
+            border-bottom: 1px solid rgba(255,255,255,0.06); 
+        }
+        .platform-step:last-child { 
+            border-bottom: none; 
+            margin-bottom: 0; 
+            padding-bottom: 0; 
+        }
+        .step-num { 
+            width: 32px; 
+            height: 32px; 
+            border-radius: 50%; 
+            background: var(--gold); 
+            color: var(--navy); 
+            font-weight: 800; 
+            font-size: 13px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-shrink: 0; 
+        }
+        .step-body h4 { 
+            font-size: 14px; 
+            color: var(--white); 
+            margin-bottom: 4px; 
+        }
+        .step-body p { 
+            font-size: 12px; 
+            color: rgba(255,255,255,0.5); 
+            line-height: 1.5; 
+        }
+        .status-pill { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 6px; 
+            padding: 6px 14px; 
+            background: rgba(26,122,74,0.15); 
+            border: 1px solid rgba(26,122,74,0.3); 
+            border-radius: 20px; 
+            font-size: 11px; 
+            font-weight: 600; 
+            color: #5DC88A; 
+            margin-top: 20px; 
+        }
+        .status-dot { 
+            width: 6px; 
+            height: 6px; 
+            border-radius: 50%; 
+            background: #5DC88A; 
+            animation: pulse 2s infinite; 
+        }
+        @keyframes pulse { 
+            0%,100% { opacity:1 } 
+            50% { opacity: 0.4 } 
+        }
+
+        /* ── THREAT BANNER ───────────────────────────────────────────────── */
+        .threat-banner { 
+            background: var(--charcoal); 
+        }
+        .threat-banner-inner { 
+            display: flex; 
+            gap: 0; 
+            overflow: hidden; 
+        }
+        .threat-stat { 
+            flex: 1; 
+            padding: 40px 36px; 
+            border-right: 1px solid rgba(255,255,255,0.06); 
+        }
+        .threat-stat:last-child { 
+            border-right: none; 
+        }
+        .threat-stat .num { 
+            font-size: 40px; 
+            font-weight: 800; 
+            color: var(--gold); 
+            letter-spacing: -0.03em; 
+            line-height: 1; 
+            margin-bottom: 8px; 
+        }
+        .threat-stat .desc { 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.55); 
+            line-height: 1.5; 
+        }
+        .threat-stat .desc strong { 
+            color: rgba(255,255,255,0.85); 
+            display: block; 
+            font-size: 14px; 
+            margin-bottom: 4px; 
+        }
+
+        /* ── INTERACTIVE THREAT LANDSCAPE ARCHITECTURE ───────────────────── */
+        .landscape-wrapper { 
+            display: grid; 
+            grid-template-columns: 280px 1fr; 
+            gap: 40px; 
+            background: var(--white); 
+            border: 1px solid var(--silver); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 12px 48px rgba(10,22,40,0.04); 
+        }
+        .landscape-tabs { 
+            background: var(--offwhite); 
+            border-right: 1px solid var(--silver); 
+            padding: 24px 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 4px; 
+        }
+        .landscape-tab-btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 14px 24px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            color: var(--midgray); 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            cursor: pointer; 
+            border-left: 3px solid transparent; 
+            transition: all 0.2s ease; 
+            text-align: left; 
+            background: transparent; 
+            border-top: none; 
+            border-right: none; 
+            border-bottom: none; 
+            width: 100%; 
+        }
+        .landscape-tab-btn:hover { 
+            color: var(--navy); 
+            background: rgba(0,0,0,0.02); 
+        }
+        .landscape-tab-btn.active { 
+            color: var(--cobalt); 
+            background: var(--white); 
+            border-left-color: var(--gold); 
+        }
+        .landscape-tab-btn .arrow-indicator { 
+            font-size: 16px; 
+            opacity: 0; 
+            transition: opacity 0.2s; 
+            color: var(--gold); 
+        }
+        .landscape-tab-btn.active .arrow-indicator { 
+            opacity: 1; 
+        }
+        .landscape-content-panel { 
+            padding: 48px; 
+            display: none; 
+        }
+        .landscape-content-panel.active { 
+            display: block; 
+            animation: panelFade 0.35s ease forwards; 
+        }
+        @keyframes panelFade { 
+            from { opacity: 0; transform: translateY(8px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .threat-grid-cards { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 24px; 
+            margin-top: 32px; 
+        }
+        .threat-detail-card { 
+            background: var(--offwhite); 
+            border: 1px solid var(--silver); 
+            border-radius: 6px; 
+            padding: 24px; 
+            border-top: 2px solid var(--steel); 
+        }
+        .threat-detail-card h4 { 
+            font-size: 15px; 
+            color: var(--navy); 
+            margin-bottom: 10px; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .threat-detail-card p { 
+            font-size: 13px; 
+            color: var(--midgray); 
+            line-height: 1.6; 
+        }
+
+        .stat-callout-box { 
+            background: var(--navy); 
+            color: var(--white); 
+            border-radius: 6px; 
+            padding: 32px; 
+            margin-bottom: 32px; 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+        }
+        .stat-callout-box .huge-num { 
+            font-size: 48px; 
+            font-weight: 900; 
+            color: var(--gold); 
+            line-height: 1; 
+        }
+        .stat-callout-box .callout-text h4 { 
+            font-size: 16px; 
+            margin-bottom: 4px; 
+            color: var(--white); 
+        }
+        .stat-callout-box .callout-text p { 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.6); 
+            line-height: 1.5; 
+        }
+
+        /* ── PLATFORM VISUAL ────────────────────────────────────────────── */
+        .platform-visual { 
+            background: var(--navy); 
+            border-radius: 8px; 
+            padding: 48px; 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        /* ── TECH CARDS ─────────────────────────────────────────────────── */
+        .tech-card { 
+            background: var(--white); 
+            border: 1px solid var(--silver); 
+            border-radius: 8px; 
+            padding: 32px; 
+            transition: var(--transition); 
+            border-top: 3px solid transparent; 
+        }
+        .tech-card:hover { 
+            border-top-color: var(--gold); 
+            box-shadow: 0 12px 36px rgba(10,22,40,0.08); 
+            transform: translateY(-4px); 
+        }
+        .tech-card .icon { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 8px; 
+            background: var(--ice-lt); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+            font-size: 22px; 
+        }
+        .tech-card h3 { 
+            font-size: 16px; 
+            color: var(--navy); 
+            margin-bottom: 12px; 
+        }
+        .tech-card p { 
+            font-size: 14px; 
+            color: var(--midgray); 
+            line-height: 1.7; 
+        }
+
+        /* ── INDUSTRIES ──────────────────────────────────────────────────── */
+        .industry-card { 
+            border-radius: 8px; 
+            overflow: hidden; 
+            position: relative; 
+            cursor: pointer; 
+        }
+        .industry-card-inner { 
+            background: var(--cobalt); 
+            padding: 32px 28px 28px; 
+            min-height: 180px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            transition: background 0.2s; 
+            position: relative; 
+        }
+        .industry-card-inner:hover { 
+            background: var(--steel); 
+        }
+        .industry-card .ind-icon { 
+            font-size: 32px; 
+            margin-bottom: 16px; 
+            opacity: 0.85; 
+        }
+        .industry-card h3 { 
+            font-size: 16px; 
+            font-weight: 700; 
+            color: var(--white); 
+            margin-bottom: 8px; 
+        }
+        .industry-card p { 
+            font-size: 12px; 
+            color: rgba(255,255,255,0.55); 
+            line-height: 1.5; 
+        }
+        .industry-card .ind-arrow { 
+            position: absolute; 
+            bottom: 20px; 
+            right: 24px; 
+            font-size: 18px; 
+            color: var(--gold); 
+            opacity: 0; 
+            transition: opacity 0.2s; 
+        }
+        .industry-card-inner:hover .ind-arrow { 
+            opacity: 1; 
+        }
+
+        /* ── DIFFERENTIATORS ─────────────────────────────────────────────── */
+        .diff-row { 
+            display: flex; 
+            gap: 32px; 
+            padding: 36px 0; 
+            border-bottom: 1px solid var(--silver); 
+            align-items: flex-start; 
+        }
+        .diff-row:last-child { 
+            border-bottom: none; 
+        }
+        .diff-num { 
+            font-size: 48px; 
+            font-weight: 900; 
+            color: var(--ice); 
+            flex-shrink: 0; 
+            width: 72px; 
+            line-height: 1; 
+        }
+        .diff-body h3 { 
+            font-size: 20px; 
+            color: var(--navy); 
+            margin-bottom: 12px; 
+            font-weight: 700; 
+        }
+        .diff-body p { 
+            font-size: 15px; 
+            color: var(--midgray); 
+            line-height: 1.75; 
+        }
+        .diff-badge { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 6px; 
+            margin-top: 12px; 
+            padding: 5px 12px; 
+            background: var(--offwhite); 
+            border: 1px solid var(--silver); 
+            border-radius: 4px; 
+            font-size: 11px; 
+            color: var(--midgray); 
+            font-weight: 600; 
+        }
+        .diff-badge .ck { 
+            color: var(--green); 
+        }
+
+        /* ── MARKET / INVESTORS ──────────────────────────────────────────── */
+        .market-num { 
+            font-size: 56px; 
+            font-weight: 900; 
+            color: var(--gold); 
+            letter-spacing: -0.04em; 
+            line-height: 1; 
+        }
+        .market-sub { 
+            font-size: 14px; 
+            color: rgba(255,255,255,0.5); 
+            margin-top: 6px; 
+        }
+        .investor-card { 
+            background: rgba(255,255,255,0.04); 
+            border: 1px solid rgba(255,255,255,0.08); 
+            border-radius: 8px; 
+            padding: 28px; 
+        }
+        .investor-card h3 { 
+            font-size: 15px; 
+            color: var(--white); 
+            margin-bottom: 10px; 
+        }
+        .investor-card ul { 
+            padding-left: 0; 
+            list-style: none; 
+        }
+        .investor-card ul li { 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.6); 
+            padding: 6px 0; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 8px; 
+        }
+        .investor-card ul li:last-child { 
+            border-bottom: none; 
+        }
+        .investor-card ul li::before { 
+            content: "›"; 
+            color: var(--gold); 
+            font-weight: 700; 
+            flex-shrink: 0; 
+        }
+
+        /* ── COMPARISON ──────────────────────────────────────────────────── */
+        .comp-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        .comp-table th { 
+            padding: 14px 20px; 
+            font-size: 12px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.06em; 
+            background: var(--navy); 
+            color: rgba(255,255,255,0.5); 
+            font-weight: 600; 
+            text-align: left; 
+        }
+        .comp-table th:first-child { 
+            border-radius: 8px 0 0 0; 
+        }
+        .comp-table th:last-child { 
+            border-radius: 0 8px 0 0; 
+        }
+        .comp-table th.highlight { 
+            background: var(--cobalt); 
+            color: var(--gold); 
+        }
+        .comp-table td { 
+            padding: 14px 20px; 
+            font-size: 13px; 
+            color: var(--midgray); 
+            border-bottom: 1px solid var(--silver); 
+            vertical-align: middle; 
+        }
+        .comp-table td.highlight { 
+            background: rgba(28,63,110,0.05); 
+            color: var(--cobalt); 
+            font-weight: 600; 
+        }
+        .comp-table tr:last-child td { 
+            border-bottom: none; 
+        }
+        .comp-table .yes { 
+            color: var(--green); 
+            font-weight: 700; 
+        }
+        .comp-table .no { 
+            color: #C0392B; 
+        }
+        .comp-table .partial { 
+            color: #E67E22; 
+        }
+
+        /* ── CONTACT FORM ────────────────────────────────────────────────── */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            gap: 64px; 
+            align-items: center; 
+        }
+        .contact-info h2 { 
+            font-size: 36px; 
+            color: var(--white); 
+            margin-bottom: 20px; 
+        }
+        .contact-form { 
+            background: var(--white); 
+            border-radius: 8px; 
+            padding: 40px; 
+            box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+        }
+        .form-row { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 16px; 
+            margin-bottom: 16px; 
+        }
+        .form-group { 
+            margin-bottom: 16px; 
+        }
+        .form-group label { 
+            display: block; 
+            font-size: 12px; 
+            font-weight: 600; 
+            color: var(--midgray); 
+            text-transform: uppercase; 
+            letter-spacing: 0.06em; 
+            margin-bottom: 6px; 
+        }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; 
+            padding: 12px 16px; 
+            border: 1.5px solid var(--silver); 
+            border-radius: 4px; 
+            font-size: 14px; 
+            font-family: var(--font); 
+            color: var(--charcoal); 
+            background: var(--white); 
+            transition: border-color 0.15s; 
+            outline: none; 
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+            border-color: var(--cobalt); 
+        }
+        .form-group textarea { 
+            resize: vertical; 
+            min-height: 100px; 
+        }
+
+        /* ── FOOTER ──────────────────────────────────────────────────────── */
+        .footer { 
+            background: #060E1C; 
+            color: rgba(255,255,255,0.5); 
+            padding: 72px 0 40px; 
+        }
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr 1fr; 
+            gap: 48px; 
+            margin-bottom: 60px; 
+        }
+        .footer-brand p { 
+            font-size: 13px; 
+            line-height: 1.75; 
+            margin-top: 16px; 
+            max-width: 280px; 
+        }
+        .footer h4 { 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            color: var(--white); 
+            margin-bottom: 16px; 
+            font-weight: 700; 
+        }
+        .footer ul { 
+            list-style: none; 
+        }
+        .footer ul li { 
+            margin-bottom: 10px; 
+        }
+        .footer ul a { 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.5); 
+            transition: color 0.15s; 
+        }
+        .footer ul a:hover { 
+            color: var(--gold); 
+        }
+        .footer-bottom { 
+            padding-top: 32px; 
+            border-top: 1px solid rgba(255,255,255,0.06); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .footer-bottom p { 
+            font-size: 12px; 
+        }
+        .footer-badges { 
+            display: flex; 
+            gap: 12px; 
+        }
+        .footer-badge { 
+            padding: 4px 10px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 3px; 
+            font-size: 10px; 
+            color: rgba(255,255,255,0.4); 
+            font-weight: 600; 
+            letter-spacing: 0.06em; 
+        }
+
+        .sec-header { 
+            margin-bottom: 56px; 
+        }
+        .sec-header-center { 
+            text-align: center; 
+        }
+        .sec-header-center .divider { 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+        .sec-title { 
+            font-size: clamp(28px, 3vw, 40px); 
+            color: var(--navy); 
+            font-weight: 800; 
+            letter-spacing: -0.02em; 
+        }
+        .sec-title-light { 
+            color: var(--white); 
+        }
+        .sec-sub { 
+            font-size: 16px; 
+            color: var(--midgray); 
+            max-width: 580px; 
+            margin-top: 16px; 
+            line-height: 1.7; 
+        }
+        .sec-sub-light { 
+            color: rgba(255,255,255,0.55); 
+        }
+
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(20px); 
+            transition: opacity 0.55s ease, transform 0.55s ease; 
+        }
+        .reveal.visible { 
+            opacity: 1; 
+            transform: none; 
+        }
+
+        /* ── DYNAMIC ABOUT VIEW PANEL (SLIDE-OVER ARCHITECTURE) ── */
+        .company-panel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .company-panel-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .company-panel {
+            width: 100%;
+            max-width: 780px;
+            height: 100%;
+            background: var(--bg-main-f1);
+            color: var(--text-primary);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 48px;
+            position: relative;
+            border-left: 2px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .company-panel-overlay.active .company-panel {
+            transform: translateX(0);
+        }
+
+        .panel-close-btn {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .panel-close-btn:hover {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: #f43f5e;
+            color: #f43f5e;
+            transform: rotate(90deg);
+        }
+
+        .panel-header-wrapper {
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 24px;
+        }
+
+        .panel-logo-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .panel-logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .panel-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-blue-f1);
+            font-weight: 700;
+        }
+
+        .panel-section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .panel-section-title::before {
+            content: '';
+            width: 4px;
+            height: 1.5rem;
+            background: var(--accent-blue-f1);
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .panel-p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .panel-innovation-card {
+            background: linear-gradient(135deg, var(--bg-card-f1), var(--bg-card-hover-f1));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--accent-green-f1);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .panel-innovation-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            background: var(--accent-green-glow-f1);
+            filter: blur(60px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .panel-innovation-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+        }
+
+        .panel-innovation-card h3 span {
+            color: var(--accent-green-f1);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .panel-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .panel-pillar-item {
+            background-color: var(--bg-card-f1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 24px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .panel-pillar-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            background-color: var(--bg-card-hover-f1);
+        }
+
+        .panel-pillar-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: var(--font-display);
+        }
+
+        .panel-pillar-item.science h3 { color: var(--white); border-bottom-color: rgba(255, 255, 255, 0.2); }
+        .panel-pillar-item.mission h3 { color: var(--accent-blue-f1); border-bottom-color: rgba(56, 189, 248, 0.3); }
+        .panel-pillar-item.vision h3 { color: var(--accent-green-f1); border-bottom-color: rgba(52, 211, 153, 0.3); }
+
+        .panel-pillar-item p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+
+        /* ── TOAST NOTIFICATION SYSTEM ── */
+        .toast-container {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast {
+            background: #0B1120;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-left: 4px solid var(--gold);
+            color: var(--white);
+            padding: 16px 24px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            .threat-banner-inner { flex-wrap: wrap; }
+            .threat-stat { min-width: 50%; }
+            .landscape-wrapper { grid-template-columns: 1fr; }
+            .landscape-tabs { border-right: none; border-bottom: 1px solid var(--silver); padding: 12px; flex-direction: row; overflow-x: auto; }
+            .landscape-content-panel { padding: 24px; }
+            .threat-grid-cards { grid-template-columns: 1fr; }
+            .company-panel { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ██ NAVIGATION (With logo.jpg integration) ██████████████████ -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="DefendX Technologies home">
+        <img src="C:\Users\esale\OneDrive\Desktop\DefendX\Logo.jpg" alt="DefendX Technologies Logo" class="nav-logo-img">
+      </a>
+
+      <div class="nav-links" role="menubar">
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Threat Landscape
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#threat-landscape-section">Airspace Risk Architecture</a>
+            <a href="#threat-landscape-section">Commercial Utility Framework</a>
+            <a href="#threat-landscape-section">Statistical Intelligence</a>
+            <a href="#threat-landscape-section">Financial Liability Analysis</a>
+            <a href="#comparison">Vulnerability Assessment</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Technology
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#technology">Detection Mechanisms</a>
+            <a href="#technology">Signal Classification</a>
+            <a href="#technology">Threat &amp; Payload Grouping</a>
+            <a href="#technology">Spatial Diagnostics</a>
+            <a href="#technology">Actionable Security Output</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Solutions
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#platform">AirSentinel™ Platform</a>
+            <a href="#Systems">Solutions by Sector</a>
+            <a href="#Systems">System Integration &amp; API</a>
+            <a href="#Systems">Deployment Configurations</a>
+            <a href="#Systems">Monitoring-as-a-Service (MaaS)</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Systems
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="#Systems">Airports &amp; Aviation</a>
+            <a href="#Systems">Correctional Institutions</a>
+            <a href="#Systems">Critical Infrastructure</a>
+            <a href="#Systems">National Defence &amp; Law Enforcement</a>
+            <a href="#Systems">Border &amp; Maritime Security</a>
+            <a href="#Systems">Events &amp; Venue Security</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0">
+            Company
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown">
+            <a href="javascript:void(0)" onclick="openAboutPanel()">About DefendX</a>
+            <a href="#why">Why DefendX</a>
+            <a href="javascript:void(0)" onclick="openAboutPanel()">Leadership Team</a>
+            <a href="javascript:void(0)" onclick="openAboutPanel()">Partners &amp; Ecosystem</a>
+            <a href="#contact">Careers</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <a href="#investors" class="nav-link" role="menuitem">
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-gold" style="padding:10px 20px; font-size:13px;">Contact US</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ██ HERO SECTION ██████████████████████████████████████████████████ -->
+<section class="hero" id="home">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container" style="width:100%">
+    <div class="grid-2" style="align-items:center; gap:80px;">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line" aria-hidden="true"></div>
+          <span class="tag tag-gold">Enterprise Airspace Security</span>
+          <span class="tag tag-ice" style="background:rgba(214,232,246,0.1); color:var(--ice);">Sovereign Defense</span>
+        </div>
+        <h1>Passive RF Intelligence.<br>Autonomous Airspace<br><em>Protection.</em></h1>
+        <p>DefendX Technologies delivers edge-autonomous UAV detection architectures for airports, correctional institutions, energy infrastructure, and security forces — providing continuous situational awareness without transmitting local signals.</p>
+        <div class="hero-actions">
+          <a href="#platform" class="btn btn-gold">Explore the Platform</a>
+          <a href="javascript:void(0)" onclick="openAboutPanel()" class="btn btn-outline">About DefendX</a>
+        </div>
+      </div>
+      <div class="hero-right reveal">
+        <div class="hero-platform-card">
+          <h3>Detection &amp; Mitigation Pipeline</h3>
+          <div class="platform-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>Passive RF Acquisition</h4>
+              <p>Omnidirectional tracking monitors high-priority frequency bands — no emissions, no licensing, and zero interference with surrounding communication systems.</p>
+            </div>
+          </div>
+          <div class="platform-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>Edge-Based Signal Analysis</h4>
+              <p>Advanced intelligent processing identifies signatures locally, filtering out urban background noise in real time without needing server processing.</p>
+            </div>
+          </div>
+          <div class="platform-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Actionable Security Output</h4>
+              <p>Geolocated coordinate matrices and localized threat vectors are dispatched directly to facility dashboards or security management networks instantly.</p>
+            </div>
+          </div>
+          <div class="status-pill">
+            <div class="status-dot" aria-hidden="true"></div>
+            Technology validated in live operational environments
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ THREAT STATISTICS BANNER ███████████████████████████████████████ -->
+<div class="threat-banner" id="threat" aria-label="Key threat statistics">
+  <div class="threat-banner-inner">
+    <div class="threat-stat">
+      <div class="num">69%</div>
+      <div class="desc"><strong>Rise in drone incidents</strong> over regional correctional facilities, 2021–22 → 2024–25. High volumes reported in Q1 2025 alone.</div>
+    </div>
+    <div class="threat-stat">
+      <div class="num">$38.5M</div>
+      <div class="desc"><strong>Government investment</strong> allocated towards critical correctional drone countermeasures in key jurisdictions in 2025.</div>
+    </div>
+    <div class="threat-stat">
+      <div class="num">€10M+</div>
+      <div class="desc"><strong>Major international airport losses</strong> stemming from a single 4-hour drone-induced closure, underscoring the immediate economic threat.</div>
+    </div>
+    <div class="threat-stat">
+      <div class="num">$20.3B</div>
+      <div class="desc"><strong>Global counter-UAS market</strong> projected by 2030 at a 25.1% CAGR. North America accounts for a significant portion of global spend.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ██ DEEP DIVE INTERACTIVE THREAT LANDSCAPE SECTION ██████████████████ -->
+<section class="section section-alt" id="threat-landscape-section">
+  <div class="container">
+    <div class="sec-header sec-header-center">
+      <span class="label">Strategic Assessment</span>
+      <h2 class="sec-title">Airspace Threat Landscape &amp; Analysis</h2>
+      <div class="divider divider-center"></div>
+      <p class="sec-sub">An evaluation of low-altitude vectors, macro-economic utility dynamics, structural deficiencies in contemporary countermeasures, and financial operational impacts.</p>
+    </div>
+
+    <div class="landscape-wrapper">
+      <!-- Tab Navigation Sidebar -->
+      <div class="landscape-tabs" role="tablist" aria-label="Threat Landscape Navigation">
+        <button class="landscape-tab-btn active" onclick="switchLandscapeTab(event, 'uav-threat')" role="tab" aria-selected="true" aria-controls="panel-uav-threat">
+          <span>The Drone Threat</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'commercial-utility')" role="tab" aria-selected="false" aria-controls="panel-commercial-utility">
+          <span>Commercial Utility</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'incident-data')" role="tab" aria-selected="false" aria-controls="panel-incident-data">
+          <span>Incident Data</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'cost-inaction')" role="tab" aria-selected="false" aria-controls="panel-cost-inaction">
+          <span>Cost of Inaction</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchLandscapeTab(event, 'solution-gaps')" role="tab" aria-selected="false" aria-controls="panel-solution-gaps">
+          <span>Current Solution Gaps</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <!-- Panel 1: The Drone Threat -->
+      <div id="panel-uav-threat" class="landscape-content-panel active" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--navy); margin-bottom: 16px;">Asymmetric Airspace Vulnerabilities: The Dual-Use Dilemma</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Small Unmanned Aerial Systems (sUAVs) have evolved from recreational novelties into ubiquitous operational assets. While providing immense economic efficiencies, their structural agility allows malicious or negligent actors to completely bypass traditional terrestrial security perimeters. Low-altitude vectors present unique detection challenges due to minimized radar signatures and rapid, low-altitude maneuvering capability.
+        </p>
+        <blockquote>
+          <p style="font-style: italic; color: var(--cobalt); border-left: 3px solid var(--gold); padding-left: 16px; font-size: 14px; margin-bottom: 24px;">
+            "The democratization of advanced flight controllers means that standard physical boundaries no longer guarantee perimeter integrity."
+          </p>
+        </blockquote>
+        <div class="threat-grid-cards">
+          <div class="threat-detail-card">
+            <h4>🛰️ Airborne Espionage</h4>
+            <p>Readily available high-definition optics allow unauthorized surveillance of sensitive facilities, corporate assets, and executive installations from unprotected vertical lines of sight.</p>
+          </div>
+          <div class="threat-detail-card">
+            <h4>📦 Contraband Delivery Vectors</h4>
+            <p>Automated waypoint navigation allows payload-carrying systems to execute precise drops over correctional facility fences and across international borders, evading standard ground checkpoints.</p>
+          </div>
+          <div class="threat-detail-card">
+            <h4>💥 Asymmetric Sabotage</h4>
+            <p>Consumer platforms can be configured to carry kinetic or electronic hazards, threatening public officials, open-air venues, and vital energy nodes.</p>
+          </div>
+          <div class="threat-detail-card">
+            <h4>⚠️ Operational Incursions</h4>
+            <p>Inexperienced operators flying consumer platforms routinely drift into restricted corridors, causing immediate disruptions to civil aviation hubs, traffic networks, and high-visibility public events.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Commercial Utility -->
+      <div id="panel-commercial-utility" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--navy); margin-bottom: 16px;">The Macro-Economic Utility Landscape: Commercial &amp; Sovereign Value</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Unmanned aviation acts as a fundamental catalyst across global markets, driving down operational costs, protecting human capital, and optimizing data collection frequency. Understanding the massive legitimate deployment of these systems highlights why indiscriminate mitigation tools fail, emphasizing the requirement for highly precise, targeted detection systems.
+        </p>
+        <div class="threat-grid-cards">
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>⚡ Industrial &amp; Energy Logistics</h4>
+            <p>Automated inspections of energy grids, transformers, and pipeline networks reduce data acquisition delay while eliminating the safety risks associated with human inspections.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>🌾 Precision Digital Agriculture</h4>
+            <p>Imaging payloads assess vast crop acreage, monitor livestock distribution, map irrigation deficiencies, and direct automated localized delivery with minimal soil impact.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>🏗️ Civil Infrastructure &amp; Real Estate</h4>
+            <p>Construction management frameworks leverage continuous aerial modeling to assess structural layouts and track high-velocity material distributions safely.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--green);">
+            <h4>🛡️ Sovereign Governance &amp; Tactical Defence</h4>
+            <p>First responders, border security elements, and local military units deploy localized systems for real-time terrain intelligence and search-and-rescue arrays.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Incident Data & Statistics -->
+      <div id="panel-incident-data" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--navy); margin-bottom: 16px;">Quantifying the Airspace Crisis: Empirical Trends</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Data collected from international regulatory bodies, municipal registries, and proprietary signal monitoring frameworks demonstrate an undeniable trend: unauthorized low-altitude flights are growing exponentially. The combination of decreasing hardware acquisition costs and expanding battery ranges has eliminated the barrier to entry for untrained and malicious actors.
+        </p>
+        <div class="stat-callout-box">
+          <div class="huge-num">3.4x</div>
+          <div class="callout-text">
+            <h4>Incursion Multiplier</h4>
+            <p>Validated localized tracking reports show a massive increase in uncoordinated aerial events near critical infrastructure nodes between 2023 and 2026.</p>
+          </div>
+        </div>
+        <p style="font-size: 14px; color: var(--midgray); line-height: 1.7;">
+          DefendX maintains a continuous analysis framework mapping uncoordinated low-altitude deviations globally. The primary sectors experiencing intense, persistent disruption include major civilian transit hubs, maximum-security correctional boundaries, critical chemical refineries, landmark institutional real estate, and high-capacity sporting arenas.
+        </p>
+      </div>
+
+      <!-- Panel 4: Cost of Inaction -->
+      <div id="panel-cost-inaction" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--navy); margin-bottom: 16px;">The Financial &amp; Operational Liabilities of Airspace Blindness</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Waiting for an explicit airborne breach to occur represents a severe organizational risk. For asset operators, corporate boards, and security managers, failing to deploy continuous monitoring tools results in direct exposure to substantial downstream liabilities.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="background:var(--white); border:1px solid var(--silver); padding:20px; border-radius:4px;">
+            <strong style="color:var(--navy); display:block; margin-bottom:4px; font-size:14px;">Immediate Capital Dissipation</strong>
+            <p style="font-size:13px; color:var(--midgray);">A minor incursion at a primary shipping port or aviation corridor forces a complete operational suspension. Idle logistics operations, diverted commercial aircraft, and emergency response workflows can generate losses exceeding millions per hour.</p>
+          </div>
+          <div style="background:var(--white); border:1px solid var(--silver); padding:20px; border-radius:4px;">
+            <strong style="color:var(--navy); display:block; margin-bottom:4px; font-size:14px;">Regulatory &amp; Legal Exposure</strong>
+            <p style="font-size:13px; color:var(--midgray);">Failing to maintain a documented record of low-altitude threats exposes infrastructure operators to compliance penalties, third-party liability lawsuits, and severe breaches of mandated physical security standards.</p>
+          </div>
+          <div style="background:var(--white); border:1px solid var(--silver); padding:20px; border-radius:4px;">
+            <strong style="color:var(--navy); display:block; margin-bottom:4px; font-size:14px;">Intellectual Property &amp; Security Erosion</strong>
+            <p style="font-size:13px; color:var(--midgray);">Unchecked aerial reconnaissance allows competitors or hostile entities to extract structural layouts, proprietary processing sequences, and operational rhythms, destroying long-term strategic advantages.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: Current Solution Gaps -->
+      <div id="panel-solution-gaps" class="landscape-content-panel" role="tabpanel">
+        <h3 style="font-size: 24px; color: var(--navy); margin-bottom: 16px;">The Failure of Legacy Defensive Paradigms</h3>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          Traditional corporate security methods are structurally ill-equipped to identify or counter modern consumer and custom drone threats. Legacy technologies frequently introduce severe secondary risks or suffer from significant blind spots.
+        </p>
+        <div class="threat-grid-cards">
+          <div class="threat-detail-card" style="border-top-color: var(--red);">
+            <h4>Active Radar Limitations</h4>
+            <p>Conventional radar arrays struggle with small physical signatures, frequently misidentifying incoming targets as ground clutter or bird activity in urban landscapes.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--red);">
+            <h4>Optical &amp; Acoustic Failures</h4>
+            <p>Visual trackers and acoustic arrays are dependent on environmental conditions, failing during heavy fog, night operations, or in noisy industrial environments.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--red);">
+            <h4>Active Jamming Restrictions</h4>
+            <p>Active transmission counter-measures generate severe signal interference, creating major legal and operational barriers near airports or commercial centers.</p>
+          </div>
+          <div class="threat-detail-card" style="border-top-color: var(--red);">
+            <h4>Cloud Dependency Risks</h4>
+            <p>Many modern systems rely on off-site cloud computing, introducing processing latency and exposing data to potential transmission failures.</p>
+          </div>
+        </div>
+        <div style="margin-top:32px; text-align:right;">
+          <a href="#comparison" class="btn btn-navy" style="font-size:12px; padding:10px 20px;">Review Tech Comparison Matrix →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ PLATFORM OVERVIEW ██████████████████████████████████████████████ -->
+<section class="section" id="platform">
+  <div class="container">
+    <div class="grid-2" style="gap:80px; align-items:center;">
+      <div>
+        <div class="sec-header">
+          <span class="label">The Solution</span>
+          <h2 class="sec-title">AirSentinel™ — Built for the Real World, Not the Test Range</h2>
+          <div class="divider"></div>
+          <p class="sec-sub">AirSentinel™ is built to operate reliably in real-world environments, filtering out ambient clutter to provide clear, actionable insights for security coordinators where false alarms disrupt workflows.</p>
+        </div>
+        <p style="font-size: 15px; color: var(--midgray); margin-bottom: 24px;">
+          By running specialized analytical processing directly at the edge, the AirSentinel™ platform monitors low-altitude perimeters continuously, operating independently without requiring constant external network connections.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="platform-visual">
+          <div style="margin-bottom:32px;">
+            <span class="label label-light">Three-Stage Architecture</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:24px;">
+            <div style="background:rgba(255,255,255,0.05); border-radius:6px; padding:24px; border-left:3px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:11px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Stage 01</span>
+                <span class="tag tag-ice" style="background:rgba(214,232,246,0.08); color:var(--ice); font-size:10px;">Passive · No Emissions</span>
+              </div>
+              <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Passive RF Signal Acquisition</h4>
+              <p style="font-size:13px; color:rgba(255,255,255,0.5);">Wideband omnidirectional monitoring across key frequency bands. Zero electromagnetic output. Fully compliant with spectrum regulations.</p>
+            </div>
+            <div style="text-align:center; color:var(--gold); font-size:20px;">↓</div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:6px; padding:24px; border-left:3px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:11px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Stage 02</span>
+                <span class="tag tag-ice" style="background:rgba(214,232,246,0.08); color:var(--ice); font-size:10px;">Edge Deployed</span>
+              </div>
+              <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Edge-Based Processing</h4>
+              <p style="font-size:13px; color:rgba(255,255,255,0.5);">Signal analysis runs entirely on-site. Intelligently filters out normal environmental signals and background wireless activity.</p>
+            </div>
+            <div style="text-align:center; color:var(--gold); font-size:20px;">↓</div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:6px; padding:24px; border-left:3px solid var(--gold);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:11px; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Stage 03</span>
+                <span class="tag tag-ice" style="background:rgba(214,232,246,0.08); color:var(--ice); font-size:10px;">API · SOC Compatible</span>
+              </div>
+              <h4 style="color:#fff; font-size:15px; margin-bottom:6px;">Autonomous Alert &amp; Reporting</h4>
+              <p style="font-size:13px; color:rgba(255,255,255,0.5);">Real-time coordinate transfers map localized security threats. Integrates with security operations center software layers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ TECHNOLOGY PILLARS ██████████████████████████████████████████████ -->
+<section class="section section-alt" id="technology">
+  <div class="container">
+    <div class="sec-header sec-header-center">
+      <span class="label" style="display:block; text-align:center;">Technology</span>
+      <h2 class="sec-title" style="max-width:580px; margin:0 auto;">Comprehensive Defense-in-Depth Capability</h2>
+      <div class="divider divider-center"></div>
+      <p class="sec-sub" style="margin:0 auto; text-align:center;">Our multi-tier tech stack processes complex aerial environments systematically, bringing rigorous safety to corporate and government facilities.</p>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px;">
+      <div class="tech-card reveal">
+        <div class="icon">📡</div>
+        <h3>Detection</h3>
+        <p>Utilizes passive radio frequency monitoring to intercept low-altitude targets without emitting active signals, eliminating licensing conflicts and local network interference.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.08s;">
+        <div class="icon">🧬</div>
+        <h3>Identification</h3>
+        <p>Identifies the threat profile by matching incoming signal characteristics to a pre-configured, localized classification library.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.16s;">
+        <div class="icon">📊</div>
+        <h3>Classification</h3>
+        <p>Differentiates harmless consumer platforms from high-priority, unauthorized targets immediately.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.24s;">
+        <div class="icon">📍</div>
+        <h3>Tracking</h3>
+        <p>Maintains a continuous, secure path log of the threat's coordinates through your protected boundaries.</p>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.32s;">
+        <div class="icon">🛑</div>
+        <h3>Addressing</h3>
+        <p>Sends real-time coordinates and threat alerts directly to security staff or central monitoring dashboards for immediate operational response.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ INDUSTRIES ██████████████████████████████████████████████████████ -->
+<section class="section section-dark" id="Systems">
+  <div class="container">
+    <div class="sec-header">
+      <span class="label label-light">Systems</span>
+      <h2 class="sec-title sec-title-light">Every Environment Where Airspace Matters</h2>
+      <div class="divider"></div>
+      <p class="sec-sub sec-sub-light">Our passive, edge-autonomous architecture is uniquely positioned to serve critical infrastructure security networks under strict regulatory oversight.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">✈️</div>
+          <h3>Airports &amp; Aviation</h3>
+          <p>Perimeter monitoring without aviation signal interference. Protects civilian aviation hubs from sudden incursion-triggered ground stops and massive operational liabilities.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🏛️</div>
+          <h3>Correctional Institutions</h3>
+          <p>Passive, fence-line sensor meshes easily deployed where active jamming hardware is restricted. Mitigates high-volume automated contraband vectors.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">⚡</div>
+          <h3>Critical Infrastructure</h3>
+          <p>Continuous monitoring arrays for power substations, cross-country pipelines, and remote refineries, providing non-stop protection along linear assets.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🛡️</div>
+          <h3>National Defence &amp; Law Enforcement</h3>
+          <p>Secure, domestic technology that complies fully with rigorous security criteria for national protection nodes, command posts, and temporary operations centers.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🗺️</div>
+          <h3>Border &amp; Maritime Security</h3>
+          <p>Persistent passive surveillance across dynamic international borders, detecting unmapped, modified custom pathways and scouting patterns.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-inner">
+          <div class="ind-icon">🏟️</div>
+          <h3>Events &amp; Venue Security</h3>
+          <p>Rapid-deployment kits for stadium security coordinators. Minimizes on-site operational footprints while feeding immediate alert telemetry to local dispatch teams.</p>
+          <div class="ind-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ WHY DEFENDX (DIFFERENTIATION) ████████████████████████████████ -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="grid-2" style="gap:80px; align-items:flex-start;">
+      <div>
+        <div class="sec-header">
+          <span class="label">Differentiation</span>
+          <h2 class="sec-title">Architected Where Conventional Detection Fails</h2>
+          <div class="divider"></div>
+          <p class="sec-sub">Technical and operational design choices that ensure dependable security in highly complex enterprise environments.</p>
+        </div>
+        <div class="diff-row reveal">
+          <div class="diff-num">01</div>
+          <div class="diff-body">
+            <h3>Fully Passive Architecture</h3>
+            <p>Our systems transmit zero signals. This structural choice handles complex regulatory compliance hurdles naturally across commercial airfields, urban cores, and high-density industrial plants.</p>
+            <div class="diff-badge"><span class="ck">✓</span> Deployable where active transmission systems cannot operate</div>
+          </div>
+        </div>
+        <div class="diff-row reveal">
+          <div class="diff-num">02</div>
+          <div class="diff-body">
+            <h3>Operational Noise Filtering</h3>
+            <p>Built explicitly for challenging urban, industrial, and maritime zones. The platform distinguishes potential threats from high-volume local signals and background wireless activity.</p>
+            <div class="diff-badge"><span class="ck">✓</span> Significant reduction in false alarms compared to standard threshold systems</div>
+          </div>
+        </div>
+        <div class="diff-row reveal">
+          <div class="diff-num">03</div>
+          <div class="diff-body">
+            <h3>True Edge Autonomy</h3>
+            <p>Every analysis step happens locally on optimized units. Eliminates mandatory cloud reliance, round-trip processing lag, and data exposure vulnerabilities from external raw captures.</p>
+            <div class="diff-badge"><span class="ck">✓</span> Solar-compatible installation and sub-second detection metrics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitive Comparison Table -->
+      <div id="comparison" class="reveal" style="position:sticky; top:100px;">
+        <span class="label">Competitive Analysis</span>
+        <h3 style="font-size:20px; color:var(--navy); margin-bottom:24px; font-weight:700;">System Capabilities vs. Market Standards</h3>
+        <div style="overflow-x:auto; border-radius:8px; border:1px solid var(--silver);">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th class="highlight">DefendX Architecture</th>
+                <th>Legacy Vendor A</th>
+                <th>Legacy Vendor B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fully passive (no TX)</td>
+                <td class="highlight yes">✓ Yes</td>
+                <td class="no">✗ No</td>
+                <td class="no">✗ No</td>
+              </tr>
+              <tr>
+                <td>Noise filtering resilience</td>
+                <td class="highlight yes">✓ Yes</td>
+                <td class="no">✗ No</td>
+                <td class="no">✗ No</td>
+              </tr>
+              <tr>
+                <td>Edge Autonomy</td>
+                <td class="highlight yes">✓ Yes</td>
+                <td class="no">✗ No</td>
+                <td class="partial">⊘ Partial</td>
+              </tr>
+              <tr>
+                <td>Regulatory Compliant</td>
+                <td class="highlight yes">✓ Full</td>
+                <td class="partial">⊘ Partial</td>
+                <td class="partial">⊘ Partial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ INVESTORS / BUSINESS STRATEGY █████████████████████████████████ -->
+<section class="section section-cobalt" id="investors">
+  <div class="container">
+    <div class="sec-header">
+      <span class="label label-light">Investors</span>
+      <h2 class="sec-title sec-title-light">A Massive Market. A Critical Technology. Ready to Lead.</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-4" style="margin-bottom:64px;">
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.05); border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+        <div class="market-num">$5.99B</div>
+        <div class="market-sub">Global C-UAS market volume</div>
+      </div>
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.05); border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+        <div class="market-num">$20.3B</div>
+        <div class="market-sub">Projected market by 2030</div>
+      </div>
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.05); border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+        <div class="market-num">25.1%</div>
+        <div class="market-sub">Global CAGR trajectory</div>
+      </div>
+      <div style="text-align:center; padding:32px; background:rgba(255,255,255,0.05); border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+        <div class="market-num">Top Tier</div>
+        <div class="market-sub">North American addressable spend</div>
+      </div>
+    </div>
+    <div class="grid-3" style="gap:28px;">
+      <div class="investor-card reveal">
+        <h3>Commercial Milestones</h3>
+        <ul>
+          <li>Active customer discovery interviews in progress across core sectors</li>
+          <li>Targeting anchor institutional commitments by late fiscal year</li>
+          <li>Comprehensive patent application portfolios currently in preparation</li>
+          <li>Strategic government innovation grants mapped for upcoming cycles</li>
+        </ul>
+      </div>
+      <div class="investor-card reveal">
+        <h3>Competitive Moat</h3>
+        <ul>
+          <li>Pioneering passive signal processing algorithms built for complex urban perimeters</li>
+          <li>Field-tested validation across regional infrastructure nodes and facilities</li>
+          <li>Pure standalone edge implementation requires zero continuous off-site network dependencies</li>
+          <li>Optimized technical architecture creates significant structural cost advantages over alternatives</li>
+        </ul>
+      </div>
+      <div class="investor-card reveal">
+        <h3>Revenue Model</h3>
+        <ul>
+          <li>Scalable edge hardware node procurement contracts</li>
+          <li>Monitoring-as-a-Service (MaaS) recurring site subscription architecture</li>
+          <li>Integration API licensing matrices customized for physical system integrators</li>
+          <li>Long-term government security procurement pathways</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ BRIEFING CALL TO ACTION ████████████████████████████████████████ -->
+<section style="background:var(--navy); padding:72px 0;" id="about">
+  <div class="container text-center">
+    <span class="label label-light" style="display:block; text-align:center;">DefendX Technologies Inc.</span>
+    <h2 style="font-size:36px; color:var(--white); max-width:600px; margin:0 auto 20px; font-weight:800; letter-spacing:-0.02em;">The Airspace Above Critical Assets Deserves Better Protection.</h2>
+    <p style="font-size:16px; color:rgba(255,255,255,0.55); max-width:480px; margin:0 auto 40px; line-height:1.75;">We build security solutions because the tools that exist today are too expensive, too limited, or too legally risky to deploy where threats matter most.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="javascript:void(0)" onclick="openAboutPanel()" class="btn btn-gold">About the Company</a>
+      <a href="#contact" class="btn btn-outline">Request an Operator Briefing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ██ CONTACT & BRIEFING REQUESTS ██████████████████████████████████ -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="label label-light">Contact</span>
+        <h2>Start the Conversation</h2>
+        <div class="divider"></div>
+        <p style="font-size:15px; color:rgba(255,255,255,0.6); line-height:1.8; margin-bottom:40px;">Whether you're a potential customer, government procurement officer, system integrator, or investor — we'd like to hear from you. All briefings are handled under strict confidentiality protocols.</p>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:40px; height:40px; border-radius:6px; background:rgba(184,150,12,0.1); border:1px solid rgba(184,150,12,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">🌐</div>
+            <div><div style="font-size:12px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Website</div><div style="font-size:14px; color:var(--gold);">www.defxtech.com</div></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:40px; height:40px; border-radius:6px; background:rgba(184,150,12,0.1); border:1px solid rgba(184,150,12,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">📍</div>
+            <div><div style="font-size:12px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Region</div><div style="font-size:14px; color:rgba(255,255,255,0.7);">Canada</div></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:40px; height:40px; border-radius:6px; background:rgba(184,150,12,0.1); border:1px solid rgba(184,150,12,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;">🏛️</div>
+            <div><div style="font-size:12px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Collaborating Laboratories</div><div style="font-size:14px; color:rgba(255,255,255,0.7);">Lakehead University · Western University</div></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive Contact Form Container -->
+      <div>
+        <div class="contact-form" id="briefingForm">
+          <h3 style="font-size:18px; color:var(--navy); margin-bottom:24px; font-weight:700;">Request a Confidential Briefing</h3>
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" required placeholder="Jane">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" required placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Organization</label>
+              <input type="text" required placeholder="Department / Company">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" required placeholder="jane.smith@organization.com">
+            </div>
+            <div class="form-group">
+              <label>I am a</label>
+              <select required>
+                <option value="">— Select your role —</option>
+                <option>Airport / Aviation Authority</option>
+                <option>Correctional Service / Public Safety</option>
+                <option>Energy / Utility Operator</option>
+                <option>National Defence / Security Forces</option>
+                <option>Border Security Operations</option>
+                <option>System Integrator / Channel Partner</option>
+                <option>Investor / Venture Capital</option>
+                <option>Government Procurement Officer</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea required placeholder="Briefly describe your operational environment and the challenge you're trying to solve…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-navy" style="width:100%; justify-content:center; padding:15px 28px; font-size:14px;">
+              Submit Request →
+            </button>
+          </form>
+          <p style="font-size:11px; color:var(--lgray); text-align:center; margin-top:12px;">All inquiries are treated as strictly proprietary information. DefendX Technologies does not share contact details with third parties.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ██ FOOTER ██████████████████████████████████████████████████████████ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+          <img src="Logo.jpg" alt="DefendX Technologies Footer Logo" style="height:44px; width:auto; border-radius:4px; border:1px solid rgba(255,255,255,0.1)">
+          <span style="font-size:15px; font-weight:800; color:var(--white);">DefendX<span style="color:var(--gold);"> Technologies Inc.</span></span>
+        </div>
+        <p>Transforming complex RF signatures into actionable airspace intelligence. Intelligent Detection. Autonomous Awareness. Secure Airspace.</p>
+        <div style="margin-top:20px; font-size:12px; color:rgba(255,255,255,0.3);">www.defxtech.com</div>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#platform">AirSentinel™ Overview</a></li>
+          <li><a href="#platform">Pipeline Framework</a></li>
+          <li><a href="#technology">Technology Pillars</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Systems</h4>
+        <ul>
+          <li><a href="#Systems">Airports &amp; Aviation</a></li>
+          <li><a href="#Systems">Correctional Institutions</a></li>
+          <li><a href="#Systems">Critical Infrastructure</a></li>
+          <li><a href="#Systems">National Defence</a></li>
+          <li><a href="#Systems">Border Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openAboutPanel()">About DefendX</a></li>
+          <li><a href="#why">Why DefendX</a></li>
+          <li><a href="#investors">Investors</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DefendX Technologies Inc. All rights reserved. AirSentinel™ is a trademarked module of DefendX Technologies.</p>
+      <div class="footer-badges">
+        <div class="footer-badge">Domestic Ownership</div>
+        <div class="footer-badge">Sovereign Tech</div>
+        <div class="footer-badge">P.Eng. Monitored</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ██ DYNAMIC INTERACTIVE COMPONENT: ABOUT OVERLAY PANEL ██ -->
+<div class="company-panel-overlay" id="aboutPanelOverlay" onclick="closeAboutPanelOnOutsideClick(event)">
+    <div class="company-panel">
+        <button class="panel-close-btn" onclick="closeAboutPanel()" aria-label="Close About Panel">×</button>
+        
+        <!-- Stylized Logo Header -->
+        <div class="panel-header-wrapper">
+            <div class="panel-logo-box">
+                <img src="Logo.jpg" alt="DefendX Logo" class="panel-logo-img">
+                <h2 style="font-size: 2.2rem; font-weight: 800; color: #fff;">DefendX<span style="color: var(--accent-blue-f1)"> Technologies</span></h2>
+            </div>
+            <div class="panel-subtitle">Sovereign Airspace Awareness &amp; Intelligence</div>
+        </div>
+
+        <!-- About section text content -->
+        <section style="margin-bottom: 40px;">
+            <h3 class="panel-section-title">About the Company</h3>
+            <p class="panel-p"><strong>DefendX Technologies Inc.</strong> is a Canadian innovator dedicated to developing intelligent sensing solutions for airspace awareness, drone detection, and autonomous RF intelligence. Founded on extensive operational insights in wireless communications and security networks, DefendX empowers organizations to monitor, understand, and protect the increasingly complex airspace surrounding critical assets.</p>
+            <p class="panel-p">As unmanned aerial systems (UAS) rapidly proliferate across commercial, industrial, and recreational sectors, modern airspace demands sophisticated security. DefendX meets this challenge head-on. By leveraging passive radio frequency (RF) sensing and automated analytics, our technology delivers real-time situational awareness and operational continuity—all without disrupting existing communications or infrastructure.</p>
+        </section>
+
+        <!-- Innovation Highlight -->
+        <section>
+            <div class="panel-innovation-card">
+                <h3>AirSentinel™ <span>Core Innovation</span></h3>
+                <p class="panel-p" style="color: #cbd5e1; margin-bottom: 0;">At the heart of our technology is <strong>AirSentinel™</strong>, an advanced RF sensing platform engineered to autonomously detect, identify, classify, and track unauthorized drone activity. By fusing spectrum intelligence with edge processing, AirSentinel™ seamlessly transforms complex wireless environments into clear, actionable operational insights.</p>
+            </div>
+        </section>
+
+        <!-- Pillars Grid (Science, Mission, Vision) -->
+        <section style="margin-top: 40px;">
+            <h3 class="panel-section-title">Strategic Foundations</h3>
+            <div class="panel-pillars-grid">
+                <div class="panel-pillar-item science">
+                    <h3>Proven Reliability</h3>
+                    <p>Our systems are built on field-verified methodologies designed to operate reliably in highly active industrial perimeters, ensuring clean detection layouts under challenging conditions.</p>
+                </div>
+                
+                <div class="panel-pillar-item mission">
+                    <h3>Our Mission</h3>
+                    <p>To develop intelligent RF sensing technologies that enhance airspace awareness, elevate operational decision-making, and safeguard the security of critical environments.</p>
+                </div>
+                
+                <div class="panel-pillar-item vision">
+                    <h3>Our Vision</h3>
+                    <p>To be the global leader in autonomous RF intelligence and airspace awareness, empowering organizations with innovative solutions that enable safer, smarter, and more resilient operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <button class="btn btn-gold" onclick="closeAboutPanel(); scrollToContact();" style="font-size: 13px;">Request Partner Briefing</button>
+        </div>
+    </div>
+</div>
+
+<!-- ██ TOAST NOTIFICATION CONTAINER █████████████████████████████████ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+    // Intersection Observer for scroll animations
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) { 
+            e.target.classList.add('visible'); 
+            obs.unobserve(e.target); 
+        } 
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Smooth scroll triggers
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const targetId = a.getAttribute('href').slice(1);
+        const el = document.getElementById(targetId);
+        if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Threat landscape interactive sub-tabs controller
+    function switchLandscapeTab(event, targetPanelId) {
+      const wrapper = event.target.closest('.landscape-wrapper');
+      
+      // Clear active states
+      wrapper.querySelectorAll('.landscape-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      
+      wrapper.querySelectorAll('.landscape-content-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+      
+      const clickedBtn = event.target.closest('.landscape-tab-btn');
+      clickedBtn.classList.add('active');
+      clickedBtn.setAttribute('aria-selected', 'true');
+      
+      const targetPanel = wrapper.querySelector(`#panel-${targetPanelId}`);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    }
+
+    // Dynamic overlay controller functions
+    function openAboutPanel() {
+        const overlay = document.getElementById('aboutPanelOverlay');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Lock scrolling
+        showToast('🔑 Secure Info Loaded: DefendX Company Profile', 'ℹ️');
+    }
+
+    // Close company panel
+    function closeAboutPanel() {
+        const overlay = document.getElementById('aboutPanelOverlay');
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock scrolling
+    }
+
+    function closeAboutPanelOnOutsideClick(event) {
+        if (event.target.id === 'aboutPanelOverlay') {
+            closeAboutPanel();
+        }
+    }
+
+    function scrollToContact() {
+        const el = document.getElementById('contact');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Interactive Toast Notification System
+    function showToast(message, icon = '✓') {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+            <span class="toast-icon">${icon}</span>
+            <span class="toast-text">${message}</span>
+        `;
+        container.appendChild(toast);
+        
+        // Trigger presentation transition
+        setTimeout(() => toast.classList.add('show'), 100);
+        
+        // Automated garbage cleanup
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+        }, 4000);
+    }
+
+    // Secure briefing request controller
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        // Extract inputs securely
+        const form = document.getElementById('contactForm');
+        const org = form.querySelector('input[placeholder="Department / Company"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+
+        // Custom animations representing data dispatch
+        showToast('Encrypting request metadata...', '🔐');
+        
+        setTimeout(() => {
+            showToast(`Briefing request for ${org} queued successfully! Check ${email} shortly.`, '🛡️');
+            form.reset();
+        }, 1200);
+    }
+</script>
+</body>
+</html>
