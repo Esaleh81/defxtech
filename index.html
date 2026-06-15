@@ -2395,7 +2395,7 @@
             </div>
             <div class="form-group">
               <label>Email Address</label>
-              <input type="email" name="Email" required placeholder="jane.smith@organization.com">
+              <input type="email" name="Email" required placeholder="j.smith@organization.com">
             </div>
             <div class="form-group">
               <label>I am an</label>
@@ -2417,7 +2417,7 @@
               <textarea name="Message" required placeholder="Briefly describe your operational environment and the challenge you're trying to solve…"></textarea>
             </div>
             <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; padding:15px 28px; font-size:14px;">
-              Submit →
+              Submit 
             </button>
           </form>
           <p style="font-size:11px; color:var(--lgray); text-align:center; margin-top:12px;">All inquiries are treated as strictly proprietary information. DefendX Technologies does not share contact details with third parties.</p>
@@ -2680,6 +2680,7 @@
         .then(response => {
             if (response.ok) {
                 showToast(`Briefing request for ${org} queued successfully!`, '🛡️');
+                form.submit();
                 form.reset();
             } else {
                 showToast('Submission error. Please verify input fields.', '⚠️');
