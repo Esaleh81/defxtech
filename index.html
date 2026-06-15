@@ -2559,7 +2559,21 @@
         <div style="margin-top:20px; font-size:14px; color:var(--gold);">
         www.defxtech.ca
         </div>
-        </a>         
+        </a> 
+          <div class="visitor-box">
+            <span class="visitor-label">Visitors:</span>
+            <span id="counter" class="hidden-count">******</span>
+        </div>
+
+<script>
+// Swapped out the dead CountAPI for Abacus, using your domain as the unique namespace
+fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("counter").innerText = data.value;
+  })
+  .catch(err => console.error("Counter failed to load:", err));
+</script>
     <!-- <div class="visitor-box">
     <span class="visitor-label">Visitors:</span>
     <span id="counter" class="hidden-count">******</span>
