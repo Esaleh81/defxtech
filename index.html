@@ -2560,7 +2560,7 @@
         www.defxtech.ca
         </div>
         </a>
-          <div>
+          <!-- <div>
               Visitors: <span id="counter">0</span>
         </div>
 
@@ -2570,11 +2570,44 @@
       .then(data => {
         document.getElementById("counter").innerText = data.value;
       });
-    </script>
+    </script> -->
           
-          <!-- <a href="http://www.defxtech.ca" target="_blank">
-            Website: www.defxtech.ca
-            </a> -->
+   <div class="visitor-box">
+  <span class="visitor-label">Visitors:</span>
+  <span id="counter" class="hidden-count">••••</span>
+</div>
+
+<script>
+fetch("https://api.countapi.xyz/hit/defxtech.ca/visits")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("counter").innerText = data.value;
+  });
+</script>
+
+<style>
+.visitor-box {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+/* hide everything visually by default */
+.visitor-label,
+.hidden-count {
+  opacity: 0;
+  transform: translateY(2px);
+  transition: 0.3s ease;
+}
+
+/* reveal on hover */
+.visitor-box:hover .visitor-label,
+.visitor-box:hover .hidden-count {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
       </div>
       <div> 
         <h4>Solutions</h4>
