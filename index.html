@@ -2572,7 +2572,7 @@
       });
     </script> -->
           
-    <div class="visitor-box">
+    <!-- <div class="visitor-box">
     <span class="visitor-label">Visitors:</span>
     <span id="counter" class="hidden-count">0</span>
     </div>
@@ -2583,9 +2583,9 @@ fetch("https://api.countapi.xyz/hit/defxtech.ca/visits")
   .then(data => {
     document.getElementById("counter").innerText = data.value;
   });
-</script>
+</script> -->
 
-<style>
+<!-- <style>
 .visitor-box {
   display: inline-block;
   font-size: 14px;
@@ -2606,6 +2606,50 @@ fetch("https://api.countapi.xyz/hit/defxtech.ca/visits")
 .visitor-box:hover .hidden-count {
   opacity: 1;
   transform: translateY(0);
+}
+</style> -->
+
+<div class="visitor-box">
+  <span class="visitor-label">Visitors:</span>
+  <span id="counter" class="hidden-count">0</span>
+</div>
+
+<script>
+const counterEl = document.getElementById("counter");
+
+// show loading state first
+counterEl.innerText = "Loading...";
+
+fetch("https://api.countapi.xyz/hit/defxtech.ca/visits")
+  .then(res => res.json())
+  .then(data => {
+    counterEl.innerText = data.value;
+  })
+  .catch(() => {
+    counterEl.innerText = "N/A";
+  });
+</script>
+
+<style>
+.visitor-box {
+  display: inline-flex;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+/* hidden by default */
+.visitor-label,
+.hidden-count {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* reveal on hover */
+.visitor-box:hover .visitor-label,
+.visitor-box:hover .hidden-count {
+  opacity: 1;
 }
 </style>
       </div>
