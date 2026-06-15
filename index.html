@@ -1426,31 +1426,18 @@
       </div>
 
       <!-- Right Visual Airspace Simulator Dashboard -->
-      <div class="sim-control-panel reveal">
-        <div class="sim-tabs-header">
-          <button class="sim-tab-btn active" id="btn-airport" onclick="setSimSector('airport')">✈️ Airport</button>
-          <button class="sim-tab-btn" id="btn-prison" onclick="setSimSector('prison')">🏰 Prison</button>
-          <button class="sim-tab-btn" id="btn-utility" onclick="setSimSector('utility')">⚡ Hydro Grid</button>
-          <button class="sim-tab-btn" id="btn-stadium" onclick="setSimSector('stadium')">🏟️ Stadium</button>
-        </div>
+     <div class="sim-control-panel reveal">
 
-        <div class="sim-viewer-wrapper">
-          <!-- Canvas element for active radar/airspace rendering -->
-          <canvas id="airspaceCanvas"></canvas>
-          
-          <div class="alert-pulse-badge" id="simAlertBadge">
-            <div class="alert-pulse-dot"></div>
-            <span id="simAlertText">Monitoring Skyway</span>
-          </div>
+    <video autoplay muted loop playsinline preload="auto"
+           style="
+              width:100%;
+              border-radius:12px;
+              box-shadow:0 8px 30px rgba(0,0,0,0.35);
+           ">
+        <source src="bandx.mp4" type="video/mp4">
+    </video>
 
-          <div class="sim-telemetry-hud">
-            <div class="hud-line">SECTOR: <span id="hud-sector">AVIATION CORE</span></div>
-            <div class="hud-line">FREQ INDEX: <span id="hud-freq">2.412 GHz - 5.825 GHz</span></div>
-            <div class="hud-line">SENSORS: <span id="hud-sensors">3 ACTIVE PASSIVE NODES</span></div>
-            <div class="hud-line">STATUS: <span id="hud-status" style="color: var(--accent-green-f1);">NO THREAT SIGNALS</span></div>
-          </div>
-        </div>
-      </div>
+</div>
     </div>
   </div>
 </section>
