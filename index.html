@@ -2454,7 +2454,7 @@
         <div class="contact-form" id="briefingForm">
 
           <!-- <h3 style="font-size:18px; color:var(--white); margin-bottom:24px; font-weight:700;">
-           Interested in DefendX Technologies' solutions? Tell us about your requirements, and one of our specialists will contact you shortly.
+           Interested in DefendX Technologies' solutions? Please share your requirements, and one of our specialists will contact you shortly.
                       </h3> -->
             <div style="margin-bottom:26px;">
             
@@ -2463,7 +2463,7 @@
               </div>
             
               <div style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.7); margin-top:10px; line-height:1.7;">
-                Tell us about your requirements, and one of our specialists will contact you shortly.
+                Please share your requirements, and one of our specialists will contact you shortly.
               </div>
             
             </div>
@@ -2552,6 +2552,17 @@
         www.defxtech.ca
         </div>
         </a>
+          <div>
+              Visitors: <span id="counter">0</span>
+        </div>
+
+        <script>
+        fetch("https://api.countapi.xyz/hit/defxtech.ca/visits")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("counter").innerText = data.value;
+      });
+    </script>
           
           <!-- <a href="http://www.defxtech.ca" target="_blank">
             Website: www.defxtech.ca
