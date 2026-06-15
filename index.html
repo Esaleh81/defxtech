@@ -28,7 +28,7 @@
             --midgray:      #94A3B8;
             --lgray:        #64748B;
             --red:          #EF4444;
-            --green:        #10B981;
+            --green:         #10B981;
             
             --bg-main-f1:   #060913;
             --bg-card-f1:   #0b1120;
@@ -61,6 +61,7 @@
             line-height: 1.7; 
             -webkit-font-smoothing: antialiased; 
             overflow-x: hidden;
+            padding-top: 85px; /* Offset to prevent fixed nav from overlapping top content */
             padding-bottom: env(safe-area-inset-bottom);
         }
 
@@ -244,8 +245,11 @@
 
         /* ── NAV HEADER & BRAND LOGO ────────────────────────────────────── */
         .nav { 
-            position: sticky; 
+            position: fixed; 
             top: 0; 
+            left: 0;
+            right: 0;
+            width: 100%;
             z-index: 1000; 
             background: rgba(6, 11, 19, 0.95); 
             backdrop-filter: blur(12px);
@@ -256,7 +260,7 @@
         .nav-inner { 
             display: flex; 
             align-items: center; 
-            justify-content: space-between;
+            justify-content: space-between; 
             height: 85px; 
         }
         .nav-logo { 
@@ -410,6 +414,9 @@
         }
 
         @media (max-width: 1024px) {
+            body {
+                padding-top: 75px; /* Adjusted smaller fixed menu offset for tablet/mobile devices */
+            }
             .nav-toggle-btn {
                 display: flex;
             }
