@@ -1551,7 +1551,24 @@
             <!-- <a href="#technology" onclick="closeMobileMenu()">Actionable Security Output</a> -->
           </div>
         </div>
-
+        <div class="nav-item" role="none">
+          <div class="nav-link" role="menuitem" tabindex="0" onclick="toggleDropdown(this)">
+            Solutions
+            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="nav-dropdown" style="max-height: 480px; overflow-y: auto;">
+            <a href="#sector-01" onclick="jumpToSolutionSector('sector-01')">Public Mobility Hubs</a>
+            <a href="#sector-02" onclick="jumpToSolutionSector('sector-02')">Utility and Energy Corridors</a>
+            <a href="#sector-03" onclick="jumpToSolutionSector('sector-03')">Civic Landmarks and Urban Assets</a>
+            <a href="#sector-04" onclick="jumpToSolutionSector('sector-04')">Correctional and Restricted Sites</a>
+            <a href="#sector-05" onclick="jumpToSolutionSector('sector-05')">Enterprise and Industrial Campuses</a>
+            <a href="#sector-06" onclick="jumpToSolutionSector('sector-06')">Media and Event Environments</a>
+            <a href="#sector-07" onclick="jumpToSolutionSector('sector-07')">Maritime and Coastal Operations</a>
+            <a href="#sector-08" onclick="jumpToSolutionSector('sector-08')">Border and Perimeter Security</a>
+            <a href="#sector-09" onclick="jumpToSolutionSector('sector-09')">Protective Detail Operations</a>
+            <a href="#sector-10" onclick="jumpToSolutionSector('sector-10')">National Defense and Special Operations</a>
+          </div>
+        </div>
         <div class="nav-item" role="none">
           <div class="nav-link" role="menuitem" tabindex="0" onclick="toggleDropdown(this)">
             Solutions
@@ -1712,6 +1729,292 @@
 
   </div>
 </section>
+
+    <!-- ██ NEW INVESTOR-READY SOLUTIONS TAB ARCHITECTURE MATRIX ────────── -->
+<section class="section section-alt" id="solutions-matrix-section">
+  <div class="container">
+    <div class="sec-header sec-header-center">
+      <span class="label">Sectors &amp; Deployments</span>
+      <h2 class="sec-title">Enterprise Solutions Architecture</h2>
+      <p class="sec-sub">AirSentinel is built for environments where drone activity creates operational, financial, and reputational risk. The platform combines passive RF sensing, edge AI, and real-time alerting to help organizations detect, classify, and understand threats without the deployment friction and safety drawbacks of conventional counter-drone tools.</p>
+    </div>
+
+    <div class="landscape-wrapper">
+      <!-- Solutions Tab Navigation Sidebar -->
+      <div class="landscape-tabs" id="solutionsSidebarTabs" role="tablist" aria-label="Solutions Sectors">
+        <button class="landscape-tab-btn active" onclick="switchSolutionsTab(event, 'sector-01')" id="tab-sector-01">
+          <span>Public Mobility Hubs</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-02')" id="tab-sector-02">
+          <span>Utility &amp; Energy Corridors</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-03')" id="tab-sector-03">
+          <span>Civic Landmarks</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-04')" id="tab-sector-04">
+          <span>Correctional Sites</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-05')" id="tab-sector-05">
+          <span>Enterprise Campuses</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-06')" id="tab-sector-06">
+          <span>Media &amp; Events</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-07')" id="tab-sector-07">
+          <span>Maritime Operations</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-08')" id="tab-sector-08">
+          <span>Border Security</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-09')" id="tab-sector-09">
+          <span>Protective Details</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+        <button class="landscape-tab-btn" onclick="switchSolutionsTab(event, 'sector-10')" id="tab-sector-10">
+          <span>National Defense</span>
+          <span class="arrow-indicator">›</span>
+        </button>
+      </div>
+
+      <!-- Solutions Dynamic Display Panels -->
+      <div id="content-sector-01" class="landscape-content-panel active">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Public Mobility Hubs (Focus: Canadian Aviation Framework)</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Airports, stadiums, arenas, and transit-adjacent venues are among the most visible and disruption-sensitive airspace environments. In Canada, unauthorized drone loitering near commercial flight paths has followed an aggressive upward trend. Transport Canada has documented hundreds of hazardous incidents annually, putting immediate pressure on airport operators to establish real-time vertical situational awareness.</p>
+        
+        <!-- Financial & Statistic Highlight Box -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); padding: 16px; border-radius: 6px;">
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--red);">+140% Spike</span>
+            <p style="font-size: 12px; color: var(--midgray); margin-top: 4px;">YoY increase in unauthorized sUAV near-miss operations inside controlled Canadian Class C airspace corridors.</p>
+          </div>
+          <div style="background: rgba(212,175,55,0.1); border: 1px solid var(--gold); padding: 16px; border-radius: 6px;">
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--gold);">$250K / Hr</span>
+            <p style="font-size: 12px; color: var(--midgray); margin-top: 4px;">Average structural cascading loss during emergency runway lockdowns and tactical delays.</p>
+          </div>
+        </div>
+
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 High-Profile Incidents &amp; Media Impacts</h4>
+            <p style="font-size:13px; color:#fff; margin-bottom: 8px;"><strong>Toronto Pearson International Airport (YYZ):</strong> Multiple localized ground stops were triggered by rogue drone loitering over critical approach paths, drawing intense national media scrutiny, disrupting thousands of travelers, and highlighting severe industrial vulnerability gaps.</p>
+            <p style="font-size:13px; color:#fff;"><strong>Vancouver International Airport (YVR):</strong> Repeated near-miss proximity encounters recorded below 450 meters by commercial flight crews during final descent segments, prompting joint federal taskforce investigations and urgent mandates for passive RF infrastructure deployments.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional systems often struggle here because active countermeasures can create safety concerns near commercial aviation, while standalone radar or visual tools can be defeated by clutter, false alarms, or low-altitude flight profiles.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel gives operators a passive, deployable detection layer that improves response speed while avoiding airspace-disruptive mitigation methods, which is a strong fit for airport authorities, venue operators, and infrastructure investors.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-02" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Utility and Energy Corridors</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Power grids, substations, pipelines, refineries, and related energy assets need constant awareness because drone reconnaissance can expose vulnerabilities long before a physical attack occurs. In Canada, remote hydro-generation assets, nuclear plants, and oil sands delivery paths have experienced an increasing trend in unidentified sUAV scouting loiters.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); padding: 16px; border-radius: 6px;">
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--red);">65% Rise</span>
+            <p style="font-size: 12px; color: var(--midgray); margin-top: 4px;">Increase in anomalous low-altitude signatures tracked over sensitive national grid hubs.</p>
+          </div>
+        </div>
+
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios &amp; Industrial Espionage</h4>
+            <p style="font-size:13px; color:var(--midgray);">Mapping of facilities, line-of-sight intelligence gathering, package delivery near restricted assets, and coordinated disruption of distributed energy operations. Media profiles have drawn attention to unknown drone operators recording thermal telemetry over regional transmission infrastructure, raising espionage concerns at corporate levels.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional counter-drone solutions often fail in this setting because wide-area sites are difficult to cover with one sensor type, and active jamming or kinetic response can be operationally risky around critical systems.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel is positioned as a low-friction, scalable detection layer for utilities that want persistent visibility, better incident attribution, and a stronger risk story for regulators, insurers, and investors.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-03" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Civic Landmarks and Urban Assets</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Government buildings, civic centers, landmarks, and municipal complexes face drone threats that are as much about disruption and symbolism as direct damage. Dense urban RF conditions make detection harder and public concern higher. Uncoordinated flights near symbolic Canadian architectures have emphasized the need for discrete perimeter verification.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Unauthorized filming, protest activity, nuisance overflights, and drone-borne surveillance of entrances, windows, and security routines.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional tools can be limited by clutter, line-of-sight issues, and the legal sensitivity of deploying active mitigation in dense urban space.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel offers civic operators a passive intelligence layer that supports safer decision-making, lower operational disruption, and a more defensible procurement case for city governments and public agencies.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-04" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Correctional and Restricted Sites (Focus: Canadian Prison Contraband Epidemic)</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Prisons and detention facilities are now one of the clearest proof points for drone-enabled contraband delivery. Correctional Service Canada (CSC) faces an organized challenge as criminal rings deploy multi-rotor drones to bypass high-security walls, bringing severe disruption to yard perimeters.</p>
+        
+        <!-- Stats Row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--red); padding: 16px; border-radius: 6px;">
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--red);">300% Spike</span>
+            <p style="font-size: 12px; color: var(--midgray); margin-top: 4px;">YoY surge in documented nighttime drone drop maneuvers intercepted across federal institutions.</p>
+          </div>
+          <div style="background: rgba(212,175,55,0.1); border: 1px solid var(--gold); padding: 16px; border-radius: 6px;">
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--gold);">$28M+ Budget</span>
+            <p style="font-size: 12px; color: var(--midgray); margin-top: 4px;">Capital allocated by regional authorities for multi-layered perimeter counter-drone systems.</p>
+          </div>
+        </div>
+
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 High-Profile Disruptions &amp; Institutional Impacts</h4>
+            <p style="font-size:13px; color:#fff; margin-bottom: 8px;"><strong>The Kingston Correctional Cluster Incident:</strong> A major coordinated drone smuggling operation targeted multiple maximum-security prisons in the Kingston, Ontario region—notably <strong>Collins Bay Institution</strong>. Payloads holding firearms, narcotics, and communication modifications worth over $100,000 per flight led to extended facility lockdowns and emergency staff updates.</p>
+            <p style="font-size:13px; color:#fff;"><strong>Donnacona Institution Breach:</strong> Frequent drops by modified industrial units engineered to fly through severe cold weather patterns forced immediate infrastructure revisions after contraband distributions led to security threats within the facility yards.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional perimeter security fails because drones completely bypass ground-level arrays. Jamming methods are limited due to nearby municipal zones and strict telecommunication guidelines.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel identifies rogue operators and tracking signatures over perimeter boundaries long before the package payload drops, allowing security staff to respond rapidly.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-05" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Enterprise and Industrial Campuses</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Factories, logistics parks, warehouses, data centers, and large private campuses are becoming routine targets for aerial observation and competitive intelligence collection. Airspace protection is no longer limited to military or airport use cases.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Industrial espionage, perimeter mapping, inventory reconnaissance, surveillance of executives or logistics flows, and opportunistic nuisance flights over sensitive facilities.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional solutions often require too much infrastructure, too much integration work, or too much operator attention to be practical across multiple sites.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel is attractive in this segment because it can scale across distributed facilities, create a common operating picture, and support subscription-style adoption across enterprise portfolios.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-06" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Media and Event Environments</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Broadcast operations, concerts, sports events, and large public gatherings face elevated risk because drones can intrude on live coverage, crowd safety, and temporary event infrastructure. Trends across major venues highlight a growing willingness of authorities to restrict drones when threat levels rise.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Unauthorized filming, distraction of security teams, unsafe proximity to performers or crowds, and intentional disruption of live broadcasts.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional systems are often too slow to deploy, too noisy to operate, or too operationally heavy for temporary venues and fast-moving event schedules.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel gives event operators and media security teams a deployable detection solution that can be brought in quickly, then removed cleanly when the event ends.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-07" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Maritime and Coastal Operations</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Ports, harbors, coastal terminals, offshore assets, and marine logistics corridors are vulnerable because drones can support surveillance, smuggling, and coordination for air-sea hybrid threats. Airspace and maritime security are converging.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Surveillance of port operations, package drops, mapping of harbor layouts, interference with loading activity, and support for broader maritime sabotage campaigns.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional systems often fail because coastal environments combine reflection, clutter, weather complexity, and large coverage areas that are difficult to monitor with one sensor layer.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel offers maritime operators a flexible awareness layer that can support terminals, fuel depots, and offshore-adjacent facilities with earlier warning and better incident intelligence.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-08" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Border and Perimeter Security</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">Border zones, remote crossings, and long perimeters are among the most operationally difficult environments for counter-drone work. Perimeter incidents show how quickly drone responses can become sensitive when active mitigation methods are used near civilian lines.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Transnational reconnaissance, package drops, cross-border surveillance, diversion tactics, and airspace confusion that can affect both law enforcement and commercial traffic.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional solutions are limited because they can be difficult to authorize, easy to overreact with, and risky when they create aviation disruption or misidentification.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel is compelling here because it supports detection-first workflows, early attribution, and scalable monitoring without forcing immediate active engagement.</p>
+        </div>
+      </div>
+
+      <div id="id-sector-09" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">Protective Detail Operations</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">VIP protection, executive movement, convoy security, and temporary close-protection missions need fast, portable counter-drone awareness. A single drone can create a significant operational or reputational event.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Filming of movements, route reconnaissance, distraction over staging areas, and payload delivery near protected persons.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional systems are often too fixed, too slow to stage, or too dependent on large infrastructure to fit protective detail operations.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel is better suited because it can be deployed rapidly, integrated into mobile security planning, and used to support command teams without adding unnecessary complexity.</p>
+        </div>
+      </div>
+
+      <div id="content-sector-10" class="landscape-content-panel">
+        <h3 style="font-size:22px; color:var(--white); margin-bottom:8px;">National Defense and Special Operations</h3>
+        <p style="color:var(--midgray); font-size:14px; margin-bottom:16px;">National security, homeland security, military bases, and special operations environments represent the high-end sector of the counter-drone market. Defense guidelines focus closely on maintaining multi-layered passive detection capabilities to counteract coordinated low-altitude intelligence collection cycles.</p>
+        <div class="solutions-grid-cards">
+          <div class="sol-sub-box">
+            <h4>🔴 Threat Scenarios</h4>
+            <p style="font-size:13px; color:var(--midgray);">Reconnaissance, swarm probing, payload delivery, base mapping, and hostile surveillance of personnel or infrastructure.</p>
+          </div>
+          <div class="sol-sub-box">
+            <h4>⚠️ Legacy Limitations</h4>
+            <p style="font-size:13px; color:var(--midgray);">Conventional systems remain limited because no single sensor or mitigation method is reliable across every mission, and active effects can raise safety, policy, or collateral concerns.</p>
+          </div>
+        </div>
+        <div style="background:rgba(212,175,55,0.05); border:1px solid rgba(212,175,55,0.2); border-radius:6px; padding:20px; margin-top:20px;">
+          <h4 style="color:var(--gold); font-size:14px; margin-bottom:4px;">🛡️ The DefendX AirSentinel™ Advantage</h4>
+          <p style="font-size:13.5px; color:#fff;">AirSentinel gives defense buyers a resilient passive layer that improves early warning, supports layered architectures, and strengthens mission readiness without requiring immediate dependence on disruptive countermeasures.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ██ THREAT STATISTICS BANNER ███████████████████████████████████████ -->
 <!-- <div class="threat-banner" id="threat" aria-label="Key threat statistics">
   <div class="threat-banner-inner container">
@@ -2774,6 +3077,45 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
 <div class="toast-container" id="toastContainer"></div>
 
 <script>
+    
+    // Dynamic Solutions Dynamic Panel Tab Architecture Logic
+    function switchSolutionsTab(event, sectorId) {
+        const activeContainer = event.currentTarget.closest('.landscape-wrapper');
+        
+        // Deactivate all tab keys inside this specific component instance
+        activeContainer.querySelectorAll('.landscape-tab-btn').forEach(btn => btn.classList.remove('active'));
+        // Hide content panes
+        activeContainer.querySelectorAll('.landscape-content-panel').forEach(panel => panel.classList.remove('active'));
+        
+        event.currentTarget.classList.add('active');
+        const TargetPanel = activeContainer.querySelector(`#content-${sectorId}`) || activeContainer.querySelector(`#panel-${sectorId}`);
+        if(TargetPanel) TargetPanel.classList.add('active');
+    }
+
+    // Dynamic Threat Landscape Tab Switching Logic
+    function switchLandscapeTab(event, panelId) {
+        const activeContainer = event.currentTarget.closest('.landscape-wrapper');
+        activeContainer.querySelectorAll('.landscape-tab-btn').forEach(btn => btn.classList.remove('active'));
+        activeContainer.querySelectorAll('.landscape-content-panel').forEach(panel => panel.classList.remove('active'));
+        
+        event.currentTarget.classList.add('active');
+        const targetPanel = document.getElementById(`panel-${panelId}`);
+        if(targetPanel) targetPanel.classList.add('active');
+    }
+
+    // Dropdown solution link jump helper
+    function jumpToSolutionSector(sectorId) {
+        closeMobileMenu();
+        const matrixSection = document.getElementById('solutions-matrix-section');
+        if(matrixSection) {
+            matrixSection.scrollIntoView({ behavior: 'smooth' });
+            // Simulate button click to switch tab
+            const targetBtn = document.getElementById(`tab-${sectorId}`);
+            if(targetBtn) {
+                targetBtn.click();
+            }
+        }
+    }
     // Intersection Observer for scroll animations
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { 
