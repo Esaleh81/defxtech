@@ -3266,10 +3266,10 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
     }
     function jumpToFirstLandscapeTab() {
     // 1. Programmatically trigger the switch tab mechanism for the first item
-    switchLandscapeTab(null, 'uav-threat');
+    switchLandscapeTab(event, 'uav-threat');
     
     // 2. Locate the parent section container to scroll the user to the right view area 'threat-landscape-section'
-    const targetSection = document.getElementById('uav-threat1');
+    const targetSection = document.getElementById('threat-landscape-section');
     if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     }
