@@ -2045,7 +2045,7 @@
     <div class="landscape-wrapper">
       <!-- Tab Navigation Sidebar -->
       <div class="landscape-tabs" role="tablist" aria-label="Threat Landscape Navigation">
-        <button class="landscape-tab-btn active" onclick="switchLandscapeTab(event, 'uav-threat')" role="tab" aria-selected="true" aria-controls="panel-uav-threat">
+        <button class="landscape-tab-btn active" id="uav-threat1" onclick="switchLandscapeTab(event, 'uav-threat')" role="tab" aria-selected="true" aria-controls="panel-uav-threat">
           <span>The Drone Threat</span>
           <span class="arrow-indicator">›</span>
         </button>
@@ -3268,8 +3268,8 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
     // 1. Programmatically trigger the switch tab mechanism for the first item
     switchLandscapeTab(null, 'uav-threat');
     
-    // 2. Locate the parent section container to scroll the user to the right view area
-    const targetSection = document.getElementById('threat-landscape-section');
+    // 2. Locate the parent section container to scroll the user to the right view area 'threat-landscape-section'
+    const targetSection = document.getElementById('uav-threat1');
     if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     }
