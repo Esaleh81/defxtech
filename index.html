@@ -1531,7 +1531,7 @@
             <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="nav-dropdown">
-            <a href="#uab-threat1" onclick="closeMobileMenu();jumpToFirstLandscapeTab();">Airspace Risk Architecture</a>
+            <a href="#uab-threat" onclick="closeMobileMenu();jumpToFirstLandscapeTab();">Airspace Risk Architecture</a>
             <a href="#comparison" onclick="closeMobileMenu()">Vulnerability Assessment</a>
           </div>
         </div>
@@ -2045,7 +2045,7 @@
     <div class="landscape-wrapper">
       <!-- Tab Navigation Sidebar -->
       <div class="landscape-tabs" role="tablist" aria-label="Threat Landscape Navigation">
-        <button class="landscape-tab-btn active" id="uav-threat1" onclick="switchLandscapeTab(event, 'uav-threat')" role="tab" aria-selected="true" aria-controls="panel-uav-threat">
+        <button class="landscape-tab-btn active"  onclick="switchLandscapeTab(event, 'uav-threat')" role="tab" aria-selected="true" aria-controls="panel-uav-threat">
           <span>The Drone Threat</span>
           <span class="arrow-indicator">›</span>
         </button>
@@ -3266,7 +3266,7 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
     }
     function jumpToFirstLandscapeTab() {
     // 1. Programmatically trigger the switch tab mechanism for the first item
-    switchLandscapeTab(event, 'uav-threat');
+    switchLandscapeTab(null, 'uav-threat');
     
     // 2. Locate the parent section container to scroll the user to the right view area 'threat-landscape-section'
     const targetSection = document.getElementById('threat-landscape-section');
