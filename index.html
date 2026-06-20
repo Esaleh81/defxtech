@@ -1505,6 +1505,213 @@
             font-size: 1.25rem;
             flex-shrink: 0;
         }
+
+         <!-- INDUSTRIES SECTION START -->   
+.industries-section {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    padding: 80px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.industries-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.section-header .subtitle {
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    margin: 10px 0 15px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.section-header .section-desc {
+    color: var(--text-muted);
+    max-width: 700px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Layout Framework */
+.segmentation-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Left Nav Column */
+.verticals-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.segment-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+}
+
+.segment-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.segment-card.active {
+    border-color: var(--accent-blue);
+    background: linear-gradient(90deg, #17223b 0%, var(--card-bg) 100%);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.badge.tier-1 { background: rgba(239, 68, 68, 0.15); color: var(--tier-1-color); }
+.badge.tier-2 { background: rgba(245, 158, 11, 0.15); color: var(--tier-2-color); }
+.badge.tier-3 { background: rgba(16, 185, 129, 0.15); color: var(--tier-3-color); }
+
+.urgency {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.urgency.urgent { color: var(--tier-1-color); }
+.urgency.high { color: var(--tier-2-color); }
+.urgency.mod { color: var(--tier-3-color); }
+
+.segment-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 8px 0;
+    color: var(--text-main);
+}
+
+.segment-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Right Content Display Box */
+.segment-display {
+    background: #0e1422;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    min-height: 500px;
+    position: sticky;
+    top: 40px;
+}
+
+.display-panel {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.display-panel.active {
+    display: block;
+}
+
+.panel-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.panel-tier {
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.panel-header h2 {
+    font-size: 1.8rem;
+    margin: 5px 0 0 0;
+    font-weight: 700;
+}
+
+.panel-body .info-block {
+    margin-bottom: 20px;
+}
+
+.panel-body h4 {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+}
+
+.panel-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #d1d5db;
+}
+
+.panel-body blockquote {
+    margin: 30px 0 0 0;
+    background: rgba(37, 99, 235, 0.08);
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.panel-body blockquote strong {
+    color: var(--accent-blue);
+    display: block;
+    margin-bottom: 4px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+    .segmentation-layout {
+        grid-template-columns: 1fr;
+    }
+    .segment-display {
+        position: relative;
+        top: 0;
+        padding: 25px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1565,32 +1772,21 @@
             <a href="#sector-10" onclick="jumpToSolutionSector('sector-10')">National Defense and Special Operations</a>
           </div>
         </div>
-        <!-- <div class="nav-item" role="none">
+      <div class="nav-item" role="none">
           <div class="nav-link" role="menuitem" tabindex="0" onclick="toggleDropdown(this)">
-            Solutions
+            Industries
             <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="nav-dropdown">
-            <a href="#Systems" onclick="closeMobileMenu()">Solutions by Sector</a>
-            <a href="#Systems" onclick="closeMobileMenu()">System Integration &amp; API</a>
-            <a href="#Systems" onclick="closeMobileMenu()">Deployment Configurations</a>
-            <a href="#Systems" onclick="closeMobileMenu()">Monitoring-as-a-Service (MaaS)</a>
+               <a href="#industries-segmentation" onclick="triggerSegmentMenu('corrections')">Correctional Facilities</a>
+                <a href="#industries-segmentation" onclick="triggerSegmentMenu('aviation')">Aviation & Mobility Hubs</a>
+                <a href="#industries-segmentation" onclick="triggerSegmentMenu('stadiums')">Stadiums & Mass Gatherings</a>
+                <a href="#industries-segmentation" onclick="triggerSegmentMenu('utilities')">Energy & Infrastructure</a>
+                <a href="#industries-segmentation" onclick="triggerSegmentMenu('government')">Government & Diplomatic</a>
+                 <a href="#industries-segmentation" onclick="triggerSegmentMenu('defense')">Defense & Logistics</a>
           </div>
-        </div> -->
+        </div>  
 
-        <div class="nav-item" role="none">
-          <div class="nav-link" role="menuitem" tabindex="0" onclick="toggleDropdown(this)">
-            Systems
-            <svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="nav-dropdown">
-            <a href="#Systems" onclick="closeMobileMenu()">Airports &amp; Aviation Hubs</a>
-            <a href="#Systems" onclick="closeMobileMenu()">Correctional Facilities</a>
-            <a href="#Systems" onclick="closeMobileMenu()">Utilities &amp; Hydro Grid</a>
-            <a href="#Systems" onclick="closeMobileMenu()">Stadiums &amp; Mass Gatherings</a>
-            <a href="#Systems" onclick="closeMobileMenu()">Border &amp; Maritime Security</a>
-          </div>
-        </div>
 
         <div class="nav-item" role="none">
           <div class="nav-link" role="menuitem" tabindex="0" onclick="toggleDropdown(this)">
@@ -2031,7 +2227,175 @@
     </div>
   </div>
 </div> -->
+    
+<!-- INDUSTRIES DYNAMIC GRID SECTION -->
+<section id="industries-segmentation" class="industries-section">
+    <div class="container">
+        
+        <div class="section-header">
+            <span class="subtitle">Market Segmentation</span>
+            <h2>AirSentinel™ Deployment Prioritization Matrix</h2>
+            <p class="section-desc">Target verticals ranked by economic urgency, revenue potential, and operational alignment for sovereign airspace intelligence.</p>
+        </div>
 
+        <div class="segmentation-layout">
+            
+            <!-- Left Side: Interactive Navigation Cards (The 6 Items) -->
+            <div class="verticals-nav" role="tablist" aria-label="Market Segments">
+                
+                <button id="card-corrections" class="segment-card active" onclick="switchSegment(event, 'corrections')" role="tab" aria-selected="true" aria-controls="panel-corrections">
+                    <div class="card-meta">
+                        <span class="badge tier-1">Priority Tier 1</span>
+                        <span class="urgency urgent">Critical Urgency</span>
+                    </div>
+                    <h3>1. Correctional Facilities</h3>
+                    <p>Preventing automated contraband delivery and perimeter breaches.</p>
+                </button>
+
+                <button id="card-aviation" class="segment-card" onclick="switchSegment(event, 'aviation')" role="tab" aria-selected="false" aria-controls="panel-aviation">
+                    <div class="card-meta">
+                        <span class="badge tier-1">Priority Tier 1</span>
+                        <span class="urgency urgent">Critical Urgency</span>
+                    </div>
+                    <h3>2. Aviation & Mobility Hubs</h3>
+                    <p>Securing flight corridors and active runways from grounding delays.</p>
+                </button>
+
+                <button id="card-stadiums" class="segment-card" onclick="switchSegment(event, 'stadiums')" role="tab" aria-selected="false" aria-controls="panel-stadiums">
+                    <div class="card-meta">
+                        <span class="badge tier-2">Priority Tier 2</span>
+                        <span class="urgency high">High Urgency</span>
+                    </div>
+                    <h3>3. Stadiums & Mass Gatherings</h3>
+                    <p>Protecting commercial airspaces, live broadcasts, and large crowds.</p>
+                </button>
+
+                <button id="card-utilities" class="segment-card" onclick="switchSegment(event, 'utilities')" role="tab" aria-selected="false" aria-controls="panel-utilities">
+                    <div class="card-meta">
+                        <span class="badge tier-2">Priority Tier 2</span>
+                        <span class="urgency high">High Urgency</span>
+                    </div>
+                    <h3>4. Energy & Critical Infrastructure</h3>
+                    <p>Defending remote power grids, nuclear facilities, and refineries.</p>
+                </button>
+
+                <button id="card-government" class="segment-card" onclick="switchSegment(event, 'government')" role="tab" aria-selected="false" aria-controls="panel-government">
+                    <div class="card-meta">
+                        <span class="badge tier-2">Priority Tier 2</span>
+                        <span class="urgency high">High Urgency</span>
+                    </div>
+                    <h3>5. Government & Diplomatic Sites</h3>
+                    <p>Mitigating urban corporate espionage and tactical drone tracking.</p>
+                </button>
+
+                <button id="card-defense" class="segment-card" onclick="switchSegment(event, 'defense')" role="tab" aria-selected="false" aria-controls="panel-defense">
+                    <div class="card-meta">
+                        <span class="badge tier-3">Priority Tier 3</span>
+                        <span class="urgency mod">Strategic Growth</span>
+                    </div>
+                    <h3>6. Defense & Military Logistics</h3>
+                    <p>Integrating zero-emission sensors into tactical defense networks.</p>
+                </button>
+
+            </div>
+
+            <!-- Right Side: Dynamic Information Panels -->
+            <div class="segment-display">
+                
+                <!-- Panel 1: Corrections -->
+                <div id="panel-corrections" class="display-panel active" role="tabpanel">
+                    <div class="panel-header">
+                        <span class="panel-tier">Priority Tier 1: Immediate Urgency</span>
+                        <h2>Correctional Facilities & Justice Infrastructure</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-block"><h4>Who Buys</h4><p>Federal and state/provincial corrections procurement boards, institutional wardens, and enterprise perimeter infrastructure security directors.</p></div>
+                        <div class="info-block"><h4>Why They Buy</h4><p>To eliminate the immediate financial, legal, and operational risks of automated contraband delivery systems bypassing traditional physical walls.</p></div>
+                        <div class="info-block"><h4>Operational Context</h4><p>Continuous, low-altitude perimeter monitoring across small geographic boundaries. The edge-AI platform filters out regular urban background noise to track delivery drones instantly.</p></div>
+                        <div class="info-block"><h4>Commercialization Model</h4><p>High-margin, highly repeatable regional contracts. Generated through hardware sales or multi-year Perimeter-Security-as-a-Service (PSaaS) leases, combined with recurring software subscription fees.</p></div>
+                        <blockquote><strong>Best Fit:</strong> This platform is ideal for correctional facilities facing active perimeter breaches that need to intercept illegal drone drops without disrupting local institutional communications.</blockquote>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Aviation -->
+                <div id="panel-aviation" class="display-panel" role="tabpanel">
+                    <div class="panel-header">
+                        <span class="panel-tier">Priority Tier 1: Immediate Urgency</span>
+                        <h2>Aviation & Public Mobility Hubs</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-block"><h4>Who Buys</h4><p>Airport authorities, tier-1 commercial aviation safety directors, and national transportation safety regulators.</p></div>
+                        <div class="info-block"><h4>Why They Buy</h4><p>To avoid massive financial losses from ground delays, flight diversions, and catastrophic mid-air collisions caused by unauthorized drone activity in restricted airspace.</p></div>
+                        <div class="info-block"><h4>Operational Context</h4><p>Wide-area monitoring across active runways, flight paths, and approach corridors. The system operates completely passively to ensure zero interference with critical airport radar or navigation.</p></div>
+                        <div class="info-block"><h4>Commercialization Model</h4><p>Multi-million dollar enterprise capital expenditure (CapEx) contracts or multi-year software-as-a-service (SaaS) frameworks that shorten integration timelines from years to weeks.</p></div>
+                        <blockquote><strong>Best Fit:</strong> This platform is ideal for major commercial airports that require continuous, long-range drone monitoring without risking interference with active flight systems.</blockquote>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Stadiums -->
+                <div id="panel-stadiums" class="display-panel" role="tabpanel">
+                    <div class="panel-header">
+                        <span class="panel-tier">Priority Tier 2: High Commercial Potential</span>
+                        <h2>Stadiums, Arenas, & Large-Scale Mass Gatherings</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-block"><h4>Who Buys</h4><p>Vice Presidents of Venue Operations, Stadium Security Directors, and Executive Producers of major public events and high-value sports broadcasts.</p></div>
+                        <div class="info-block"><h4>Why They Buy</h4><p>To safeguard packed stadium crowds from airborne physical threats, prevent unauthorized event filming, and eliminate the risk of an unapproved drone grounding a high-value live broadcast.</p></div>
+                        <div class="info-block"><h4>Operational Context</h4><p>High-density RF environments during event days. The system accurately filters out urban noise to isolate unauthorized drone control signals instantly without disrupting venue communications.</p></div>
+                        <div class="info-block"><h4>Commercialization Model</h4><p>A lucrative mix of permanent venue infrastructure integration and predictable, high-margin, event-based equipment leasing models (Mitigation-as-a-Service / MaaS).</p></div>
+                        <blockquote><strong>Best Fit:</strong> This platform is ideal for high-capacity entertainment and sports venues that require immediate, low-false-alarm drone tracking across dense, RF-heavy metropolitan crowds.</blockquote>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Utilities -->
+                <div id="panel-utilities" class="display-panel" role="tabpanel">
+                    <div class="panel-header">
+                        <span class="panel-tier">Priority Tier 2: High Commercial Potential</span>
+                        <h2>Energy, Utilities, & Nuclear Infrastructure</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-block"><h4>Who Buys</h4><p>Corporate security heads, chief risk officers, and critical infrastructure protection teams at power stations, refineries, and water treatment plants.</p></div>
+                        <div class="info-block"><h4>Why They Buy</h4><p>To defend against corporate espionage, physical damage to critical machinery, and intentional drops of hazardous payloads that can compromise public safety grids.</p></div>
+                        <div class="info-block"><h4>Operational Context</h4><p>Remote, rugged, and hazardous environments that require durable equipment able to withstand harsh weather while covering vast asset footprints.</p></div>
+                        <div class="info-block"><h4>Commercialization Model</h4><p>Significant multi-site expansion opportunities across entire national asset networks. Low-power edge compute units run entirely on off-grid solar arrays to lower physical infrastructure costs.</p></div>
+                        <blockquote><strong>Best Fit:</strong> This platform is ideal for remote energy and utility facilities that require rugged, low-maintenance drone detection capable of operating reliably in harsh environments.</blockquote>
+                    </div>
+                </div>
+
+                <!-- Panel 5: Government -->
+                <div id="panel-government" class="display-panel" role="tabpanel">
+                    <div class="panel-header">
+                        <span class="panel-tier">Priority Tier 2: High Commercial Potential</span>
+                        <h2>Government Buildings, Diplomatic Sites, & High-Profile Facilities</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-block"><h4>Who Buys</h4><p>Federal building management services, diplomatic security teams, and national law enforcement agencies.</p></div>
+                        <div class="info-block"><h4>Why They Buy</h4><p>To protect leadership personnel, classified meetings, and foreign embassies from targeted surveillance, electronic eavesdropping, and airborne perimeter violations.</p></div>
+                        <div class="info-block"><h4>Operational Context</h4><p>Dense city environments packed with heavy background radio interference, demanding highly accurate signal filtering to prevent false alarms.</p></div>
+                        <div class="info-block"><h4>Commercialization Model</h4><p>Highly stable, long-term government contracts backed by steady annual maintenance allocations. Processes all signal data directly at the edge to ensure maximum security protocol compliance.</p></div>
+                        <blockquote><strong>Best Fit:</strong> This platform is ideal for high-security government and diplomatic facilities that require discrete, passive threat detection within complex city environments.</blockquote>
+                    </div>
+                </div>
+
+                <!-- Panel 6: Defense -->
+                <div id="panel-defense" class="display-panel" role="tabpanel">
+                    <div class="panel-header">
+                        <span class="panel-tier">Priority Tier 3: Strategic Long-Term Expansion</span>
+                        <h2>Defense Contractors & Military Logistics Centers</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="info-block"><h4>Who Buys</h4><p>Base defense commanders, military logistics operators, and defense prime integrators.</p></div>
+                        <div class="info-block"><h4>Why They Buy</h4><p>To secure supply depots, training grounds, and tactical staging areas against hostile drone surveillance and unexpected air attacks.</p></div>
+                        <div class="info-block"><h4>Operational Context</h4><p>Must integrate smoothly with broader tactical military command systems (such as forward area air defense networks) and adapt to mobile deployments.</p></div>
+                        <div class="info-block"><h4>Commercialization Model</h4><p>Massive, multi-year programmatic procurement volume. Zero-emission passive operation prevents adversaries from tracking the system using electronic warfare counter-measures.</p></div>
+                        <blockquote><strong>Best Fit:</strong> This platform is ideal for forward logistics hubs and military bases that need a light, zero-emission sensor footprint to plug into broader defense networks.</blockquote>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ██ DEEP DIVE INTERACTIVE THREAT LANDSCAPE SECTION ██████████████████ -->
 <section class="section section-alt" id="threat-landscape-section">
   <div class="container">
@@ -2278,77 +2642,6 @@
   </div>
 </section>
 
-<!-- ██ INDUSTRIES / SYSTEMS ████████████████████████████████████████████ -->
-<section class="section section-dark" id="Systems">
-  <div class="container">
-    <div class="sec-header">
-      <span class="label label-light">Systems</span>
-      <h2 class="sec-title sec-title-light">Every Environment Where Airspace Matters</h2>
-      <div class="divider"></div>
-      <p class="sec-sub sec-sub-light">Our passive, edge-autonomous architecture is uniquely positioned to serve critical infrastructure security networks under strict regulatory oversight.</p>
-    </div>
-    <div class="grid-3 reveal" style="align-items: center;">
-      <!-- Col 1 -->
-      <div>
-        <div class="industry-card">
-          <div class="industry-card-inner">
-            <div class="ind-icon">✈️</div>
-            <h3>Airports &amp; Aviation</h3>
-            <p>Perimeter monitoring without aviation signal interference. Protects civilian aviation hubs from sudden incursion-triggered ground stops and massive operational liabilities.</p>
-            <!-- <div class="ind-arrow">→</div> -->
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-card-inner">
-            <div class="ind-icon">🏛️</div>
-            <h3>Correctional Institutions</h3>
-            <p>Passive, fence-line sensor meshes easily deployed where active jamming hardware is restricted. Mitigates high-volume automated contraband vectors.</p>
-            <!-- <div class="ind-arrow">→</div> -->
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-card-inner">
-            <div class="ind-icon">⚡</div>
-            <h3>Critical Infrastructure &amp; Industries</h3>
-            <p>Continuous monitoring arrays for power substations, cross-country pipelines, and remote refineries, providing non-stop protection along linear assets.</p>
-            <!-- <div class="ind-arrow">→</div> -->
-          </div>
-        </div>
-      </div>
-      <!-- Col 2 -->
-      <div>
-        <div class="industry-card">
-          <div class="industry-card-inner">
-            <div class="ind-icon">🛡️</div>
-            <h3>National Defence &amp; Law Enforcement</h3>
-            <p>Secure, domestic technology that complies fully with rigorous security criteria for national protection nodes, command posts, and temporary operations centers.</p>
-            <!-- <div class="ind-arrow">→</div> -->
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-card-inner">
-            <div class="ind-icon">🗺️</div>
-            <h3>Border &amp; Maritime Security</h3>
-            <p>Persistent passive surveillance across dynamic international borders, detecting unmapped, modified custom pathways and smuggling patterns.</p>
-            <!-- <div class="ind-arrow">→</div> -->
-          </div>
-        </div>
-        <div class="industry-card">
-          <div class="industry-card-inner">
-            <div class="ind-icon">🏟️</div>
-            <h3>Events &amp; Venue Security</h3>
-            <p>Rapid-deployment kits for stadium security coordinators. It minimizes on-site operational footprints and feeds immediate alert telemetry to local dispatch teams.</p>
-            <!-- <div class="ind-arrow">→</div> -->
-          </div>
-        </div>
-      </div>
-      <!-- Col 3: Visual asset space -->
-      <div style="display:flex; justify-content:center; align-items:center;">
-        <img src="problem.jpg" alt="Airspace Threat Vector Mapping" style="width:100%; max-width: 320px; height:auto; border-radius:8px; border:1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5)">
-      </div>
-    </div>
-  </div>
-</section>
 
     <!-- ██ WHY DEFENDX (DIFFERENTIATION) ████████████████████████████████ -->
 <section class="section" id="why" style="padding: 60px 0; overflow: hidden; width: 100%; box-sizing: border-box;">
@@ -3272,6 +3565,55 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
     const targetSection = document.getElementById('threat-landscape-section');
     if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+    // Industries functions
+    function switchSegment(event, segmentId) {
+    // 1. Prevent default event bubbling actions
+    event.preventDefault();
+
+    // 2. Fetch DOM elements inside the segmentation context
+    const navContainer = event.currentTarget.parentElement;
+    const layoutContainer = navContainer.parentElement;
+    
+    // 3. Deactivate all navigation cards
+    const cards = navContainer.querySelectorAll('.segment-card');
+    cards.forEach(card => {
+        card.classList.remove('active');
+        card.setAttribute('aria-selected', 'false');
+    });
+
+    // 4. Hide all active detail panels
+    const panels = layoutContainer.querySelectorAll('.display-panel');
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    });
+
+    // 5. Activate selected element and update accessibility properties
+    const selectedCard = event.currentTarget;
+    selectedCard.classList.add('active');
+    selectedCard.setAttribute('aria-selected', 'true');
+
+    // 6. Reveal target information panel
+    const targetPanel = layoutContainer.querySelector(`#panel-${segmentId}`);
+    if (targetPanel) {
+        targetPanel.classList.add('active');
+    }
+}
+// This function bridges your main header dropdown to the tab layout below
+function triggerSegmentMenu(segmentId) {
+    // Find the specific button card element down on the page grid
+    const targetCard = document.getElementById(`card-${segmentId}`);
+    
+    if (targetCard) {
+        // Trigger a native click event to fire the existing switchSegment function
+        targetCard.click();
+        
+        // Optional: Smoothly scroll down the page directly to the grid display area
+        document.getElementById('industries-segmentation').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
     }
 }
 </script>
