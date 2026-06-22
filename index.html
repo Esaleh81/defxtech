@@ -1882,8 +1882,31 @@
           
       </div>
 
+        <!-- Right Visual Airspace Simulator Dashboard -->
+<div class="sim-control-panel reveal">
+   <!-- Removed 'loop' attribute so JavaScript can catch the 'ended' event -->
+   <video id="hero-video-player" autoplay muted playsinline preload="auto"
+          style="
+              width:100%;
+              display:block;
+              border-radius:12px;
+              box-shadow:0 8px 30px rgba(0,0,0,0.35);
+          ">
+       <source src="bandx.mp4" type="video/mp4">
+   </video>
+   
+   <img src="segments.jpeg" alt="AirSentinel Platform Display" 
+        style="
+            width: 100%; 
+            display: block; 
+            margin-top: 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+        ">
+</div>
+        
       <!-- Right Visual Airspace Simulator Dashboard -->
-      <div class="sim-control-panel reveal">
+      <!-- <div class="sim-control-panel reveal">
          <video autoplay muted loop playsinline preload="auto"
                 style="
                    width:100%;
@@ -1901,7 +1924,7 @@
                  border-radius: 12px; 
                  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
               ">
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -3898,54 +3921,34 @@ function triggerSegmentMenu(navKeyId) {
         }
     }, 150);
 }
+document.addEventListener('DOMContentLoaded', function () {
+    const videoPlayer = document.getElementById('hero-video-player');
     
-//     function switchSegment(event, segmentId) {
-//     // 1. Prevent default event bubbling actions
-//     event.preventDefault();
-
-//     // 2. Fetch DOM elements inside the segmentation context
-//     const navContainer = event.currentTarget.parentElement;
-//     const layoutContainer = navContainer.parentElement;
+    // Define your video playlist in order
+    const playlist = [
+        "bandx.mp4",
+        "second-video.mp4" // <-- Replace with your second video file name
+    ];
     
-//     // 3. Deactivate all navigation cards
-//     const cards = navContainer.querySelectorAll('.segment-card');
-//     cards.forEach(card => {
-//         card.classList.remove('active');
-//         card.setAttribute('aria-selected', 'false');
-//     });
+    let currentTrack = 0;
 
-//     // 4. Hide all active detail panels
-//     const panels = layoutContainer.querySelectorAll('.display-panel');
-//     panels.forEach(panel => {
-//         panel.classList.remove('active');
-//     });
+    if (videoPlayer) {
+        videoPlayer.addEventListener('ended', function () {
+            // Increment track counter, wrap back around to 0 if it reaches the end
+            currentTrack = (currentTrack + 1) % playlist.length;
+            
+            // Update the source file path
+            videoPlayer.src = playlist[currentTrack];
+            
+            // Load and play the newly queued video track
+            videoPlayer.load();
+            videoPlayer.play().catch(error => {
+                console.log("Autoplay context blocked or interrupted: ", error);
+            });
+        });
+    }
+});    
 
-//     // 5. Activate selected element and update accessibility properties
-//     const selectedCard = event.currentTarget;
-//     selectedCard.classList.add('active');
-//     selectedCard.setAttribute('aria-selected', 'true');
-
-//     // 6. Reveal target information panel
-//     const targetPanel = layoutContainer.querySelector(`#panel-${segmentId}`);
-//     if (targetPanel) {
-//         targetPanel.classList.add('active');
-//     }
-// }
-// // This function bridges your main header dropdown to the tab layout below
-// function triggerSegmentMenu(segmentId) {
-//     // Find the specific button card element down on the page grid
-//     const targetCard = document.getElementById(`card-${segmentId}`);
-    
-//     if (targetCard) {
-//         // Trigger a native click event to fire the existing switchSegment function
-//         targetCard.click();
-        
-//         // Optional: Smoothly scroll down the page directly to the grid display area
-//         document.getElementById('industries-segmentation').scrollIntoView({ 
-//             behavior: 'smooth' 
-//         });
-//     }
-// }
 </script>
 </body>
 </html>
