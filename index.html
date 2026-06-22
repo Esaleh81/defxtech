@@ -3922,61 +3922,27 @@ function triggerSegmentMenu(navKeyId) {
     }, 150);
 }
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const videoPlayer = document.getElementById('hero-video-player');
-    
-//     // Define your video playlist in order
-//     const playlist = [
-//         "video2.mp4",
-//         "bandx.mp4"
-//     ];
-    
-//     // Set track index based on the video currently playing in the HTML structure
-//     let currentTrack = 0;
-//     if (videoPlayer) {
-//         const currentSrc = videoPlayer.currentSrc || videoPlayer.src;
-//         if (currentSrc) {
-//             const currentFileName = currentSrc.split('/').pop();
-//             const matchedIndex = playlist.indexOf(currentFileName);
-//             if (matchedIndex !== -1) {
-//                 currentTrack = matchedIndex;
-//             }
-//         }
-//     }
-
-//     if (videoPlayer) {
-//         videoPlayer.addEventListener('ended', function () {
-//             // Increment track counter, wrap back around to 0 if it reaches the end
-//             currentTrack = (currentTrack + 1) % playlist.length;
-            
-//             // Update the source file path
-//             videoPlayer.src = playlist[currentTrack];
-            
-//             // Wait for the specific new file data to switch before playing
-//             videoPlayer.onloadedmetadata = function() {
-//                 videoPlayer.play().catch(error => {
-//                     console.log("Playback engine waiting for interaction context: ", error);
-//                 });
-//                 // Clear the temporary handler to prevent unintended fire loops
-//                 videoPlayer.onloadedmetadata = null;
-//             };
-            
-//             videoPlayer.load();
-//         });
-//     }
-// });
-    
 document.addEventListener('DOMContentLoaded', function () {
     const videoPlayer = document.getElementById('hero-video-player');
     
     // Define your video playlist in order
     const playlist = [
-       "video2.mp4",
+        "video2.mp4",
         "bandx.mp4"
-         // <-- Replace with your second video file name
     ];
     
+    // Set track index based on the video currently playing in the HTML structure
     let currentTrack = 0;
+    if (videoPlayer) {
+        const currentSrc = videoPlayer.currentSrc || videoPlayer.src;
+        if (currentSrc) {
+            const currentFileName = currentSrc.split('/').pop();
+            const matchedIndex = playlist.indexOf(currentFileName);
+            if (matchedIndex !== -1) {
+                currentTrack = matchedIndex;
+            }
+        }
+    }
 
     if (videoPlayer) {
         videoPlayer.addEventListener('ended', function () {
@@ -3986,14 +3952,48 @@ document.addEventListener('DOMContentLoaded', function () {
             // Update the source file path
             videoPlayer.src = playlist[currentTrack];
             
-            // Load and play the newly queued video track
+            // Wait for the specific new file data to switch before playing
+            videoPlayer.onloadedmetadata = function() {
+                videoPlayer.play().catch(error => {
+                    console.log("Playback engine waiting for interaction context: ", error);
+                });
+                // Clear the temporary handler to prevent unintended fire loops
+                videoPlayer.onloadedmetadata = null;
+            };
+            
             videoPlayer.load();
-            videoPlayer.play().catch(error => {
-                console.log("Autoplay context blocked or interrupted: ", error);
-            });
         });
     }
-});    
+});
+    
+// document.addEventListener('DOMContentLoaded', function () {
+//     const videoPlayer = document.getElementById('hero-video-player');
+    
+//     // Define your video playlist in order
+//     const playlist = [
+//        "video2.mp4",
+//         "bandx.mp4"
+//          // <-- Replace with your second video file name
+//     ];
+    
+//     let currentTrack = 0;
+
+//     if (videoPlayer) {
+//         videoPlayer.addEventListener('ended', function () {
+//             // Increment track counter, wrap back around to 0 if it reaches the end
+//             currentTrack = (currentTrack + 1) % playlist.length;
+            
+//             // Update the source file path
+//             videoPlayer.src = playlist[currentTrack];
+            
+//             // Load and play the newly queued video track
+//             videoPlayer.load();
+//             videoPlayer.play().catch(error => {
+//                 console.log("Autoplay context blocked or interrupted: ", error);
+//             });
+//         });
+//     }
+// });    
 
 </script>
 </body>
