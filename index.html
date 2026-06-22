@@ -3918,71 +3918,84 @@ function triggerSegmentMenu(navKeyId) {
     }, 150);
 }
 
-
- document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const playerA = document.getElementById('player-a');
     const playerB = document.getElementById('player-b');
     
     const playlist = ["video2.mp4", "bandx.mp4"];
-    let nextTrackIndex = 1; // The index of the video waiting in the background
+    let nextTrackIndex = 1; 
 
     function swapVideos(activePlayer, bufferPlayer) {
-        // 1. Start the background player immediately
+        // 1. Play the standby background player from the exact beginning
+        bufferPlayer.currentTime = 0;
+        
         bufferPlayer.play().then(() => {
-            // 2. Crossfade: Bring buffer to front, hide the old active player
+            // 2. Perform the visual crossfade
             bufferPlayer.style.opacity = "1";
             activePlayer.style.opacity = "0";
 
-            // 3. Prepare the old player for the NEXT transition
+            // 3. CRITICAL: Pause the old active player so it stops running in the background
+            activePlayer.pause();
+
+            // 4. Wait for the 0.3s CSS opacity transition to fully finish 
+            // before changing the source. This prevents frame skipping.
             setTimeout(() => {
-                // Determine what the next video after this one should be
                 nextTrackIndex = (nextTrackIndex + 1) % playlist.length;
                 activePlayer.src = playlist[nextTrackIndex];
                 activePlayer.load();
-            }, 500); // Small delay to ensure the swap is finished visually
+            }, 350); 
+            
+        }).catch(error => {
+            console.log("Playback transition alignment error: ", error);
         });
     }
 
-    // Listener for Player A
-    playerA.addEventListener('ended', function() {
-        swapVideos(playerA, playerB);
-    });
+    if (playerA && playerB) {
+        playerA.addEventListener('ended', function() {
+            swapVideos(playerA, playerB);
+        });
 
-    // Listener for Player B
-    playerB.addEventListener('ended', function() {
-        swapVideos(playerB, playerA);
-    });
+        playerB.addEventListener('ended', function() {
+            swapVideos(playerB, playerA);
+        });
+    }
 });
     
-// document.addEventListener('DOMContentLoaded', function () {
-//     const videoPlayer = document.getElementById('hero-video-player');
+//  document.addEventListener('DOMContentLoaded', function () {
+//     const playerA = document.getElementById('player-a');
+//     const playerB = document.getElementById('player-b');
     
-//     // Define your video playlist in order
-//     const playlist = [
-//        "video2.mp4",
-//         "bandx.mp4"
-//          // <-- Replace with your second video file name
-//     ];
-    
-//     let currentTrack = 0;
+//     const playlist = ["video2.mp4", "bandx.mp4"];
+//     let nextTrackIndex = 1; // The index of the video waiting in the background
 
-//     if (videoPlayer) {
-//         videoPlayer.addEventListener('ended', function () {
-//             // Increment track counter, wrap back around to 0 if it reaches the end
-//             currentTrack = (currentTrack + 1) % playlist.length;
-            
-//             // Update the source file path
-//             videoPlayer.src = playlist[currentTrack];
-            
-//             // Load and play the newly queued video track
-//             videoPlayer.load();
-//             videoPlayer.play().catch(error => {
-//                 console.log("Autoplay context blocked or interrupted: ", error);
-//             });
+//     function swapVideos(activePlayer, bufferPlayer) {
+//         // 1. Start the background player immediately
+//         bufferPlayer.play().then(() => {
+//             // 2. Crossfade: Bring buffer to front, hide the old active player
+//             bufferPlayer.style.opacity = "1";
+//             activePlayer.style.opacity = "0";
+
+//             // 3. Prepare the old player for the NEXT transition
+//             setTimeout(() => {
+//                 // Determine what the next video after this one should be
+//                 nextTrackIndex = (nextTrackIndex + 1) % playlist.length;
+//                 activePlayer.src = playlist[nextTrackIndex];
+//                 activePlayer.load();
+//             }, 500); // Small delay to ensure the swap is finished visually
 //         });
 //     }
-// });    
 
+//     // Listener for Player A
+//     playerA.addEventListener('ended', function() {
+//         swapVideos(playerA, playerB);
+//     });
+
+//     // Listener for Player B
+//     playerB.addEventListener('ended', function() {
+//         swapVideos(playerB, playerA);
+//     });
+// });
+    
 </script>
 </body>
 </html>
