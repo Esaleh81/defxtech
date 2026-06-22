@@ -1883,27 +1883,23 @@
       </div>
 
         <!-- Right Visual Airspace Simulator Dashboard -->
-<div class="sim-control-panel reveal">
-   <!-- Removed 'loop' attribute so JavaScript can catch the 'ended' event -->
-   <video id="hero-video-player" autoplay muted playsinline preload="auto"
-          style="
-              width:100%;
-              display:block;
-              border-radius:12px;
-              box-shadow:0 8px 30px rgba(0,0,0,0.35);
-          ">
-       <source src="video2.mp4" type="video/mp4">
-   </video>
-   
-   <img src="segments.jpeg" alt="AirSentinel Platform Display" 
-        style="
-            width: 100%; 
-            display: block; 
-            margin-top: 20px; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-        ">
-</div>
+    <div class="sim-control-panel reveal" style="position: relative; width: 100%;">
+       <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; background: #000; box-shadow: 0 8px 30px rgba(0,0,0,0.35);">
+        
+        <video id="player-a" autoplay muted playsinline preload="auto" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;">
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+
+        <video id="player-b" muted playsinline preload="auto" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s ease;">
+            <source src="bandx.mp4" type="video/mp4">
+        </video>
+     </div>
+
+         <img src="segments.jpeg" alt="AirSentinel Platform Display" 
+         style="width: 100%; display: block; margin-top: 20px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.35);">
+    </div>
         
       <!-- Right Visual Airspace Simulator Dashboard -->
       <!-- <div class="sim-control-panel reveal">
@@ -3922,48 +3918,40 @@ function triggerSegmentMenu(navKeyId) {
     }, 150);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const videoPlayer = document.getElementById('hero-video-player');
-    
-    // Define your video playlist in order
-    const playlist = [
-        "video2.mp4",
-        "bandx.mp4"
-    ];
-    
-    // Set track index based on the video currently playing in the HTML structure
-    let currentTrack = 0;
-    if (videoPlayer) {
-        const currentSrc = videoPlayer.currentSrc || videoPlayer.src;
-        if (currentSrc) {
-            const currentFileName = currentSrc.split('/').pop();
-            const matchedIndex = playlist.indexOf(currentFileName);
-            if (matchedIndex !== -1) {
-                currentTrack = matchedIndex;
-            }
-        }
-    }
 
-    if (videoPlayer) {
-        videoPlayer.addEventListener('ended', function () {
-            // Increment track counter, wrap back around to 0 if it reaches the end
-            currentTrack = (currentTrack + 1) % playlist.length;
-            
-            // Update the source file path
-            videoPlayer.src = playlist[currentTrack];
-            
-            // Wait for the specific new file data to switch before playing
-            videoPlayer.onloadedmetadata = function() {
-                videoPlayer.play().catch(error => {
-                    console.log("Playback engine waiting for interaction context: ", error);
-                });
-                // Clear the temporary handler to prevent unintended fire loops
-                videoPlayer.onloadedmetadata = null;
-            };
-            
-            videoPlayer.load();
+ document.addEventListener('DOMContentLoaded', function () {
+    const playerA = document.getElementById('player-a');
+    const playerB = document.getElementById('player-b');
+    
+    const playlist = ["video2.mp4", "bandx.mp4"];
+    let nextTrackIndex = 1; // The index of the video waiting in the background
+
+    function swapVideos(activePlayer, bufferPlayer) {
+        // 1. Start the background player immediately
+        bufferPlayer.play().then(() => {
+            // 2. Crossfade: Bring buffer to front, hide the old active player
+            bufferPlayer.style.opacity = "1";
+            activePlayer.style.opacity = "0";
+
+            // 3. Prepare the old player for the NEXT transition
+            setTimeout(() => {
+                // Determine what the next video after this one should be
+                nextTrackIndex = (nextTrackIndex + 1) % playlist.length;
+                activePlayer.src = playlist[nextTrackIndex];
+                activePlayer.load();
+            }, 500); // Small delay to ensure the swap is finished visually
         });
     }
+
+    // Listener for Player A
+    playerA.addEventListener('ended', function() {
+        swapVideos(playerA, playerB);
+    });
+
+    // Listener for Player B
+    playerB.addEventListener('ended', function() {
+        swapVideos(playerB, playerA);
+    });
 });
     
 // document.addEventListener('DOMContentLoaded', function () {
