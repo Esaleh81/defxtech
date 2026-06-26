@@ -4000,5 +4000,167 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
     
 </script>
+    <div class="company-panel-overlay" id="privacyPanelOverlay" onclick="closePrivacyPanelOnOutsideClick(event)" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(4, 7, 13, 0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; display: flex; justify-content: flex-end;">
+    <div class="company-panel" style="width: 100%; max-width: 820px; height: 100%; background: var(--navy); color: #fff; box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6); overflow-y: auto; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 40px; box-sizing: border-box; position: relative;">
+        
+        <button class="panel-close-btn" onclick="closePrivacyPanel()" aria-label="Close Privacy Policy Panel" style="position: absolute; top: 20px; right: 24px; background: transparent; border: none; color: var(--midgray); font-size: 32px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--midgray)'">×</button>
+
+        <div class="panel-header-wrapper" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 24px; margin-bottom: 32px;">
+            <div class="panel-logo-box" style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <img src="Logo.jpg" alt="DefendX Logo" class="panel-logo-img" style="height: 40px; width: auto; border-radius: 4px;">
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: #fff; font-family: var(--font-display);">DefendX<span style="color: var(--gold)"> Technologies Inc.</span></h2>
+            </div>
+            <div class="panel-subtitle" style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Corporate Privacy Shield & Data Protection Framework</div>
+            <p style="font-size: 11px; color: var(--lgray); margin-top: 8px;">Effective Date: June 26, 2026 | Last Modified: June 26, 2026</p>
+        </div>
+
+        <div class="policy-scroll-content" style="font-size: 14px; color: #E2E8F0; line-height: 1.75; text-align: justify; padding-right: 10px;">
+            
+            <p style="margin-bottom: 20px;">
+                Thank you for visiting <a href="http://defxtech.ca" style="color: var(--gold); font-weight: 600;">http://defxtech.ca</a> (together with all content on the site including subdomains and other websites or cloud environments operated by DefendX Technologies Inc. or its affiliates and subsidiaries, collectively referred to as the <strong>"Website"</strong>). This privacy policy explains the accepted privacy practices for our online services at the Website (the <strong>"Services"</strong>). It describes the ways in which your Personal Information is collected and used, and the rights and options available to you with respect to your information.
+            </p>
+            <p style="margin-bottom: 24px;">
+                Given our operational footprint in Artificial Intelligence, Counter-UAV (C-UAV) Systems, RF Sensing, Wireless Signal Intelligence, and Defence Technology, DefendX Technologies Inc. operates under a conservative, highly stringent risk-management posture designed to satisfy the rigorous compliance mandates of global enterprise partnerships, national security frameworks, and international regulatory frameworks.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">A. CONSENT</h3>
+            <p style="margin-bottom: 16px;">
+                By using this Website, you consent to the terms of our Privacy Policy and to DefendX Technologies Inc.’s processing of Personal Information for the purposes set forth herein. If you do not agree to this Privacy Policy, please do not use our Website and Services. 
+            </p>
+            <p style="margin-bottom: 16px;">
+                Where mandated by Canadian privacy legislation (including the <em>Personal Information Protection and Electronic Documents Act</em> [PIPEDA] and Quebec’s Law 25), explicit consent will be explicitly requested prior to processing critical datasets for net-new operational mandates. Data subjects maintain an absolute right to withdraw consent for the processing of their Personal Information at any time by contacting our legal desk, subject to legal or contractual restrictions and reasonable notice.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">B. GLOBAL PRIVACY SHIELD ALIGNMENT</h3>
+            <p style="margin-bottom: 16px;">
+                DefendX Technologies Inc. models its baseline data processing around established global privacy standards regarding the collection, use, and retention of personal data transferred from European Union member countries and other international jurisdictions. DefendX adheres strictly to the fundamental Privacy Principles of notice, choice, onward transfer, security, data integrity, access, and enforcement. If there is any conflict between the terms in this Privacy Policy and these data protection tenets, the strictest protective principle shall govern.
+            </p>
+            <p style="margin-bottom: 16px;">
+                It is important to note that DefendX’s Website and Services may be operated via secure servers situated in Canada, the United States, and elsewhere. If you are located outside of Canada, please be aware that any information which you supply to DefendX (including, without limitation, Personal Information) may be transferred to, processed, and used globally. By accessing and/or using the Website and Services provisioned by DefendX, you irrevocably and unconditionally consent to the transfer, processing, and use of such information in accordance with this Privacy Policy. DefendX accepts full accountability and responsibility for the protection of your Personal Information, according to applicable privacy legislation during onward transfers to third parties.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">C. COOKIES AND TRACKING TECHNOLOGIES</h3>
+            <p style="margin-bottom: 16px;">
+                We collect information using cookies and other web technologies. Like many website owners and operators, we use automated data collection tools such as cookies to collect certain information.
+            </p>
+            <p style="margin-bottom: 16px;">
+                <strong>"Cookies"</strong> are small text files that are placed on your hard drive by a web server when accessing our services. We use both session cookies and persistent cookies to identify that you’ve logged into the services and to tell us how and when you interact with our services. We also use cookies to monitor aggregate usage and web traffic routing on our services and to customize and improve our services. Unlike persistent cookies, session cookies are deleted when you log off from the services and close your browser. 
+            </p>
+            <p style="margin-bottom: 16px;">
+                Although most browsers automatically accept cookies, you can change your browser options to stop automatically accepting cookies or to prompt you before accepting cookies. Please note, however, that if you don’t accept cookies, you will not be able to access all portions or secure features of the services. We engage third party service providers, who may also place their own cookies on your hard drive. Note that this privacy policy covers only our use of cookies and does not include use of cookies by such third parties.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">D. PERSONAL INFORMATION THAT DEFENDX COLLECTS</h3>
+            <p style="margin-bottom: 16px;">
+                In the course of downloading white papers, system briefings, or other technical information available on the Website, or while completing secure contact forms on our Website, we will require you to provide mandatory Personal Information, including your name, corporate email address, organizational affiliation, as well as optional information. We will explicitly indicate the fields designated for mandatory completion. If you do not enter the requisite data in the mandatory fields, you will not be able to complete the relevant contact form. 
+            </p>
+            <p style="margin-bottom: 16px;">
+                It’s important that you understand there is no requirement by law for you to provide DefendX with your personal details – the information you share with us is entirely voluntary. We request that you provide DefendX with complete, accurate and correct details. Your failure to do so will likely result in DefendX being unable to contact you about your inquiries or validate your authorization to evaluate our tactical airspace solutions.
+            </p>
+            <p style="margin-bottom: 16px;">
+                If, at any time, you provide DefendX with personal details about another person, you expressly represent and warrant that you received that person’s explicit written consent to provide such details to DefendX Technologies Inc.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">E. ANALYTICAL TOOLS</h3>
+            <p style="margin-bottom: 16px;">
+                We may use various tools to collect information about your use of the Website and Services (<strong>“Analytical Tools”</strong>), such as Google Analytics. Analytical Tools collect information such as how often users visit the Website and Services, what pages they visit when they do so, and what other sites they used prior to coming to this Website. We use the information we get from Analytical Tools to maintain, monitor, secure, and improve the operational integrity of the Website and Services. 
+            </p>
+            <p style="margin-bottom: 16px;">
+                We do not combine the information collected through the use of Analytical Tools with personally identifiable information. 
+            </p>
+            <p style="margin-bottom: 16px;">
+                With respect to Google’s “Google Analytics” tool (<strong>“Google Analytics”</strong>), Google’s ability to use and share information collected by Google Analytics about your visits to the Website and Services is restricted by the Google Analytics Terms of Service, available at <a href="http://www.google.com/analytics/terms/us.html" target="_blank" style="color: var(--gold); text-decoration: underline;">http://www.google.com/analytics/terms/us.html</a>, and the Google Privacy Policy, available at <a href="http://www.google.com/policies/privacy/" target="_blank" style="color: var(--gold); text-decoration: underline;">http://www.google.com/policies/privacy/</a>. You may learn more about how Google collects and processes data specifically in connection with Google Analytics at <a href="http://www.google.com/policies/privacy/partners/" target="_blank" style="color: var(--gold); text-decoration: underline;">http://www.google.com/policies/privacy/partners/</a>. 
+            </p>
+            <p style="margin-bottom: 16px; background: rgba(212, 175, 55, 0.05); border: 1px dashed rgba(212, 175, 55, 0.2); padding: 14px; border-radius: 6px;">
+                <strong>Analytical Opt-Out Mechanism:</strong> To maintain strict compliance with global data protection frameworks and provide robust privacy optionality for users within the defence and technology sectors, you may completely prevent your data from being used or ingested by Google Analytics across our properties. You may prevent your data from being used by Google Analytics by downloading and installing the Google Analytics Opt-out Browser Add-on, available at <a href="https://tools.google.com/dlpage/gaoptout/" target="_blank" style="color: var(--gold); font-weight: bold; text-decoration: underline;">https://tools.google.com/dlpage/gaoptout/</a>.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">F. USE OF INFORMATION</h3>
+            <p style="margin-bottom: 12px;">
+                We will store the information you provide and the information we collect about your activity on the Website throughout our local and foreign databases (the <strong>“Databases“</strong>). We reserve the right to use such information for the following purposes:
+            </p>
+            <ul style="margin-left: 20px; margin-bottom: 20px; list-style-type: square;">
+                <li style="margin-bottom: 6px;">To provide the Services on the Website and to enable you to use them safely;</li>
+                <li style="margin-bottom: 6px;">To improve and expand the Services and content offered on the Website, including to create new services and content which correspond to the security requirements and expectations of the users of the Website and to modify or cancel existing Services and content. The information used by DefendX for this purpose will be statistical information, and will not identify you personally;</li>
+                <li style="margin-bottom: 6px;">To send you marketing/advertisement communications regarding specialized aerospace systems that we believe may be of interest to you;</li>
+                <li style="margin-bottom: 6px;">To improve and customize your experience and other users’ experience with both the Website and related Services;</li>
+                <li style="margin-bottom: 6px;">To contact you occasionally, either by DefendX or by a third party acting on our behalf, regarding DefendX Services and products. Subject to applicable laws, we will only contact you about DefendX offerings if you permit us to do so. Even if you authorize DefendX to contact you, your authorization may be revoked/withdrawn by you at any time and you may opt out of our mailing lists by following the unsubscribe instructions in each of the emails you receive;</li>
+                <li style="margin-bottom: 6px;">To contact you if you or someone in your organization requests a product demonstration or technical system documentation;</li>
+                <li style="margin-bottom: 6px;">To contact you as and when DefendX believes it to be necessary for technical, administrative, network diagnostic, or critical safety/security reasons;</li>
+                <li style="margin-bottom: 6px;">To analyze and provide statistical information to authorized partners and other third parties. This information will not identify you personally.</li>
+            </ul>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">G. TRANSFER OF INFORMATION TO THIRD PARTIES</h3>
+            <p style="margin-bottom: 12px;">
+                DefendX Technologies Inc. will not transfer your Personal Information and any information collected pertaining to your activities on the Website that identify you personally to any third party, except in the following cases or as otherwise outlined in this Privacy Policy:
+            </p>
+            <ul style="margin-left: 20px; margin-bottom: 20px; list-style-type: square;">
+                <li style="margin-bottom: 8px;">If DefendX reasonably believes that you abused your rights to use the Website or any of the Services, or performed any act or omission that DefendX reasonably believes to be violating any applicable law, rules, or regulations. DefendX may share your information in these cases, with law enforcement and other competent authorities;</li>
+                <li style="margin-bottom: 8px;">If DefendX reasonably believes that it is required by law to share or disclose your information in order to prevent, investigate, or take action regarding illegal activities, or in response to lawful requests by applicable law enforcement agencies, federal agencies, or regulatory frameworks tasked with overseeing national security or export control compliance;</li>
+                <li style="margin-bottom: 8px;">In any case of dispute, or legal proceeding of any kind between you and DefendX, or between you and other users or third parties with respect to, or in relation with the Services;</li>
+                <li style="margin-bottom: 8px;">In any case where DefendX may reasonably believe that sharing information is necessary to prevent serious damage to your person or property or to the person or property of any third party;</li>
+                <li style="margin-bottom: 8px;">If DefendX organizes the operation of the Services within a different framework, or through another legal structure or entity, or if DefendX is acquired by, or merged with another entity, provided however, that those entities agree to be bound by the provisions of this Privacy Policy;</li>
+                <li style="margin-bottom: 8px;">DefendX may share personally identifiable information with companies or organizations connected to or affiliated with DefendX, such as subsidiaries, sister-companies, parent companies and secure service providers acting strictly on our behalf, with the express provision that their use of such information must comply with this policy.</li>
+            </ul>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">H. OPTING OUT</h3>
+            <p style="margin-bottom: 16px;">
+                You may choose not to receive future promotional, advertising, or other emails from us by selecting an unsubscribe link at the bottom of each email that we send. Please note that even if you opt out of receiving the foregoing emails, we may still send you a response to any “Contact Us” or demonstration request as well as administrative or security emails that are necessary to facilitate your use of the Website and Services.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">I. ACCESS AND ACCURACY</h3>
+            <p style="margin-bottom: 16px;">
+                To the extent that you do provide us with Personal Information, we wish to maintain accurate Personal Information. If you would like to delete, audit, or correct any of your other Personal Information that we may be storing, you may submit an access request by sending an email to our data protection officer placeholders. Your email should include adequate details of your identity to enable verification.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">J. CHILDREN’S ONLINE PRIVACY INFORMATION</h3>
+            <p style="margin-bottom: 16px;">
+                DefendX does not knowingly collect Personal Information from minors who are under the age of 16 through the Website and/or the Services thereon. If a parent or guardian becomes aware that his or her child has provided us with personally identifiable information without consent, then he or she should contact DefendX immediately. If we become aware that a child under the age of 16 has provided us with personally identifiable information, we will delete such information from our files. Further, the Children’s Online Privacy Protection Act (<strong>“COPPA“</strong>) requires parental consent for collection of data from children younger than the age of 13 years old.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">K. LIABILITY & DISCLAIMER</h3>
+            <p style="margin-bottom: 16px;">
+                While DefendX Technologies Inc. implements enterprise-grade physical, technical, and administrative cryptographic safeguards to protect your records, no system can be guaranteed to be absolutely unbreachable. DefendX cannot guarantee absolute protection against highly sophisticated threat actors or network espionage. To the maximum extent permitted by applicable laws, DefendX shall not be held liable for indirect, incidental, or consequential damages arising from any third-party cyber intrusion or data misuse within legal boundaries.
+            </p>
+
+            <h3 style="color: var(--white); font-size: 16px; font-family: var(--font-display); border-left: 2px solid var(--gold); padding-left: 10px; margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.05em;">L. OUR CALIFORNIA DO NOT TRACK NOTICE</h3>
+            <p style="margin-bottom: 16px;">
+                We do not currently respond or take any action with respect to web browser “do not track” signals or other mechanisms that provide consumers the ability to exercise choice regarding the collection of personally identifiable information about an individual consumer’s online activities over time and across third-party websites. We may allow third parties, such as companies that provide us with analytics tools, to collect metrics over time and across different websites when a consumer uses the Website and/or Services.
+            </p>
+
+            <div style="margin-top: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;">
+                <button class="btn btn-gold" onclick="closePrivacyPanel()" style="font-size: 13px; padding: 10px 24px;">Acknowledge & Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openPrivacyPanel() {
+        const overlay = document.getElementById('privacyPanelOverlay');
+        const panel = overlay.querySelector('.company-panel');
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        panel.style.transform = 'translateX(0)';
+        document.body.style.overflow = 'hidden'; // Lock background scroll
+    }
+
+    function closePrivacyPanel() {
+        const overlay = document.getElementById('privacyPanelOverlay');
+        const panel = overlay.querySelector('.company-panel');
+        overlay.style.opacity = '0';
+        panel.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            overlay.style.visibility = 'hidden';
+        }, 400);
+        document.body.style.overflow = ''; // Restore background scroll
+    }
+
+    function closePrivacyPanelOnOutsideClick(event) {
+        if (event.target.id === 'privacyPanelOverlay') {
+            closePrivacyPanel();
+        }
+    }
+</script>
 </body>
 </html>
