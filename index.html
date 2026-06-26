@@ -3547,7 +3547,92 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
+      <div class="footer-bottom">
+    <style>
+        .footer-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--midgray, #94A3B8);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+        .footer-badges {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-badge {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--midgray, #94A3B8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .footer-privacy-trigger {
+            color: var(--midgray, #94A3B8);
+            font-size: 13px;
+            text-decoration: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px; /* Essential mobile touch-target alignment */
+            padding: 4px 0;
+            white-space: nowrap;
+        }
+
+        /* Mobile Layout Stack Adjustments */
+        @media (max-width: 991px) {
+            .footer-bottom {
+                flex-direction: column-reverse; /* Puts the legal text in a premium logical order on mobile */
+                justify-content: center;
+                gap: 16px;
+                padding: 30px 15px;
+            }
+            .footer-bottom p {
+                order: 1;
+                line-height: 1.5;
+            }
+            .footer-badges {
+                order: 2;
+            }
+            .footer-privacy-trigger {
+                order: 3;
+            }
+        }
+    </style>
+
+    <a href="javascript:void(0)" class="footer-privacy-trigger" onclick="toggleDefendXPrivacyPanel(true)" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--midgray)'">Privacy Policy</a>
+    
+    <p>© 2026 DefendX Technologies Inc. All rights reserved. AirSentinel™ is a trademarked module of DefendX Technologies.</p>
+    
+    <div class="footer-badges">
+        <div class="footer-badge">Proudly Canadian</div>
+        <div class="footer-badge">Sovereign Tech</div>
+        <div class="footer-badge">Professionally Engineered</div>
+    </div>
+</div>
+    <!-- <div class="footer-bottom">
         <a href="javascript:void(0)" onclick="toggleDefendXPrivacyPanel(true)" style="color: var(--midgray); font-size: 13px; text-decoration: none; font-family: 'Plus Jakarta Sans', sans-serif; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--midgray)'">Privacy Policy</a>
         <p>© 2026 DefendX Technologies Inc. All rights reserved. AirSentinel™ is a trademarked module of DefendX Technologies.</p>
         <div class="footer-badges">
@@ -3555,7 +3640,7 @@ fetch("https://abacus.jasoncameron.dev/hit/defxtech.ca/visits")
         <div class="footer-badge">Sovereign Tech</div>
         <div class="footer-badge">Professionally Engineered</div>
       </div>
-    </div>
+    </div> -->
   </div>
 </footer>
 
