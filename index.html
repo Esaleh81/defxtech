@@ -4000,7 +4000,345 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
     
 </script>
- 
+ <div class="company-panel-overlay" id="defxtechPrivacyOverlay" onclick="handleDefendXPrivacyOutsideClick(event)" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(4, 7, 13, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 99999; opacity: 0; visibility: hidden; transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s; display: flex; justify-content: flex-end;">
+    <div class="company-panel" style="width: 100%; max-width: 850px; height: 100%; background: #060B13; color: #F1F5F9; box-shadow: -15px 0 50px rgba(0, 0, 0, 0.8); overflow-y: auto; -webkit-overflow-scrolling: touch; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); padding: var(--panel-padding, 45px); box-sizing: border-box; position: relative; font-family: 'Plus Jakarta Sans', sans-serif;">
+        
+        <style>
+            :root {
+                --panel-padding: 45px;
+                --text-alignment: justify;
+            }
+            @media (max-width: 768px) {
+                :root {
+                    --panel-padding: 24px;
+                    --text-alignment: left;
+                }
+                .defendx-mobile-meta {
+                    flex-direction: column !important;
+                    gap: 6px !important;
+                }
+                .defendx-close-trigger {
+                    top: 16px !important;
+                    right: 16px !important;
+                    font-size: 32px !important;
+                    width: 44px !important;
+                    height: 44px !important;
+                }
+                .defendx-panel-title-container {
+                    padding-right: 40px !important;
+                }
+            }
+        </style>
+
+        <button class="defendx-close-trigger" onclick="toggleDefendXPrivacyPanel(false)" aria-label="Dismiss Privacy Specification Panel" style="position: absolute; top: 25px; right: 28px; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; color: #94A3B8; font-size: 36px; line-height: 1; cursor: pointer; transition: color 0.2s ease, transform 0.2s ease; z-index: 10;" onmouseover="this.style.color='#FFFFFF'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='#94A3B8'; this.style.transform='scale(1)';">&times;</button>
+
+        <div class="defendx-panel-title-container" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 24px; margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 6px; height: 28px; background: #D4AF37; border-radius: 2px; flex-shrink: 0;"></div>
+                <h2 style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; font-family: 'Space Grotesk', sans-serif; margin: 0; letter-spacing: -0.02em; line-height: 1.2;">DefendX <span style="color: #D4AF37; font-weight: 400;">Technologies Inc.</span></h2>
+            </div>
+            <div style="font-size: 10.5px; color: #D4AF37; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 14px; line-height: 1.4;">Global Data Governance & Strategic Privacy Architecture</div>
+            <div class="defendx-mobile-meta" style="display: flex; gap: 20px; font-size: 12px; color: #94A3B8; font-weight: 500;">
+                <span><strong>Effective Date:</strong> June 26, 2026</span>
+                <span class="defendx-meta-divider" style="color: rgba(255,255,255,0.15);">•</span>
+                <span><strong>Revision Level:</strong> June 26, 2026</span>
+            </div>
+        </div>
+
+        <div style="font-size: 14.5px; color: #E2E8F0; line-height: 1.8; text-align: var(--text-alignment); box-sizing: border-box;">
+            
+            <p style="margin-bottom: 22px; font-size: 15px; color: #F8FAFC;">
+                This Data Protection and Privacy Policy (the <strong>"Policy"</strong>) explains the corporate data governance principles managed by DefendX Technologies Inc., alongside our controlled branches, regional business divisions, and corporate subsidiaries (collectively, <strong>"DefendX"</strong>, <strong>"we"</strong>, <strong>"us"</strong>, or <strong>"our"</strong>). This structural framework clarifies our methods for acquiring, using, retaining, and sharing individual data records gathered via our primary website domain, <a href="https://defxtech.ca" style="color: #D4AF37; text-decoration: none; font-weight: 600; padding: 4px 0; display: inline-block;">https://defxtech.ca</a>, including all related subdomains, secure staging portals, virtual sandboxes, and application interfaces (collectively, the <strong>"Website"</strong>). Any virtual portals, analytical features, or service interfaces made available through the Website are designated as our <strong>"Services"</strong>.
+            </p>
+            <p style="margin-bottom: 26px;">
+                DefendX designs software and hardware infrastructure within highly sensitive domains, including Artificial Intelligence architectures, Counter-UAV (C-UAV) defense solutions, RF autonomous awareness sensing, wireless signal intelligence modules, and integrated cyber-physical ecosystems. Because our technologies operate in fields critical to aerospace security and global defense coordination, we enforce a highly conservative data management posture. This configuration satisfies the security standards of national defense frameworks, international corporate enterprises, and federal regulatory bodies.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">1. Target Interpretations & Definitions</h3>
+            <p style="margin-bottom: 14px;">To remove ambiguity, definitions within this Policy are established as follows:</p>
+            <div style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid #1E3B66; padding: 4px 16px; margin-bottom: 24px; border-radius: 0 6px 6px 0; font-size: 14px;">
+                <p style="margin: 12px 0;"><strong>Identifiable Information / Personal Data:</strong> Any metric that maps to an individual or can be used in combination with other available information to ascertain the identity of a natural person.</p>
+                <p style="margin: 12px 0;"><strong>Highly Protected Data / Sensitive Personal Information:</strong> Critical information segments subject to high legal protection, covering racial origin, biometric profiles, genetic strings, precise geolocation mappings, or structural credentials used within governmental or tactical military operations.</p>
+                <p style="margin: 12px 0;"><strong>Operational Metrics / Usage Data:</strong> Analytical logs captured dynamically during software interaction (such as page viewing durations or module execution histories).</p>
+                <p style="margin: 12px 0;"><strong>Hardware Telemetry / Device Information:</strong> Systems data extracted from devices making application access requests, including hardware model types, system patch configurations, and unique hardware signatures.</p>
+                <p style="margin: 12px 0;"><strong>Web Trackers / Cookies:</strong> Compact textual files saved onto a browser terminal to preserve authentication states, recall system options, and analyze system traversal tracks.</p>
+                <p style="margin: 12px 0;"><strong>Monitoring Instruments:</strong> Scripts, beacons, and software pixels engineered to review interface operation parameters and platform performance values.</p>
+                <p style="margin: 12px 0;"><strong>Information Repositories:</strong> Encrypted data storage centers hosted across our localized physical servers and secure international cloud spaces.</p>
+                <p style="margin: 12px 0;"><strong>Performance Software / Analytical Tools:</strong> Integrated algorithmic modules running systematically to measure visitor counts and aggregate traffic channels.</p>
+                <p style="margin: 12px 0;"><strong>Affirmative Agreement / Consent:</strong> An explicit, uncoerced, and conscious validation through which a visitor accepts the processing of personal data for specified parameters.</p>
+            </div>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">2. User Consent Status & Jurisdictional Mandates</h3>
+            <h4 style="margin: 16px 0 8px; font-size: 14px; color: #FFFFFF; font-weight: 600;">2.1 Regulatory and Inferred Agreement</h4>
+            <p style="margin-bottom: 14px;">
+                By remaining on this Website and engaging with our specialized tech interfaces, you establish a binding acceptance of this Policy and authorize DefendX to organize and handle your personal data points according to these provisions. If you do not accept these criteria, you must immediately close this platform.
+            </p>
+            <p style="margin-bottom: 14px;">
+                In strict alignment with Canadian data standards (including the <em>Personal Information Protection and Electronic Documents Act</em> [PIPEDA] and Quebec's Law 25 framework), explicit assent will be requested before managing any critical or sensitive information profiles. Non-sensitive corporate processing is managed under implied parameters or legitimate business operations where permitted.
+            </p>
+            <h4 style="margin: 16px 0 8px; font-size: 14px; color: #FFFFFF; font-weight: 600;">2.2 Withdrawal and Retraction Pathways</h4>
+            <p style="margin-bottom: 14px;">
+                Every natural individual retains the absolute legal right to retract their processing agreement at any point, subject to prevailing contractual limitations, statutory mandates, and reasonable notification periods. To formally revoke your authorization, contact the DefendX Corporate Privacy Officer.
+            </p>
+            <h4 style="margin: 16px 0 8px; font-size: 14px; color: #FFFFFF; font-weight: 600;">2.3 Technical Disadvantage of Consent Refusal</h4>
+            <p style="margin-bottom: 14px;">
+                If you choose to withhold required entries or later retract your operational consent, DefendX may be restricted by technical and legal barriers from providing access to restricted documentation areas, secure system portals, or technical evaluation environments. Because our core operations support defense technologies, verification processes remain strictly enforced.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">3. Operational Boundaries & Document Scope</h3>
+            <p style="margin-bottom: 14px;">
+                This Policy governs data management exclusively across all electronic assets managed by DefendX Technologies Inc., which include:
+            </p>
+            <ul style="margin-left: 20px; margin-bottom: 22px; padding: 0; list-style-type: square; color: #CBD5E1;">
+                <li style="margin-bottom: 8px;">The primary corporate website domain: <code>https://defxtech.ca</code>.</li>
+                <li style="margin-bottom: 8px;">All integrated corporate subdomains, client login zones, and evaluation testing environments.</li>
+                <li style="margin-bottom: 8px;">Proprietary Application Programming Interfaces (APIs) built for integration by partners or defense networks.</li>
+                <li style="margin-bottom: 8px;">Cloud-hosted sandboxes, system test platforms, and telemetry collection hubs.</li>
+                <li style="margin-bottom: 8px;">Electronic intake tools, message fields, and remote service support channels.</li>
+                <li style="margin-bottom: 8px;">Information download vectors providing system blueprints, research reports, and technical manuals.</li>
+                <li style="margin-bottom: 8px;">Corporate recruiting systems and contract personnel onboarding interfaces.</li>
+            </ul>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">4. Information Compilation Framework</h3>
+            <p style="margin-bottom: 14px;">
+                To preserve system integrity, meet global security standards, and ensure interface functionality, DefendX ingests data across the following defined modules:
+            </p>
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">A. Explicit Personal Profiles</h4>
+            <p style="margin-bottom: 14px;">
+                When downloading specialized documentation or completing interactive message windows on our Website, you will be required to submit accurate, identifiable inputs, containing:
+                Your complete corporate identity (First and Last Name); your official corporate electronic mail address; a valid telephone routing number; your professional job title and organizational scope; your associated company name, commercial registration numbers, or government agency affiliation; and your physical corporate facility coordinates or mailing point.
+            </p>
+            <p style="margin-bottom: 14px; background: rgba(30, 59, 102, 0.25); border-radius: 6px; padding: 14px; font-size: 13.5px; border-left: 3px solid #1E3B66; line-height: 1.6;">
+                <strong>Voluntary Submission & Data Precision:</strong> You are under no legal obligation to submit personal profiles to DefendX, and all communications are initiated at your own choice. However, providing false information prevents our validation systems from approving your clearance levels, meaning we will be unable to fulfill information requests, authorize secure sandboxes, or respond to inquiries.
+            </p>
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">B. Hardware and Terminal Metrics</h4>
+            <p style="margin-bottom: 14px;">Our platforms collect network telemetry parameters, specifically: inbound IP details; hardware configuration records and MAC identification indices; browser version markers and system cipher capabilities; operating system builds and patch tracking tags; and display canvas choices and regional language settings.</p>
+            
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">C. Navigation and Interaction Tracking</h4>
+            <p style="margin-bottom: 14px;">We trace system interaction vectors, including asset files reviewed, timestamp metrics for specific software locations, structural clickstream actions, and system logs tracking execution histories within our secure web testing nodes.</p>
+
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">D. Geographic Ingestion Parameters</h4>
+            <p style="margin-bottom: 14px;">
+                Our hosts collect general country and city locations derived purely from network IP numbers. <strong>Strict Security Policy:</strong> DefendX does not pull precise real-time satellite coordinates through its public web interfaces unless explicitly authorized, provisioned, and enabled for specialized counter-UAV or RF sensing system configurations.
+            </p>
+
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">E. Incoming Communications and Associated Assurances</h4>
+            <p style="margin-bottom: 14px;">
+                We preserve full text logs of message entries routed to our staff, alongside diagnostics logs provided for technical support. <strong>Representations regarding Third-Party Data:</strong> If you supply DefendX with personal details about another person (such as a colleague or subordinate), you expressly represent and warrant that you received that person’s explicit written consent to provide such details to DefendX.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">5. Tracking Components and Cookies</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX utilizes automated tracking instruments to track platform interaction and refine system stability.
+            </p>
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">5.1 Implemented Tracker Variations</h4>
+            <p style="margin-bottom: 14px;">
+                We deploy transient <strong>Session Trackers</strong> that dissolve from memory once you shut down your browser window. These are required for system navigation and securing active user logins. Long-term <strong>Persistent Trackers</strong> stay inside your local terminal memory for a designated period to recall language choices, quantify site traffic volumes, and assess our performance. 
+            </p>
+            <p style="margin-bottom: 14px;">
+                Our core domain places <strong>First-Party Trackers</strong> to isolate secure user profiles, while external structural layers save <strong>Third-Party Trackers</strong> to maintain analytics pipelines. We also employ pseudonymized <strong>Efficiency Trackers</strong> to capture performance trends, and may utilize <strong>Marketing Trackers</strong> to help optimize long-term user experiences, though we do not track individuals across third-party networks.
+            </p>
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">5.2 Technical Modification of Trackers</h4>
+            <p style="margin-bottom: 14px;">
+                Most browser applications accept tracking elements automatically, but you can update your software preferences to block trackers or to prompt you before saving them. Note that blocking web trackers may disrupt your experience, making secure platform dashboards or specialized areas inaccessible. This Policy covers only our internal use of trackers and does not extend to the practices of third-party integrations.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">6. Automated Infrastructure Logs</h3>
+            <p style="margin-bottom: 14px;">
+                In accordance with cybersecurity best practices and critical infrastructure tracking rules, our host servers automatically log system activity. This operational ingestion is completely decoupled from marketing frameworks and is used solely for technical diagnostics, cyber threat identification, and network performance auditing.
+            </p>
+            <p style="margin-bottom: 14px;">These automated log streams routinely capture: visitor IP headers; browser software details; host operating system builds; referral web links; internal feature interaction pathways; search queries entered into local fields; operational commands run inside virtual test nodes; and data size details of files downloaded from our site.</p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">7. Analytical Frameworks & Performance Measurement</h3>
+            <p style="margin-bottom: 14px;">
+                We use tracking mechanisms like Google Analytics (<strong>"Analytical Tools"</strong>) to monitor how users interact with our site. These tools record traffic volumes, target pages visited, and referral links used before arriving at our platform. This information helps us secure, monitor, and refine our public properties.
+            </p>
+            <p style="margin-bottom: 14px;">
+                We maintain a policy of not linking or combining analytical metrics with personally identifiable files.
+            </p>
+            <p style="margin-bottom: 14px;">
+                Data management governed by Google Analytics is bound by the Google Analytics Terms of Service, located at <a href="https://www.google.com/analytics/terms/us.html" target="_blank" style="color: #D4AF37; text-decoration: underline; padding: 2px 0; display: inline-block;">http://www.google.com/analytics/terms/us.html</a>, and the Google Privacy Policy, found at <a href="https://www.google.com/policies/privacy/" target="_blank" style="color: #D4AF37; text-decoration: underline; padding: 2px 0; display: inline-block;">http://www.google.com/policies/privacy/</a>. To evaluate how Google processes information collected via this infrastructure, see <a href="https://www.google.com/policies/privacy/partners/" target="_blank" style="color: #D4AF37; text-decoration: underline; padding: 2px 0; display: inline-block;">http://www.google.com/policies/privacy/partners/</a>.
+            </p>
+            <p style="margin-bottom: 14px; border: 1px dashed rgba(212, 175, 55, 0.35); padding: 16px; border-radius: 6px; background: rgba(212, 175, 55, 0.03); line-height: 1.6;">
+                <strong>Analytical Opt-Out Control:</strong> To maintain strict compliance with global data protection frameworks and provide robust privacy optionality for users within the defence and technology sectors, you may completely prevent your data from being used or ingested by Google Analytics across our properties. To completely opt out, download and install the Google Analytics Opt-out Browser Add-on provided by Google at: <a href="https://tools.google.com/dlpage/gaoptout/" target="_blank" style="color: #D4AF37; font-weight: 700; text-decoration: underline; padding: 2px 0; display: inline-block;">https://tools.google.com/dlpage/gaoptout/</a>.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">8. Application and Use of Collected Datasets</h3>
+            <p style="margin-bottom: 14px;">We process your data points within our secure databases for specific business functions, including:</p>
+            <ul style="margin-left: 20px; margin-bottom: 22px; padding: 0; list-style-type: square; color: #CBD5E1;">
+                <li style="margin-bottom: 8px;">Providing access to the Website and verifying your access security.</li>
+                <li style="margin-bottom: 8px;">Refining and expanding the content on the Website to create new services that align with the requirements, security profiles, and expectations of the users of the Website. These evaluations rely on anonymous statistical metrics that do not identify individuals.</li>
+                <li style="margin-bottom: 8px;">Sending promotional updates, regulatory alerts, and system briefings. Subject to applicable laws, we will only contact you about DefendX offerings if you permit us to do so. This authorization can be withdrawn at any time by following the unsubscribe steps inside our email transmissions.</li>
+                <li style="margin-bottom: 8px;">Customizing the online experience for platform visitors.</li>
+                <li style="margin-bottom: 8px;">Coordinating with your team when a request for technical product information or a C-UAV system demonstration has been initiated.</li>
+                <li style="margin-bottom: 8px;">Sending technical alerts, software updates, account modifications, or urgent security announcements.</li>
+                <li style="margin-bottom: 8px;">Compiling aggregated, anonymous performance metrics for verified business partners and technical consultants.</li>
+            </ul>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">9. Lawful Grounds for Information Processing</h3>
+            <p style="margin-bottom: 14px;">For users located within regions that require an explicit legal basis for data processing (such as the EEA), DefendX manages personal records under the following legal bases:</p>
+            <ul style="margin-left: 20px; margin-bottom: 22px; padding: 0; list-style-type: square; color: #CBD5E1;">
+                <li style="margin-bottom: 8px;"><strong>Consent:</strong> Clear, unambiguous assent provided by the user for one or more specific processing operations.</li>
+                <li style="margin-bottom: 8px;"><strong>Contractual Obligations:</strong> When using data is required to deliver services under an active contract, or to handle preparatory steps before formal contract signing.</li>
+                <li style="margin-bottom: 8px;"><strong>Legitimate Business Operations:</strong> When processing data supports our business management, provided these actions do not override your privacy rights (such as protecting our network boundaries, running system diagnostics, and preventing data loss).</li>
+                <li style="margin-bottom: 8px;"><strong>Statutory Commitments:</strong> Retaining or sharing records to fulfill legal duties (such as defense export controls, military tracking rules, or financial regulations).</li>
+                <li style="margin-bottom: 8px;"><strong>Vital Protection:</strong> Rare, urgent situations where processing data is critical to preserve the physical life or safety of an individual.</li>
+            </ul>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">10. Data Retention Schedules</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX retains your personal data only as long as necessary to achieve the business goals outlined in this Policy, or to satisfy applicable statutory retention timelines.
+            </p>
+            <p style="margin-bottom: 14px;">
+                Core client profiles and communications are maintained for the duration of our commercial relationship plus any additional periods needed to address potential legal claims. Infrastructure logs and security monitoring data are stored in encrypted archives to support cybersecurity audits. Once retention windows expire, information is securely overwritten or destroyed. If a formal legal hold is issued by a court or government agency, automated deletion routines are paused, and relevant data is isolated until the legal matter is resolved.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">11. Information Disclosures & Outside Contractors</h3>
+            <p style="margin-bottom: 14px;">DefendX does not sell or distribute personal information to outside entities. We disclose data only under the following conditions:</p>
+            <ul style="margin-left: 20px; margin-bottom: 22px; padding: 0; list-style-type: square; color: #CBD5E1;">
+                <li style="margin-bottom: 8px;"><strong>Misuse and Violations:</strong> If we have reason to believe you have violated our terms of use or engaged in unauthorized activity, data may be shared with regulatory agencies, corporate investigators, or competent legal bodies to address the issue.</li>
+                <li style="margin-bottom: 8px;"><strong>Compelled Legal Disclosures:</strong> When we believe in good faith that sharing data is required to comply with a subpoena, court order, or applicable law, including sharing data with national security administrations or export control supervisors monitoring dual-use defence technology.</li>
+                <li style="margin-bottom: 8px;"><strong>Legal Protection:</strong> To establish or exercise our legal rights or defend against legal claims.</li>
+                <li style="margin-bottom: 8px;"><strong>Physical Safety:</strong> When sharing information is necessary to prevent severe physical harm or injury to an individual.</li>
+                <li style="margin-bottom: 8px;"><strong>Corporate Realignment:</strong> If DefendX undergoes a major business transition, such as a merger, acquisition, or asset sale, provided the resulting entity agrees to honor the privacy commitments in this Policy.</li>
+                <li style="margin-bottom: 8px;"><strong>Affiliates and Service Providers:</strong> Sharing data within our corporate family or with trusted technical service providers who manage systems on our behalf (such as email service providers), under strict agreements to use data only as permitted by this Policy.</li>
+                <li style="margin-bottom: 8px;"><strong>Aggregated Anonymous Data:</strong> Transferring anonymous, statistical, or aggregated information with partners, advisors, or other third parties at our discretion. This data contains no identifiers that could trace back to your identity.</li>
+            </ul>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">12. Cross-Border Information Movements</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX is a Canadian enterprise with primary computing systems located in Canada. Consequently, your data may be sent to, stored in, or processed across multiple international jurisdictions, including Canada, the United States, and the European Union. By using our platforms, you acknowledge that data protection laws differ across these territories. DefendX maintains responsibility for safeguarding your data during these transfers by using established legal mechanisms, such as Standard Contractual Clauses (SCCs) and formal Data Processing Agreements (DPAs).
+            </p>
+            <h4 style="margin: 14px 0 6px; font-size: 14px; color: #FFFFFF; font-weight: 600;">12.1 Regulatory Alignment</h4>
+            <p style="margin-bottom: 14px;">
+                DefendX models its baseline international information processing around established global data privacy principles derived historically from frameworks like the EU-U.S. Privacy Shield principles, focusing on Notice, Choice, Onward Transfer Restrictions, Security Safeguards, Data Integrity, Access Rights, and Enforcement/Recourse. If there is any conflict between the terms of this Policy and the core international privacy principles listed above, the standard that provides the highest level of personal privacy protection shall apply.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">13. Data Security Safeguards</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX implements an enterprise-grade, defense-in-depth cybersecurity architecture designed to protect your data against accidental loss, unauthorized disclosure, or malicious distortion.
+            </p>
+            <p style="margin-bottom: 14px;">
+                Data sent to or from our Website is encrypted in transit using modern Transport Layer Security (TLS) protocols. Data stored within our live environments or backup facilities is protected at rest using 256-bit Advanced Encryption Standard (AES-256) encryption keys. We deploy enterprise Web Application Firewalls (WAFs), modern network firewalls, and isolated network micro-segmentation. We operate under a "Least Privilege" security model, restricting data access to authorized personnel who must pass continuous identity verification checks, including multi-factor authentication (MFA) and zero-trust verification controls. We also use automated security event logging and endpoint detection tools to scan our networks and identify potential threats.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">14. User Legal Rights Matrix</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX aims to keep all personal data accurate and up to date. If you wish to review, modify, restrict, transfer, or delete any of your Identifiable Information stored within our systems, please submit a formal request to our data protection team. Your communication must include sufficient proof of your identity so we can verify your request before taking action.
+            </p>
+            <p style="margin-bottom: 14px;"><strong>14.1 EEA Residents (GDPR):</strong> You have the right to request the complete removal of your records ("Right to be Forgotten"), request the transfer of your datasets to another provider, correct inaccurate information, view your records, or object to processing activities conducted under our legitimate business interests.</p>
+            <p style="margin-bottom: 14px;"><strong>14.2 Canadian Residents (PIPEDA & Quebec Law 25):</strong> You have the right to review the accuracy of your personal files, compel updates to outdated records, request data portability, and request that your information be de-indexed from automated systems where applicable.</p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">15. Communication Opt-Out Options</h3>
+            <p style="margin-bottom: 14px;">
+                You can opt out of receiving marketing updates or promotional materials from us by selecting the unsubscribe link included at the bottom of our marketing emails. Please note that even if you opt out of promotional emails, we reserve the right to send you transactional messages, such as responses to direct contact inquiries, product demonstrations you requested, or critical security updates regarding your use of our platforms.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">16. External Link Isolation</h3>
+            <p style="margin-bottom: 14px;">
+                Our Website includes links to external digital properties that are not owned, managed, or audited by DefendX. Please note that we assume no responsibility for the privacy protocols, content, or security conditions of those external websites. We encourage you to review the individual privacy statements of every external website you visit.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">17. Social Media Extensions</h3>
+            <p style="margin-bottom: 14px;">
+                Our Website may feature integrated social media links or professional network plugins. These features may log your incoming network IP address, track the specific page you are viewing on our Website, and set a tracking cookie to ensure the feature works correctly. Your interactions with these features are governed by the privacy policy of the specific company providing them.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">18. Protections for Minors</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX does not knowingly request or gather personal data from individuals under the age of 16. If we discover that we have inadvertently collected data from a child under 16, we will take immediate steps to delete those records from our files. Furthermore, in accordance with the United States Children's Online Privacy Protection Act (<strong>"COPPA"</strong>), verifiable parental consent is strictly required before collecting any data from individuals under the age of 13.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">19. Artificial Intelligence Frameworks</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX uses automated systems and Artificial Intelligence to improve our RF signal analysis, assess wireless telemetry, and optimize platform response speeds. The AI modules deployed on our public interfaces process technical metadata solely to detect system anomalies and protect against cyberattacks. DefendX does not use automated decision-making processes or algorithms to make determinations that create binding legal effects on general web users, unless explicitly disclosed under a specific commercial agreement. All automated workflows operate under continuous human oversight.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">20. Browser Do-Not-Track (DNT) Posture</h3>
+            <p style="margin-bottom: 14px;">
+                We do not currently adjust our data collection practices in response to automated "Do Not Track" (DNT) browser headers or similar mechanisms. As noted in Section 7, we may allow authorized third-party analytics services to compile non-identifiable metrics regarding user browsing paths over time and across different websites when you visit our platforms.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">21. California Consumer Protections</h3>
+            <p style="margin-bottom: 14px;">
+                Under California Civil Code Section 1798.83, California residents who share personal details with us can request information regarding any data disclosures we make to third parties for direct marketing purposes. DefendX does not share personal data with external entities for marketing use. Residents may submit one inquiry per calendar year by reaching out to our privacy office.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">22. Terms Revisions & Structural Updates</h3>
+            <p style="margin-bottom: 14px;">
+                DefendX may update this Policy from time to time to reflect changes in our technology solutions, operational security practices, or global regulatory updates. Any modifications will become effective immediately upon being posted on this webpage. Your continued use of the Website or Services after an update indicates your acceptance of the revised terms.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">23. External Network Disclaimers</h3>
+            <p style="margin-bottom: 14px;">
+                Our digital environments may contain links to external web locations, software repositories, or alliance networks that are independent of DefendX. We do not monitor, control, or assume liability for the content, tracking technologies, or privacy commitments maintained by external sites. Users click on outbound links at their own discretion and risk.
+            </p>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">24. Institutional Contact Points</h3>
+            <p style="margin-bottom: 14px;">To execute your legal data rights or to log corporate privacy complaints, route formal communications to our legal tracking desk placeholders:</p>
+            <div style="border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px; border-radius: 6px; background: rgba(255,255,255,0.01); font-size: 13.5px; line-height: 1.6;">
+                <strong>Attention:</strong> Corporate Privacy Compliance Desk / Legal Counsel<br>
+                <strong>Electronic Transmission Route:</strong> <code>legal@[Insert-DefendX-Domain-Here]</code> or <code>privacy@[Insert-DefendX-Domain-Here]</code><br>
+                <strong>Physical Mailing Address:</strong> <code>[Insert Corporate Street Address, City, Province, Postal Code, Canada]</code><br>
+                <strong>Technical Support Hub:</strong> <code>[Insert Support Portal Hyperlink or Email Address]</code>
+                <p style="margin: 10px 0 0 0; font-size: 11px; color: #94A3B8; font-style: italic;">Note: Valid transactional communication metrics are to be verified and inserted explicitly post legal validation.</p>
+            </div>
+
+            <h3 style="color: #D4AF37; font-size: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 35px 0 14px; line-height: 1.4;">25. Liability Limits and Corporate Assurances</h3>
+            <p style="margin-bottom: 14px;">
+                <strong>25.1 No Security Guarantee:</strong> While DefendX deploys rigorous, defense-in-depth security measures aligned with global cybersecurity standards, no digital storage array or electronic transmission pathway is completely unbreachable. DefendX cannot provide an absolute guarantee of security against advanced state-sponsored cyberespionage, zero-day exploits, or deliberate system sabotage.
+            </p>
+            <p style="margin-bottom: 14px;">
+                <strong>25.2 Exclusion of Secondary Damages:</strong> To the maximum extent permitted under applicable law, DefendX shall not be held liable for any indirect, secondary, special, consequential, or punitive damages arising from a data security incident, unauthorized network intrusion, or system modification.
+            </p>
+            <p style="margin-bottom: 14px;">
+                <strong>25.3 Boundary of Liability:</strong> Our total combined financial liability for actionable privacy claims, data system failures, or information breaches is strictly limited to the legal boundaries and liability limits established within our primary corporate procurement contracts and client agreements.
+            </p>
+
+            <div style="margin-top: 40px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 25px;">
+                <button onclick="toggleDefendXPrivacyPanel(false)" style="background: #D4AF37; color: #060B13; border: none; padding: 14px 36px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 4px; cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;" onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)';" onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)';">Acknowledge & Dismiss</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /**
+     * Controls the layout behavior of the rewritten Privacy Policy slider modal.
+     * @param {boolean} showPanel - Directs visibility state configuration.
+     */
+    function toggleDefendXPrivacyPanel(showPanel) {
+        const overlayNode = document.getElementById('defxtechPrivacyOverlay');
+        const slidePanelNode = overlayNode.querySelector('.company-panel');
+        
+        if (showPanel) {
+            overlayNode.style.visibility = 'visible';
+            overlayNode.style.opacity = '1';
+            slidePanelNode.style.transform = 'translateX(0)';
+            document.body.style.overflow = 'hidden'; // Prevents layout parallax scrolling bleed
+        } else {
+            overlayNode.style.opacity = '0';
+            slidePanelNode.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                overlayNode.style.visibility = 'hidden';
+            }, 400);
+            document.body.style.overflow = ''; // Restores global scrolling access
+        }
+    }
+
+    /**
+     * Manages overlay clicks to allow background dismissal configurations.
+     * @param {Event} clickEvent - Capture parameter tracker.
+     */
+    function handleDefendXPrivacyOutsideClick(clickEvent) {
+        if (clickEvent.target.id === 'defxtechPrivacyOverlay') {
+            toggleDefendXPrivacyPanel(false);
+        }
+    }
+</script>
+
+
+    <!-- 
 <script>
     function openPrivacyPanel() {
         const overlay = document.getElementById('privacyPanelOverlay');
@@ -4027,6 +4365,6 @@ document.addEventListener('DOMContentLoaded', function () {
             closePrivacyPanel();
         }
     }
-</script>
+</script> -->
 </body>
 </html>
