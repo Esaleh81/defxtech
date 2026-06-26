@@ -1128,6 +1128,78 @@
         }
 
         /* ── FOOTER ──────────────────────────────────────────────────────── */
+        .footer-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .footer-bottom p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--midgray, #94A3B8);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+        .footer-badges {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-badge {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--midgray, #94A3B8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .footer-privacy-trigger {
+            color: var(--midgray, #94A3B8);
+            font-size: 13px;
+            text-decoration: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px; /* Essential mobile touch-target alignment */
+            padding: 4px 0;
+            white-space: nowrap;
+        }
+
+        /* Mobile Layout Stack Adjustments */
+        @media (max-width: 991px) {
+            .footer-bottom {
+                flex-direction: column-reverse; /* Puts the legal text in a premium logical order on mobile */
+                justify-content: center;
+                gap: 16px;
+                padding: 30px 15px;
+            }
+            .footer-bottom p {
+                order: 1;
+                line-height: 1.5;
+            }
+            .footer-badges {
+                order: 2;
+            }
+            .footer-privacy-trigger {
+                order: 3;
+            }
+        }
+        
         .footer { 
             background: #04070d; 
             color: var(--midgray); 
@@ -1175,7 +1247,7 @@
             color: var(--gold); 
         }
         
-        .footer-bottom { 
+        /* .footer-bottom { 
             padding-top: 32px; 
             border-top: 1px solid rgba(255,255,255,0.06); 
             display: flex; 
@@ -1204,13 +1276,13 @@
             color: var(--midgray); 
             font-weight: 600; 
             letter-spacing: 0.06em; 
-        }
+        } */
 
         .sec-header { 
             margin-bottom: 56px; 
         }
-        /* 768px */
-        @media (max-width: 991px 768px) { 
+
+        @media (max-width: 768px ) { 
             .sec-header { margin-bottom: 40px; }
         }
         .sec-header-center { 
