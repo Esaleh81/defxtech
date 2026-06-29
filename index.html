@@ -3208,8 +3208,85 @@
   </div>
 
 </div>
-    <!-- Hub Item 5: White Papers & Resources -->
-      <div id="resources" class="hub-item-block reveal" style="padding: 40px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 40px; border-top: 3px solid var(--accent-blue-f1); scroll-margin-top: 100px;">
+
+          <div id="resources" class="hub-item-block reveal" style="padding: 40px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 40px; border-top: 3px solid var(--accent-blue-f1); scroll-margin-top: 100px;">
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+    <div>
+      <span class="tag tag-ice" style="margin-bottom:10px;">White Papers &amp; Resources</span>
+      <h3 style="font-size:24px; color:var(--white); font-family:var(--font-display);">Operational Briefings &amp; Planning Resources</h3>
+    </div>
+  </div>
+  
+  <div class="grid-2" style="gap:24px;">
+    <div style="background:rgba(255,255,255,0.02); padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="margin-bottom: 20px;">
+        <h4 style="color:#fff; font-size:16px; margin-bottom:10px;">Master UAV Threat Intelligence Repository</h4>
+        <p style="font-size:13px; color:var(--midgray); line-height:1.6; margin-bottom:12px;">
+          Official technical compendium tracking physical attributes, performance bounds, multi-band RF links, and Counter-UAS mitigation taxonomy profiles for global defence, correctional security, and airport operators.
+        </p>
+        <div style="font-family: var(--font-mono), monospace; font-size: 11px; color: #10b981; display: flex; align-items: center; gap: 6px;">
+          <span style="background: rgba(16, 185, 129, 0.1); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(16, 185, 129, 0.2); font-weight: bold;">
+            DOWNLOADS: <span id="uav-repo-dl-count">1</span>
+          </span>
+        </div>
+      </div>
+      <a href="Resources/MASTER UAV THREAT-INTELLIGENCE REPOSITORY- DEFENDX TECHNOLOGIES INC..pdf" 
+         download="MASTER_UAV_THREAT_INTELLIGENCE_REPOSITORY_DEFENDX.pdf" 
+         class="btn btn-gold" 
+         style="padding:8px 16px; font-size:11px; min-height:36px; align-self:start; text-decoration:none; display:inline-flex; align-items:center;"
+         onclick="incrementUavRepoDownloadCount()">
+         Download PDF
+      </a>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.02); padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="margin-bottom: 20px;">
+        <h4 style="color:#fff; font-size:16px; margin-bottom:10px;">Aviation Buffer Coordination Guides</h4>
+        <p style="font-size:13px; color:var(--midgray); line-height:1.6;">Standard operating procedures for managing runway incursion response routines when drones intersect flight corridors.</p>
+      </div>
+      <a href="#contact" class="btn btn-gold" style="padding:8px 16px; font-size:11px; min-height:36px; align-self:start;">Download Guidebook</a>
+    </div>
+  </div>
+</div>
+
+<script>
+    const CONTEXT_BASELINE_COUNT = 1;
+    
+    // ERROR FIXED: Updated string identifier to force desktop browsers to ignore old storage keys
+    const STORAGE_KEY_VERSION = "dx_uav_repo_downloads_v3";
+
+    document.addEventListener("DOMContentLoaded", function() {
+        initializeUavDownloadDisplay();
+    });
+
+    function initializeUavDownloadDisplay() {
+        let storedCounter = localStorage.getItem(STORAGE_KEY_VERSION);
+        if (!storedCounter) {
+            localStorage.setItem(STORAGE_KEY_VERSION, CONTEXT_BASELINE_COUNT);
+            storedCounter = CONTEXT_BASELINE_COUNT;
+        }
+        const displayElement = document.getElementById("uav-repo-dl-count");
+        if (displayElement) {
+            displayElement.textContent = Number(storedCounter).toLocaleString();
+        }
+    }
+
+    function incrementUavRepoDownloadCount() {
+        let storedCounter = localStorage.getItem(STORAGE_KEY_VERSION);
+        if (!storedCounter) storedCounter = CONTEXT_BASELINE_COUNT;
+        
+        let dynamicNextTotal = Number(storedCounter) + 1;
+        localStorage.setItem(STORAGE_KEY_VERSION, dynamicNextTotal);
+        
+        const displayElement = document.getElementById("uav-repo-dl-count");
+        if (displayElement) {
+            displayElement.textContent = dynamicNextTotal.toLocaleString();
+        }
+    }
+</script>
+          
+    <!-- <!-- Hub Item 5: White Papers & Resources -->
+<!-- <div id="resources" class="hub-item-block reveal" style="padding: 40px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 40px; border-top: 3px solid var(--accent-blue-f1); scroll-margin-top: 100px;">
   <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
     <div>
       <span class="tag tag-ice" style="margin-bottom:10px;">White Papers &amp; Resources</span>
@@ -3280,7 +3357,7 @@
             displayElement.textContent = dynamicNextTotal.toLocaleString();
         }
     }
-</script>
+</script> --> 
     <!-- <div id="resources" class="hub-item-block reveal" style="padding: 40px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 40px; border-top: 3px solid var(--accent-blue-f1); scroll-margin-top: 100px;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
         <div>
