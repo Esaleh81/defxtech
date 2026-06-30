@@ -1801,11 +1801,18 @@
 }
 /* 2. Add scaling rules inside your existing '@media screen and (max-width: 991px)' section */
 @media screen and (max-width: 991px) {
-  .nav-mobile-actions {
+  /* .nav-mobile-actions {
     display: flex !important;
     align-items: center;
     justify-content: flex-end;
     gap: 12px;
+  } */
+     .nav-mobile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    order: 3;
   }
 
   .nav-toggle-btn {
@@ -1828,6 +1835,15 @@
     background-color: #ffffff !important;
   }
 
+      /* Desktop Viewport Visibility Rules */
+  /* .nav-cta-mobile {
+    display: none; /* Hide mobile button on desktop layouts */
+  } */
+
+  .nav-toggle-btn {
+    display: none; /* Hide hamburger menu on desktop layouts */
+  }
+    
   .nav-cta-mobile {
     display: block !important;
     order: 2; /* Contact Us button follows the three lines */
@@ -1960,30 +1976,30 @@
 
 <style>
   /* Base Layout Contexts */
-  .nav-inner {
+  /* .nav-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
+  } */
 
   /* Right-hand Action Panel Cluster Container Layout */
-  .nav-mobile-actions {
+  /* .nav-mobile-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 16px;
     order: 3;
-  }
+  } */
 
   /* Desktop Viewport Visibility Rules */
-  .nav-cta-mobile {
-    display: none; /* Hide mobile button on desktop layouts */
+  /* .nav-cta-mobile {
+    display: none; /* Hide mobile button on desktop layouts 
   }
 
   .nav-toggle-btn {
     display: none; /* Hide hamburger menu on desktop layouts */
-  }
+  } */
 </style>
     
     <!-- NAVIGATION (With Logo.jpg integration) --> 
