@@ -265,27 +265,12 @@
             border-bottom: 1px solid rgba(255,255,255,0.06); 
             transition: var(--transition);
         }
-        /* 1. Add alignment styles for your new wrapper block */
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-mobile-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  order: 3; /* Forces group container to the far right side */
-}
-        /* 
         .nav-inner { 
             display: flex; 
             align-items: center; 
             justify-content: space-between; 
             height: 85px; 
-        } */
+        }
         .nav-logo { 
             display: flex; 
             align-items: center; 
@@ -1799,67 +1784,8 @@
         padding: 25px;
     }
 }
-/* 2. Add scaling rules inside your existing '@media screen and (max-width: 991px)' section */
-@media screen and (max-width: 991px) {
-  /* .nav-mobile-actions {
-    display: flex !important;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-  } */
-     .nav-mobile-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 16px;
-    order: 3;
-  }
 
-  .nav-toggle-btn {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 22px;
-    height: 16px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    order: 1; /* Three lines come first */
-  }
-  
-  .nav-toggle-btn span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff !important;
-  }
-
-      /* Desktop Viewport Visibility Rules */
-  /* .nav-cta-mobile {
-    display: none; /* Hide mobile button on desktop layouts */
-  } */
-
-  .nav-toggle-btn {
-    display: none; /* Hide hamburger menu on desktop layouts */
-  }
-    
-  .nav-cta-mobile {
-    display: block !important;
-    order: 2; /* Contact Us button follows the three lines */
-  }
-
-  .nav-cta-mobile .btn {
-    padding: 6px 14px;
-    font-size: 11px;
-    min-height: auto;
-  }
-  
-  .nav-links {
-    display: none; /* Controlled via mobile menu toggle functions */
-  }
-}
-</style>
+    </style>
 </head>
 <body>
 <nav class="nav" aria-label="Main navigation">
@@ -1871,15 +1797,15 @@
       </a>
 
       <div class="nav-mobile-actions">
+        <div class="nav-cta">
+          <a href="#contact" class="btn btn-gold">Contact Us</a>
+        </div>
+        
         <button class="nav-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
           <span></span>
           <span></span>
           <span></span>
         </button>
-
-        <div class="nav-cta-mobile">
-          <a href="#contact" class="btn btn-gold" style="text-decoration:none; white-space:nowrap; display:inline-block; vertical-align:middle;">Contact Us</a>
-        </div>
       </div>
 
       <div class="nav-links" id="navLinks" role="menubar">
@@ -1975,54 +1901,85 @@
 </nav>
 
 <style>
-  /* Base Layout Contexts */
-  /* .nav-inner {
+  /* Base Outer Header Inner Alignment Contexts */
+  .nav-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  } */
+  }
 
-  /* Right-hand Action Panel Cluster Container Layout */
-  /* .nav-mobile-actions {
+  /* Right-hand Action Panel Cluster */
+  .nav-mobile-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 16px;
-    order: 3;
-  } */
+    gap: 12px;
+    order: 3; /* Positions items cleanly to the right side of the screen */
+  }
 
-  /* Desktop Viewport Visibility Rules */
-  /* .nav-cta-mobile {
-    display: none; /* Hide mobile button on desktop layouts 
+  /* Desktop Viewport Defaults */
+  .nav-cta .btn {
+    padding: 10px 20px; 
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
   }
 
   .nav-toggle-btn {
-    display: none; /* Hide hamburger menu on desktop layouts */
-  } */
-</style>
+    display: none; /* Hidden on desktop screens */
+  }
+
+  /* Responsive Media Query Breakpoint Overrides */
+  @media screen and (max-width: 991px) {
+    .nav-toggle-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .nav-toggle-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--white, #ffffff);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Scaling optimization for the CTA button in mobile widths */
+    .nav-mobile-actions .nav-cta .btn {
+      padding: 6px 14px;
+      font-size: 11px;
+      min-height: auto;
+    }
     
-    <!-- NAVIGATION (With Logo.jpg integration) --> 
+    /* Avoid duplication artifacts by hiding standard desktop positions */
+    .nav-inner > .nav-cta {
+      display: none;
+    }
+  }
+</style>
+<!-- ██ NAVIGATION (With Logo.jpg integration) ██████████████████ -->
 <!-- <nav class="nav" aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
-
-        
-    
       <a href="#" class="nav-logo" aria-label="DefendX Technologies home">
         <img src="Logo.jpg" alt="DefendX Technologies Logo" class="nav-logo-img">
       </a>
-    <div class="nav-mobile-actions">
+
+      <!-- Premium Hamburger Button for mobile platforms -->
       <button class="nav-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
           <span></span>
           <span></span>
           <span></span>
       </button>
-      <div class="nav-cta">
-        <a href="#contact" class="btn btn-gold">Contact Us</a>
-      </div>
-    </div>
-        
+
       <div class="nav-links" id="navLinks" role="menubar">
         <div class="nav-item" role="none">
           <div class="nav-link" role="menuitem" tabindex="0" onclick="toggleDropdown(this)">
@@ -2042,6 +1999,7 @@
           </div>
           <div class="nav-dropdown">
             <a href="#technology" onclick="closeMobileMenu()">Detection Mechanisms</a>
+            <!-- <a href="#technology" onclick="closeMobileMenu()">Signal Classification</a> -->
             <a href="#platform" onclick="closeMobileMenu()">AirSentinel™ Platform</a>
            </div>
         </div>
@@ -2103,6 +2061,7 @@
           <div class="nav-dropdown">
             <a href="javascript:void(0)" onclick="openAboutPanel(); closeMobileMenu();">About DefendX</a>
             <a href="#why" onclick="closeMobileMenu()">Why DefendX</a>
+            <!-- <a href="javascript:void(0)" onclick="openAboutPanel(); closeMobileMenu();">Leadership Team</a> -->
             <a href="#investors" onclick="closeMobileMenu()">Investors &amp; Milestones</a>
             <a href="#contact" onclick="closeMobileMenu()">Careers</a>
           </div>
@@ -2390,7 +2349,7 @@
         <div class="solutions-grid-cards">
           <div class="sol-sub-box">
             <h4>🔴 High-Profile Disruptions &amp; Institutional Impacts</h4>
-            <p style="font-size:13px; color:#fff; margin-bottom: 8px;"><strong>The Kingston Correctional Cluster Incident:</strong> A major coordinated drone smuggling operation targeted multiple maximum-security prisons in the Kingston,  region—notably <strong>Collins Bay Institution</strong>. Payloads holding firearms, narcotics, and communication modifications worth over $100,000 per flight led to extended facility lockdowns and emergency staff updates.</p>
+            <p style="font-size:13px; color:#fff; margin-bottom: 8px;"><strong>The Kingston Correctional Cluster Incident:</strong> A major coordinated drone smuggling operation targeted multiple maximum-security prisons in the Kingston, Ontario region—notably <strong>Collins Bay Institution</strong>. Payloads holding firearms, narcotics, and communication modifications worth over $100,000 per flight led to extended facility lockdowns and emergency staff updates.</p>
             <p style="font-size:13px; color:#fff;"><strong>Donnacona Institution Breach:</strong> Frequent drops by modified industrial units engineered to fly through severe cold weather patterns forced immediate infrastructure revisions after contraband distributions led to security threats within the facility yards.</p>
           </div>
           <div class="sol-sub-box">
@@ -2884,7 +2843,7 @@
           </div>
         </div>
         <p style="font-size: 14px; color: var(--midgray); line-height: 1.7;">
-          At Collins Bay Institution in Kingston,  — one of Canada's largest federal penitentiaries — nearly 100 unauthorized drones were intercepted in a single year, almost ten times the number recorded just five years earlier. In Quebec, staff reported 274 drones flying over provincial detention centres in just one quarter.
+          At Collins Bay Institution in Kingston, Ontario — one of Canada's largest federal penitentiaries — nearly 100 unauthorized drones were intercepted in a single year, almost ten times the number recorded just five years earlier. In Quebec, staff reported 274 drones flying over provincial detention centres in just one quarter.
         </p>
       </div>
 
@@ -3625,7 +3584,7 @@
       <div style="background:rgba(255,255,255,0.01); padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
         <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:12px;">
           <span class="tag tag-ice" style="font-size:10px;">Official Release</span>
-          <span style="font-size:12px; color:var(--lgray);">June 14, 2026</span>
+          <span style="font-size:12px; color:var(--lgray);">June 14, 2026, Ontario</span>
         </div>
         <!-- <h4 style="color:#fff; font-size:16px; margin-bottom:10px;">DefendX Technologies Expands Autonomous RF Integration Architecture with Advanced GIS Mapping</h4>
         <p style="font-size:13.5px; color:var(--midgray); line-height:1.6; margin-bottom:16px;">
