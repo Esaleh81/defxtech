@@ -265,12 +265,27 @@
             border-bottom: 1px solid rgba(255,255,255,0.06); 
             transition: var(--transition);
         }
+        /* 1. Add alignment styles for your new wrapper block */
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  order: 3; /* Forces group container to the far right side */
+}
+        /* 
         .nav-inner { 
             display: flex; 
             align-items: center; 
             justify-content: space-between; 
             height: 85px; 
-        }
+        } */
         .nav-logo { 
             display: flex; 
             align-items: center; 
