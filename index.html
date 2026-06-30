@@ -1799,7 +1799,39 @@
         padding: 25px;
     }
 }
+/* 2. Add scaling rules inside your existing '@media screen and (max-width: 991px)' section */
+@media screen and (max-width: 991px) {
+  .nav-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .nav-toggle-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+  }
 
+  /* Shrinks the padding and font sizing of Contact button dynamically on mobile screens */
+  .nav-mobile-actions .nav-cta .btn {
+    padding: 6px 14px;
+    font-size: 11px;
+    min-height: auto;
+  }
+  
+  /* Hides the desktop-positioned CTA button container to avoid duplication bugs */
+  .nav-inner > .nav-cta {
+    display: none;
+  }
+}
     </style>
 </head>
 <body>
