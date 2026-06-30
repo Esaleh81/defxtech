@@ -1797,7 +1797,7 @@
         <img src="Logo.jpg" alt="DefendX Technologies Logo" class="nav-logo-img">
       </a>
 
-      <div class="nav-mobile-actions" style="display: none;">
+      <div class="nav-mobile-actions">
         <button class="nav-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
             <span></span>
             <span></span>
@@ -1903,46 +1903,61 @@
 </nav>
 
 <style>
-  /* Inject this block inside your global stylesheet to handle desktop/mobile swapping context */
+  /* Base Layout Contexts for Desktop */
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-mobile-actions {
+    display: none; /* Default hidden status on desktop platform layouts */
+  }
+
+  /* Responsive Media Query Breakpoint Overrides */
   @media screen and (max-width: 991px) {
     /* Hide the standalone desktop layout CTA link container */
     .nav-inner > .nav-cta {
       display: none !important;
     }
 
-    /* Activate and position the dedicated mobile control action panel cluster */
+    /* Activate and position the mobile container action panel cluster */
     .nav-mobile-actions {
       display: flex !important;
       align-items: center;
       justify-content: flex-end;
-      gap: 12px;
+      gap: 16px;
     }
 
-    /* Force visibility and default configuration onto the active layout button layers */
+    /* Explicitly force display mechanics and sizing context onto the mobile menu trigger button */
     .nav-toggle-btn {
-      display: flex !important;
+      display: flex !important; 
       flex-direction: column;
       justify-content: space-between;
-      width: 22px;
-      height: 16px;
-      background: transparent;
-      border: none;
+      width: 22px !important;
+      height: 14px !important;
+      background: transparent !important;
+      border: none !important;
       cursor: pointer;
-      padding: 0;
+      padding: 0 !important;
+      box-sizing: border-box;
     }
 
+    /* Fix: Ensure horizontal bar spans occupy block visual space with clean background highlights */
     .nav-toggle-btn span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: #ffffff !important;
+      display: block !important;
+      width: 100% !important;
+      height: 2px !important;
+      background-color: #ffffff !important; 
+      border-radius: 1px;
     }
 
     .nav-cta-mobile {
       display: block !important;
     }
 
-    /* Compact UI layout structure overrides for the tracking mobile buttons */
+    /* Compact UI mobile styling settings for your golden button action item */
     .nav-cta-mobile .btn {
       padding: 6px 14px !important;
       font-size: 11px !important;
@@ -1953,7 +1968,6 @@
     }
   }
 </style>
-
 <!-- ██ INTERACTIVE TACTICAL AIRSPACE SIMULATOR HEADER (NEW REFINED BANNER) ██ -->
 <section class="interactive-hero-banner" id="home">
   <div class="container">
