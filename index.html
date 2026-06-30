@@ -1801,8 +1801,15 @@
 }
 /* 2. Add scaling rules inside your existing '@media screen and (max-width: 991px)' section */
 @media screen and (max-width: 991px) {
+  .nav-mobile-actions {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
   .nav-toggle-btn {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     width: 22px;
@@ -1811,31 +1818,35 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    order: 1; /* Three lines come first */
   }
   
   .nav-toggle-btn span {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
   }
 
-  /* Shrinks the padding and font sizing of Contact button dynamically on mobile screens */
-  .nav-mobile-actions .nav-cta .btn {
+  .nav-cta-mobile {
+    display: block !important;
+    order: 2; /* Contact Us button follows the three lines */
+  }
+
+  .nav-cta-mobile .btn {
     padding: 6px 14px;
     font-size: 11px;
     min-height: auto;
   }
   
-  /* Hides the desktop-positioned CTA button container to avoid duplication bugs */
-  .nav-inner > .nav-cta {
-    display: none;
+  .nav-links {
+    display: none; /* Controlled via mobile menu toggle functions */
   }
 }
-    </style>
+</style>
 </head>
 <body>
-<!-- <nav class="nav" aria-label="Main navigation">
+<nav class="nav" aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
       
@@ -1844,15 +1855,15 @@
       </a>
 
       <div class="nav-mobile-actions">
-        <div class="nav-cta-mobile">
-          <a href="#contact" class="btn btn-gold" style="padding:8px 14px; font-size:11px; text-decoration:none; white-space:nowrap; display:inline-block; vertical-align:middle;">Contact Us</a>
-        </div>
-        
         <button class="nav-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
           <span></span>
           <span></span>
           <span></span>
         </button>
+
+        <div class="nav-cta-mobile">
+          <a href="#contact" class="btn btn-gold" style="text-decoration:none; white-space:nowrap; display:inline-block; vertical-align:middle;">Contact Us</a>
+        </div>
       </div>
 
       <div class="nav-links" id="navLinks" role="menubar">
@@ -1967,72 +1978,24 @@
 
   /* Desktop Viewport Visibility Rules */
   .nav-cta-mobile {
-    display: none; /* Hide mobile-specific button on desktop layouts */
+    display: none; /* Hide mobile button on desktop layouts */
   }
 
   .nav-toggle-btn {
     display: none; /* Hide hamburger menu on desktop layouts */
   }
-
-  /* Responsive Media Query Breakpoint Overrides */
-  @media screen and (max-width: 991px) {
-    .nav-mobile-actions {
-      display: flex !important; /* Force layout visibility on mobile */
-    }
-
-    .nav-cta-mobile {
-      display: block !important; /* Force individual element rendering on mobile viewports */
-    }
-
-    .nav-toggle-btn {
-      display: flex !important; /* Force container engine execution */
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 16px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1005;
-      position: relative;
-    }
-
-    /* Fixed: Force solid color rendering so the three horizontal lines display correctly */
-    .nav-toggle-btn span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: #ffffff !important; 
-      transition: all 0.3s ease;
-    }
-  }
-</style> -->
-<!-- NAVIGATION (With Logo.jpg integration) --> 
-<nav class="nav" aria-label="Main navigation">
+</style>
+    
+    <!-- NAVIGATION (With Logo.jpg integration) --> 
+<!-- <nav class="nav" aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
 
-        <!-- <a href="#" class="nav-logo" aria-label="DefendX Technologies home">
-  <img src="Logo.jpg" alt="DefendX Technologies Logo" class="nav-logo-img">
-</a>
-
-<div class="nav-mobile-actions">
-    <button class="nav-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-    <div class="nav-cta">
-    <a href="#contact" class="btn btn-gold">Contact Us</a>
-  </div>
-</div>
-<div class="nav-links" id="navLinks" role="menubar"> -->
+        
     
       <a href="#" class="nav-logo" aria-label="DefendX Technologies home">
         <img src="Logo.jpg" alt="DefendX Technologies Logo" class="nav-logo-img">
       </a>
-      <!--Premium Hamburger Button for mobile platforms  -->
     <div class="nav-mobile-actions">
       <button class="nav-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
           <span></span>
@@ -2063,7 +2026,6 @@
           </div>
           <div class="nav-dropdown">
             <a href="#technology" onclick="closeMobileMenu()">Detection Mechanisms</a>
-            <!-- <!-- <a href="#technology" onclick="closeMobileMenu()">Signal Classification</a>  -->
             <a href="#platform" onclick="closeMobileMenu()">AirSentinel™ Platform</a>
            </div>
         </div>
@@ -2125,7 +2087,6 @@
           <div class="nav-dropdown">
             <a href="javascript:void(0)" onclick="openAboutPanel(); closeMobileMenu();">About DefendX</a>
             <a href="#why" onclick="closeMobileMenu()">Why DefendX</a>
-            <!-- <!-- <a href="javascript:void(0)" onclick="openAboutPanel(); closeMobileMenu();">Leadership Team</a>  -->
             <a href="#investors" onclick="closeMobileMenu()">Investors &amp; Milestones</a>
             <a href="#contact" onclick="closeMobileMenu()">Careers</a>
           </div>
@@ -2137,7 +2098,7 @@
       </div>
     </div>
   </div>
-</nav>
+</nav> -->
 
 <!-- ██ INTERACTIVE TACTICAL AIRSPACE SIMULATOR HEADER (NEW REFINED BANNER) ██ -->
 <section class="interactive-hero-banner" id="home">
